@@ -1,0 +1,61 @@
+---
+// Water Ripples Component
+---
+
+<div id="water-ripples-container" class="fixed inset-0 pointer-events-none z-0">
+</div>
+
+<script>
+  import $ from 'jquery';
+  import 'jquery.ripples';
+
+  // Initialize water ripples effect
+  function initWaterRipples() {
+    try {
+      $('body').ripples({
+        resolution: 512,
+        dropRadius: 30,
+        perturbance: 0.04,
+        interactive: true,
+        crossOrigin: ''
+      });
+    } catch (error) {
+      console.log('WebGL not supported, ripples effect disabled');
+    }
+  }
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', initWaterRipples);
+  
+  // Also initialize immediately if DOM is already loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWaterRipples);
+  } else {
+    initWaterRipples();
+  }
+</script>
+
+<style>
+  /* Ensure the body can have the ripples effect */
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Add subtle water-like background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+      rgba(4, 27, 36, 0.1) 0%, 
+      rgba(6, 46, 56, 0.1) 50%, 
+      rgba(1, 14, 19, 0.1) 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
+</style>
+

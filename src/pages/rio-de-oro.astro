@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RiverPath from '../components/RiverPath.jsx';
+---
+
+<Layout title="Rio de Oro - Hidropoeticas">
+	<main class="min-h-screen">
+		<!-- Header -->
+		<header class="py-8 px-8">
+			<nav class="mb-8">
+				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300">← Volver al inicio</a>
+			</nav>
+			<div class="text-center">
+				<h1 class="text-5xl font-bold text-[#1b7895] mb-4">Rio de Oro</h1>
+				<p class="text-xl text-[#2e3331] opacity-80">El río dorado que fluye por las montañas caucanas</p>
+			</div>
+		</header>
+
+		<!-- River Navigation -->
+		<RiverPath client:load />
+
+		<!-- Content Area - Simplified since content now shows in modals -->
+		<div class="flex min-h-screen">
+			<!-- Main Content Area -->
+			<div class="flex-1 px-8">
+				<!-- Welcome Section -->
+				<section class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-4xl mx-auto text-center">
+						<div class="bg-[#afd0d8] rounded-lg p-12 mb-8">
+							<div class="h-96 relative overflow-hidden rounded-lg mb-8">
+								<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover">
+							</div>
+							<h2 class="text-3xl font-bold text-[#1b7895] mb-6">Explora el Rio de Oro</h2>
+							<p class="text-xl text-[#2e3331] leading-relaxed mb-8">
+								Descubre la historia, el origen natural, los desafíos ambientales y la conexión cultural 
+								de este majestuoso río dorado a través de nuestra navegación interactiva.
+							</p>
+							<p class="text-lg text-[#2e3331] opacity-80">
+								👈 Haz clic en los puntos de navegación del lado derecho para explorar cada sección
+							</p>
+						</div>
+					</div>
+				</section>
+
+				<!-- Hidden sections for navigation detection -->
+				<section id="introduccion" style="display: none;"></section>
+				<section id="origen" style="display: none;"></section>
+				<section id="desafios" style="display: none;"></section>
+				<section id="cultura" style="display: none;"></section>
+			</div>
+		</div>
+	</main>
+	<style>
+		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
+		.flex-1 {
+			margin-right: 280px;
+		}
+
+		/* Ajustes para pantallas pequeñas */
+		@media (max-width: 1024px) {
+			.flex-1 {
+				margin-right: 0;
+			}
+		}
+	</style>
+</Layout>
+

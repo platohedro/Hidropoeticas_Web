@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RiverPath from '../components/RiverPath.jsx';
+---
+
+<Layout title="Rio Quilichao - Hidropoeticas">
+	<main class="min-h-screen">
+		<!-- Header -->
+		<header class="py-8 px-8">
+			<nav class="mb-8">
+				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300">← Volver al inicio</a>
+			</nav>
+			<div class="text-center">
+				<h1 class="text-5xl font-bold text-[#1b7895] mb-4">Rio Quilichao</h1>
+				<p class="text-xl text-[#2e3331] opacity-80">Aguas que nacen en la Reserva Natural de Munchique</p>
+			</div>
+		</header>
+
+		<!-- River Navigation -->
+		<RiverPath client:load />
+
+		<!-- Content Sections -->
+		<div class="flex">
+			<!-- Main Content -->
+			<div class="flex-1 px-8">
+				<!-- Section 1: Introducción -->
+				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-4xl mx-auto text-center">
+						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Introducción</h2>
+						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
+							<div class="h-64 relative overflow-hidden rounded-lg mb-6">
+								<img src="/rio-quilichao.jpg" alt="Rio Quilichao" class="w-full h-full object-cover">
+							</div>
+						</div>
+						<p class="text-lg text-[#2e3331] leading-relaxed">
+							El Rio Quilichao fluye a través del municipio de Santander de Quilichao en el departamento del Cauca, 
+							llevando consigo las aguas cristalinas que nacen en la majestuosa Reserva Natural de Munchique. 
+							Este río es testigo de la biodiversidad única de la región y ha sido fuente de vida 
+							para las comunidades que han habitado sus riberas durante generaciones.
+						</p>
+					</div>
+				</section>
+
+				<!-- Section 2: Origen Natural -->
+				<section id="origen" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-4xl mx-auto text-center">
+						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Origen Natural</h2>
+						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
+							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
+								<p class="text-[#2e3331] opacity-60">[Imagen de la Reserva Natural de Munchique]</p>
+							</div>
+						</div>
+						<p class="text-lg text-[#2e3331] leading-relaxed">
+							En las alturas de la Reserva Natural de Munchique, donde la niebla abraza las montañas 
+							y la biodiversidad alcanza su máxima expresión, nacen las aguas del Rio Quilichao. 
+							Este santuario natural, hogar de especies endémicas y ecosistemas únicos, 
+							alimenta al río con aguas puras que descienden por las laderas andinas, 
+							creando un corredor biológico de incalculable valor.
+						</p>
+					</div>
+				</section>
+
+				<!-- Section 3: Desafíos Ambientales -->
+				<section id="desafios" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-4xl mx-auto text-center">
+						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Desafíos y Resiliencia</h2>
+						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
+							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
+								<p class="text-[#2e3331] opacity-60">[Imagen de esfuerzos de conservación]</p>
+							</div>
+						</div>
+						<p class="text-lg text-[#2e3331] leading-relaxed">
+							Como muchos ríos colombianos, el Rio Quilichao ha enfrentado desafíos por el crecimiento urbano 
+							y la construcción de viviendas en sus orillas. Sin embargo, la comunidad y las autoridades 
+							han unido fuerzas para implementar proyectos de rehabilitación y conservación. 
+							Estos esfuerzos representan la esperanza de que las futuras generaciones 
+							puedan disfrutar de aguas limpias y ecosistemas saludables.
+						</p>
+					</div>
+				</section>
+
+				<!-- Section 4: Conexión Cultural -->
+				<section id="cultura" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-4xl mx-auto text-center">
+						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Conexión Cultural</h2>
+						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
+							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
+								<p class="text-[#2e3331] opacity-60">[Imagen de la comunidad local]</p>
+							</div>
+						</div>
+						<p class="text-lg text-[#2e3331] leading-relaxed">
+							El Rio Quilichao no es solo una fuente de agua; es el corazón que late en el centro 
+							de la vida comunitaria de Santander de Quilichao. Sus aguas han sido testigo 
+							de tradiciones ancestrales, celebraciones familiares y la vida cotidiana 
+							de miles de personas que encuentran en este río no solo sustento, 
+							sino también identidad y pertenencia a un territorio único en Colombia.
+						</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+	<style>
+		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
+		.flex-1 {
+			margin-right: 280px;
+		}
+
+		/* Ajustes para pantallas pequeñas */
+		@media (max-width: 1024px) {
+			.flex-1 {
+				margin-right: 0;
+			}
+		}
+	</style>
+</Layout>
+
