@@ -11,8 +11,8 @@ import RiverPath from '../components/RiverPath.jsx';
 				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300">← Volver al inicio</a>
 			</nav>
 			<div class="text-center">
-				<h1 class="text-5xl font-bold text-[#1b7895] mb-4">Rio Quilichao</h1>
-				<p class="text-xl text-[#2e3331] opacity-80">Aguas que nacen en la Reserva Natural de Munchique</p>
+				<h1 class="text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio Quilichao</h1>
+				<p class="text-xl text-white opacity-90">Aguas que nacen en la Reserva Natural de Munchique</p>
 			</div>
 		</header>
 
@@ -25,14 +25,44 @@ import RiverPath from '../components/RiverPath.jsx';
 			<div class="flex-1 px-8">
 				<!-- Section 1: Introducción -->
 				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
-					<div class="max-w-4xl mx-auto text-center">
-						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Introducción</h2>
-						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
-							<div class="h-64 relative overflow-hidden rounded-lg mb-6">
-								<img src="/rio-quilichao.jpg" alt="Rio Quilichao" class="w-full h-full object-cover">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+							Introducción
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container">
+												<img src="/rio-quilichao.jpg" alt="Rio Quilichao" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Nacimiento en Munchique</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													El Rio Quilichao fluye a través del municipio de Santander de Quilichao en el departamento del Cauca, 
+													llevando consigo las aguas cristalinas que nacen en la majestuosa Reserva Natural de Munchique.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Aguas cristalinas</span>
+													<span class="text-sm">• Biodiversidad única</span>
+													<span class="text-sm">• Fuente de vida</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<p class="text-lg text-[#2e3331] leading-relaxed">
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
 							El Rio Quilichao fluye a través del municipio de Santander de Quilichao en el departamento del Cauca, 
 							llevando consigo las aguas cristalinas que nacen en la majestuosa Reserva Natural de Munchique. 
 							Este río es testigo de la biodiversidad única de la región y ha sido fuente de vida 
@@ -43,14 +73,55 @@ import RiverPath from '../components/RiverPath.jsx';
 
 				<!-- Section 2: Origen Natural -->
 				<section id="origen" class="min-h-screen flex items-center justify-center py-16">
-					<div class="max-w-4xl mx-auto text-center">
-						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Origen Natural</h2>
-						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
-							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
-								<p class="text-[#2e3331] opacity-60">[Imagen de la Reserva Natural de Munchique]</p>
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+								Origen Natural
+							</span>
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
+													<div class="h-full w-full flex items-center justify-center">
+														<div class="text-white text-opacity-80 space-y-4">
+															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+															</svg>
+															<p class="text-lg font-medium">Reserva Natural de Munchique</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white">Santuario de Vida</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													En las alturas de la Reserva Natural de Munchique, donde la niebla abraza las montañas 
+													y la biodiversidad alcanza su máxima expresión, nacen las aguas del Rio Quilichao.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Especies endémicas</span>
+													<span class="text-sm">• Ecosistemas únicos</span>
+													<span class="text-sm">• Corredor biológico</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<p class="text-lg text-[#2e3331] leading-relaxed">
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
 							En las alturas de la Reserva Natural de Munchique, donde la niebla abraza las montañas 
 							y la biodiversidad alcanza su máxima expresión, nacen las aguas del Rio Quilichao. 
 							Este santuario natural, hogar de especies endémicas y ecosistemas únicos, 
@@ -59,17 +130,116 @@ import RiverPath from '../components/RiverPath.jsx';
 						</p>
 					</div>
 				</section>
+					<section id="cultura" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+								Conexión Cultural
+							</span>
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
+													<div class="h-full w-full flex items-center justify-center">
+														<div class="text-white text-opacity-80 space-y-4">
+															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+															</svg>
+															<p class="text-lg font-medium">Comunidad Local</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white">Corazón de la Comunidad</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													El Rio Quilichao no es solo una fuente de agua; es el corazón que late en el centro 
+													de la vida comunitaria de Santander de Quilichao.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Tradiciones ancestrales</span>
+													<span class="text-sm">• Celebraciones familiares</span>
+													<span class="text-sm">• Identidad territorial</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
+							El Rio Quilichao no es solo una fuente de agua; es el corazón que late en el centro 
+							de la vida comunitaria de Santander de Quilichao. Sus aguas han sido testigo 
+							de tradiciones ancestrales, celebraciones familiares y la vida cotidiana 
+							de miles de personas que encuentran en este río no solo sustento, 
+							sino también identidad y pertenencia a un territorio único en Colombia.
+						</p>
+					</div>
+				</section>
 
 				<!-- Section 3: Desafíos Ambientales -->
 				<section id="desafios" class="min-h-screen flex items-center justify-center py-16">
-					<div class="max-w-4xl mx-auto text-center">
-						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Desafíos y Resiliencia</h2>
-						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
-							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
-								<p class="text-[#2e3331] opacity-60">[Imagen de esfuerzos de conservación]</p>
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+								Desafíos y Resiliencia
+							</span>
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
+													<div class="h-full w-full flex items-center justify-center">
+														<div class="text-white text-opacity-80 space-y-4">
+															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+															</svg>
+															<p class="text-lg font-medium">Conservación Activa</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white">Protegiendo Nuestro Río</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													Como muchos ríos colombianos, el Rio Quilichao ha enfrentado desafíos por el crecimiento urbano 
+													y la construcción de viviendas en sus orillas.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Rehabilitación</span>
+													<span class="text-sm">• Conservación</span>
+													<span class="text-sm">• Futuro sostenible</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-						<p class="text-lg text-[#2e3331] leading-relaxed">
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
 							Como muchos ríos colombianos, el Rio Quilichao ha enfrentado desafíos por el crecimiento urbano 
 							y la construcción de viviendas en sus orillas. Sin embargo, la comunidad y las autoridades 
 							han unido fuerzas para implementar proyectos de rehabilitación y conservación. 
@@ -80,23 +250,7 @@ import RiverPath from '../components/RiverPath.jsx';
 				</section>
 
 				<!-- Section 4: Conexión Cultural -->
-				<section id="cultura" class="min-h-screen flex items-center justify-center py-16">
-					<div class="max-w-4xl mx-auto text-center">
-						<h2 class="text-4xl font-bold text-[#1b7895] mb-8">Conexión Cultural</h2>
-						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
-							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
-								<p class="text-[#2e3331] opacity-60">[Imagen de la comunidad local]</p>
-							</div>
-						</div>
-						<p class="text-lg text-[#2e3331] leading-relaxed">
-							El Rio Quilichao no es solo una fuente de agua; es el corazón que late en el centro 
-							de la vida comunitaria de Santander de Quilichao. Sus aguas han sido testigo 
-							de tradiciones ancestrales, celebraciones familiares y la vida cotidiana 
-							de miles de personas que encuentran en este río no solo sustento, 
-							sino también identidad y pertenencia a un territorio único en Colombia.
-						</p>
-					</div>
-				</section>
+			
 			</div>
 		</div>
 	</main>

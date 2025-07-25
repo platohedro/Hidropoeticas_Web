@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RiverPath from '../components/RiverPath.jsx';
+import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 ---
 
 <Layout title="Rio de Oro - Hidropoeticas">
@@ -11,49 +12,290 @@ import RiverPath from '../components/RiverPath.jsx';
 				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300">← Volver al inicio</a>
 			</nav>
 			<div class="text-center">
-				<h1 class="text-5xl font-bold text-[#1b7895] mb-4">Rio de Oro</h1>
-				<p class="text-xl text-[#2e3331] opacity-80">El río dorado que fluye por las montañas caucanas</p>
+				<h1 class="text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio de Oro</h1>
+				<p class="text-xl text-white opacity-90">El río dorado que fluye por las montañas caucanas</p>
 			</div>
 		</header>
 
 		<!-- River Navigation -->
 		<RiverPath client:load />
 
-		<!-- Content Area - Simplified since content now shows in modals -->
-		<div class="flex min-h-screen">
-			<!-- Main Content Area -->
+		<!-- Content Sections -->
+		<div class="flex">
+			<!-- Main Content -->
 			<div class="flex-1 px-8">
-				<!-- Welcome Section -->
-				<section class="min-h-screen flex items-center justify-center py-16">
-					<div class="max-w-4xl mx-auto text-center">
-						<div class="bg-[#afd0d8] rounded-lg p-12 mb-8">
-							<div class="h-96 relative overflow-hidden rounded-lg mb-8">
-								<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover">
+				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+							Introducción
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">El Río Dorado</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													El Rio de Oro serpentea majestuosamente a través de las montañas del Cauca,
+													llevando consigo sedimentos dorados que le dan su nombre característico.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Biodiversidad única</span>
+													<span class="text-sm">• Sedimentos dorados</span>
+													<span class="text-sm">• Fuente de vida</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<h2 class="text-3xl font-bold text-[#1b7895] mb-6">Explora el Rio de Oro</h2>
-							<p class="text-xl text-[#2e3331] leading-relaxed mb-8">
-								Descubre la historia, el origen natural, los desafíos ambientales y la conexión cultural 
-								de este majestuoso río dorado a través de nuestra navegación interactiva.
-							</p>
-							<p class="text-lg text-[#2e3331] opacity-80">
-								👈 Haz clic en los puntos de navegación del lado derecho para explorar cada sección
-							</p>
 						</div>
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
+							El Rio de Oro serpentea majestuosamente a través de las montañas del Cauca,
+							llevando consigo sedimentos dorados que le dan su nombre característico.
+							Este río es testigo de la biodiversidad única de la región y ha sido fuente de vida
+							para las comunidades que han habitado sus riberas durante generaciones.
+						</p>
 					</div>
 				</section>
 
-				<!-- Hidden sections for navigation detection -->
-				<section id="introduccion" style="display: none;"></section>
-				<section id="origen" style="display: none;"></section>
-				<section id="desafios" style="display: none;"></section>
-				<section id="cultura" style="display: none;"></section>
+				<section id="origen" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+								Origen Natural
+							</span>
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/riodeoro.jpg" alt="Origen del Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white">Nacimiento en las Alturas</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													En las alturas de la cordillera, donde los vientos andinos moldean el paisaje
+													y la vegetación de páramo abraza las alturas, nacen las aguas del Rio de Oro.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Ecosistema de páramo</span>
+													<span class="text-sm">• Minerales naturales</span>
+													<span class="text-sm">• Aguas cristalinas</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
+							En las alturas de la cordillera, donde los vientos andinos moldean el paisaje
+							y la vegetación de páramo abraza las alturas, nacen las aguas del Rio de Oro.
+							Los minerales naturales de la montaña se mezclan con las aguas creando esa
+							tonalidad dorada única que da nombre al río.
+						</p>
+					</div>
+				</section>
+					<section id="cultura" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+								Conexión Cultural
+							</span>
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white">Historia y Tradición</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													Para las comunidades que habitan sus riberas, el Rio de Oro representa mucho más que agua;
+													es una fuente de inspiración, leyendas y tradiciones que se transmiten de generación en generación.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex items-center space-x-4 text-white/80">
+													<span class="text-sm">• Rituales ancestrales</span>
+													<span class="text-sm">• Historias locales</span>
+													<span class="text-sm">• Prácticas tradicionales</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
+							Para las comunidades que habitan sus riberas, el Rio de Oro representa mucho más que agua;
+							es una fuente de inspiración, leyendas y tradiciones que se transmiten de generación en generación.
+							Sus aguas doradas han sido testigo de historias y celebraciones que forman parte del patrimonio cultural.
+						</p>
+					</div>
+				</section>
+
+				<section id="desafios" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+								Desafíos y Resiliencia
+							</span>
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
+													<div class="h-full w-full flex items-center justify-center">
+														<div class="text-white text-opacity-80 space-y-4">
+															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+															</svg>
+															<p class="text-lg font-medium">Conservación Activa</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white">Protegiendo Nuestro Río</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													Como muchos ríos colombianos, el Rio de Oro ha enfrentado desafíos por el
+													crecimiento urbano y los cambios ambientales.
+												</p>
+											</div>
+											<div class="mt-6 space-y-4">
+												<div class="flex flex-wrap gap-4 text-white/80">
+													<span class="text-sm">• Conservación comunitaria</span>
+													<span class="text-sm">• Protección ambiental</span>
+													<span class="text-sm">• Desarrollo sostenible</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<p class="text-lg text-white leading-relaxed">
+							Como muchos ríos colombianos, el Rio de Oro ha enfrentado desafíos por el
+							crecimiento urbano y los cambios ambientales. Sin embargo, la comunidad y las
+							autoridades han unido fuerzas para su conservación y protección.
+						</p>
+					</div>
+				</section>
+
+			
 			</div>
 		</div>
 	</main>
+	
+	<WaterSectionTransition client:load />
+
+	<script>
+		let currentSection = '';
+		let isTransitioning = false;
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+					const newSection = entry.target.id;
+					if (currentSection !== newSection) {
+						currentSection = newSection;
+						triggerTransition();
+					}
+				}
+			});
+		}, {
+			threshold: 0.5
+		});
+
+		// Observar todas las secciones
+		document.querySelectorAll('section[id]').forEach(section => {
+			observer.observe(section);
+		});
+
+		function triggerTransition() {
+			if (isTransitioning) return;
+			
+			const transitionComponent = document.querySelector('[data-water-transition]');
+			if (transitionComponent) {
+				isTransitioning = true;
+				transitionComponent.dispatchEvent(new CustomEvent('startTransition'));
+				
+				// La transición se resetea automáticamente en el componente cuando se completa
+				setTimeout(() => {
+					isTransitioning = false;
+				}, 2000); // Un poco más de tiempo para asegurar que la animación termine
+			}
+		}
+	</script>
+
 	<style>
 		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
 		.flex-1 {
 			margin-right: 280px;
+		}
+
+		/* Estilos para mejorar la legibilidad */
+		.text-shadow-lg {
+			text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+		}
+
+		section {
+			position: relative;
+			overflow: hidden;
+		}
+
+		section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(to bottom, rgba(27,120,149,0.1), rgba(27,120,149,0.2));
+			pointer-events: none;
+			z-index: -1;
 		}
 
 		/* Ajustes para pantallas pequeñas */

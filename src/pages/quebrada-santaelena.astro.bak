@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RiverPath from '../components/RiverPath.jsx';
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/quebrada-santaelena.jpg" alt="Historia de la Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Testigo del Crecimiento</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													La Quebrada Santa Elena fue testigo del nacimiento y crecimiento de Medellín. 
+													En sus orillas se establecieron los primeros asentamientos, y sus aguas fueron 
+													fundamentales para el desarrollo de la ciudad. Durante décadas, fue el corazón 
+													que alimentó la vida urbana, hasta que el crecimiento acelerado llevó 
+													a la decisión de cubrirla con concreto, sepultando así la "mamá" de la ciudad.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>jsx';
+---
+
+<Layout title="Quebrada Santaelena - Hidropoeticas">
+	<main class="min-h-screen">
+		<!-- Header -->
+		<header class="py-8 px-8">
+			<nav class="mb-8">
+				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300">← Volver al inicio</a>
+			</nav>
+			<div class="text-center">
+				<h1 class="text-5xl font-bold text-white mb-4 drop-shadow-lg">Quebrada Santaelena</h1>
+				<p class="text-xl text-white opacity-90">La cuna y nodriza histórica de Medellín</p>
+			</div>
+		</header>
+
+		<!-- River Navigation -->
+		<RiverPath client:load />
+
+		<!-- Content Sections -->
+		<div class="flex">
+			<!-- Main Content -->
+			<div class="flex-1 px-8">
+				<!-- Section 1: Introducción -->
+				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+							Introducción
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/quebrada-santaelena.jpg" alt="Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">La Quebrada Histórica</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													La Quebrada Santa Elena es la corriente de agua más importante del oriente de Medellín, 
+													naciendo a 2680 metros sobre el nivel del mar en el Cerro Espíritu Santo. 
+													Esta quebrada, conocida ancestralmente como "Aná" por los indígenas y luego "Aguasal" por los españoles, 
+													se ha convertido en un símbolo de la identidad paisa y la historia de la ciudad.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="text-lg text-white/90 leading-relaxed">
+							La Quebrada Santa Elena es la corriente de agua más importante del oriente de Medellín, 
+							naciendo a 2680 metros sobre el nivel del mar en el Cerro Espíritu Santo. 
+							Esta quebrada, conocida ancestralmente como "Aná" por los indígenas y luego "Aguasal" por los españoles, 
+							se ha convertido en un símbolo de la identidad paisa y la historia de la ciudad.
+						</p>
+					</div>
+				</section>
+
+				<!-- Section 2: Historia -->
+				<section id="historia" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-4xl mx-auto text-center">
+						<h2 class="text-4xl font-bold text-white mb-8 drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">Historia y Memoria</h2>
+						<div class="bg-[#afd0d8] rounded-lg p-8 mb-8">
+							<div class="h-64 bg-gradient-to-b from-[#98bac6] to-[#afd0d8] rounded-lg mb-6 flex items-center justify-center">
+								<p class="text-[#2e3331] opacity-60">[Imagen histórica de la quebrada]</p>
+							</div>
+						</div>
+						<p class="text-lg text-white/90 leading-relaxed">
+							La Quebrada Santa Elena fue testigo del nacimiento y crecimiento de Medellín. 
+							En sus orillas se establecieron los primeros asentamientos, y sus aguas fueron 
+							fundamentales para el desarrollo de la ciudad. Durante décadas, fue el corazón 
+							que alimentó la vida urbana, hasta que el crecimiento acelerado llevó 
+							a la decisión de cubrirla con concreto, sepultando así la "mamá" de la ciudad.
+						</p>
+					</div>
+				</section>
+
+				<!-- Section 3: Transformación Urbana -->
+				<section id="transformacion" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+							Transformación Urbana
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/quebrada-santaelena.jpg" alt="Transformación de la Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Cambio y Desarrollo</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													La cobertura de la Quebrada Santa Elena representó un momento crucial en la historia urbana de Medellín. 
+													Lo que una vez fue un corredor natural lleno de vida se transformó en calles y avenidas. 
+													Esta decisión, aunque necesaria para el desarrollo urbano de la época, 
+													simbolizó la tensión constante entre el progreso y la preservación del patrimonio natural.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="text-lg text-white/90 leading-relaxed">
+							La cobertura de la Quebrada Santa Elena representó un momento crucial en la historia urbana de Medellín. 
+							Lo que una vez fue un corredor natural lleno de vida se transformó en calles y avenidas. 
+							Esta decisión, aunque necesaria para el desarrollo urbano de la época, 
+							simbolizó la tensión constante entre el progreso y la preservación del patrimonio natural.
+						</p>
+					</div>
+				</section>
+
+				<!-- Section 4: Renacimiento -->
+				<section id="renacimiento" class="min-h-screen flex items-center justify-center py-16">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+							Renacimiento y Futuro
+						</h2>
+						
+						<div class="grid gap-8 mb-12">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
+												<img src="/quebrada-santaelena.jpg" alt="Renacimiento de la Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-6">
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Nuevo Amanecer</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													Hoy, la Quebrada Santa Elena experimenta un renacimiento a través de proyectos 
+													de recuperación y la creación de parques lineales. Estos esfuerzos buscan 
+													devolver a la ciudad la conexión perdida con sus aguas originales, 
+													creando espacios verdes que honren la memoria de lo que una vez fue 
+													el corazón acuático de Medellín, mientras se proyecta hacia un futuro más sostenible.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p class="text-lg text-white/90 leading-relaxed">
+							Hoy, la Quebrada Santa Elena experimenta un renacimiento a través de proyectos 
+							de recuperación y la creación de parques lineales. Estos esfuerzos buscan 
+							devolver a la ciudad la conexión perdida con sus aguas originales, 
+							creando espacios verdes que honren la memoria de lo que una vez fue 
+							el corazón acuático de Medellín, mientras se proyecta hacia un futuro más sostenible.
+						</p>
+					</div>
+				</section>
+			</div>
+
+		</div>
+	</main>
+	<style>
+		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
+		.flex-1 {
+			margin-right: 280px;
+		}
+
+		/* Ajustes para pantallas pequeñas */
+		@media (max-width: 1024px) {
+			.flex-1 {
+				margin-right: 0;
+			}
+		}
+	</style>
+</Layout>
+

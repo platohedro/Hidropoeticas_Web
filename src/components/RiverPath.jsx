@@ -12,11 +12,9 @@ const RiverPath = () => {
   const getSectionsByType = () => {
     const path = window.location.pathname;
     
-    if (path.includes('rio-quilichao')) {
+    if (path.includes('rio-quilichao') || path.includes('rio-de-oro')) {
       return ['introduccion', 'origen', 'desafios', 'cultura'];
     } else if (path.includes('quebrada-santaelena')) {
-      return ['introduccion', 'historia', 'transformacion', 'renacimiento'];
-    } else if (path.includes('rio-de-oro')) {
       return ['introduccion', 'historia', 'transformacion', 'renacimiento'];
     }
     
@@ -194,23 +192,24 @@ const RiverPath = () => {
       if (sections.length === 0) return;
       
       const viewportHeight = window.innerHeight;
-      const scrollPosition = window.scrollY + (viewportHeight / 2);
+      const scrollPosition = window.scrollY;
       
-      let currentSection = sections[0]; // Default a la primera sección
+      let currentSection = sections[0];
+      let minDistance = Infinity;
       
       // Encontrar la sección más cercana al centro de la pantalla
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          const elementTop = window.scrollY + rect.top;
+          const elementTop = scrollPosition + rect.top;
           const elementCenter = elementTop + (rect.height / 2);
+          const distance = Math.abs(scrollPosition + (viewportHeight / 2) - elementCenter);
           
-          // Si el scroll está después del centro de esta sección, esta es la sección activa
-          if (scrollPosition >= elementCenter) {
+          // Actualizar la sección activa basada en la distancia más corta al centro
+          if (distance < minDistance) {
+            minDistance = distance;
             currentSection = section;
-          } else {
-            break;
           }
         }
       }
@@ -303,18 +302,25 @@ const RiverPath = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   // Mapeo de IDs a textos de navegación
   const navItems = [
     { id: 'introduccion', text: 'INTRODUCCIÓN' },
-    { id: 'historia', text: 'HISTORIA Y MEMORIA' },
     { id: 'origen', text: 'ORIGEN NATURAL' },
-    { id: 'biodiversidad', text: 'BIODIVERSIDAD' },
-    { id: 'cultura', text: 'CONEXIÓN CULTURAL' },
     { id: 'desafios', text: 'DESAFÍOS Y RESILIENCIA' },
+    { id: 'cultura', text: 'CONEXIÓN CULTURAL' },
+    { id: 'historia', text: 'HISTORIA Y MEMORIA' },
     { id: 'transformacion', text: 'TRANSFORMACIÓN URBANA' },
     { id: 'renacimiento', text: 'RENACIMIENTO Y FUTURO' }
   ];
@@ -386,7 +392,7 @@ const RiverPath = () => {
                   onMouseLeave={() => setIsHovered(null)}
                   onClick={(e) => {
                     e.preventDefault();
-                    openModal(point.id);
+                    scrollToSection(point.id);
                   }}
                 />
                 
@@ -419,7 +425,7 @@ const RiverPath = () => {
                   onMouseLeave={() => setIsHovered(null)}
                   onClick={(e) => {
                     e.preventDefault();
-                    openModal(point.id);
+                    scrollToSection(point.id);
                   }}
                 >
                   {navItem?.text || ''}
