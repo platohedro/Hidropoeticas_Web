@@ -6,13 +6,13 @@ import RiverPath from '../components/RiverPath.jsx';
 <Layout title="Rio Quilichao - Hidropoeticas">
 	<main class="min-h-screen">
 		<!-- Header -->
-		<header class="py-8 px-8">
-			<nav class="mb-8">
-				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300">← Volver al inicio</a>
+		<header class="py-4 md:py-8 px-4 md:px-8">
+			<nav class="mb-4 md:mb-8">
+				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300 text-sm md:text-base">← Volver al inicio</a>
 			</nav>
 			<div class="text-center">
-				<h1 class="text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio Quilichao</h1>
-				<p class="text-xl text-white opacity-90">Aguas que nacen en la Reserva Natural de Munchique</p>
+				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio Quilichao</h1>
+				<p class="text-lg md:text-xl text-white opacity-90 px-4">Aguas que nacen en la Reserva Natural de Munchique</p>
 			</div>
 		</header>
 
@@ -20,9 +20,9 @@ import RiverPath from '../components/RiverPath.jsx';
 		<RiverPath client:load />
 
 		<!-- Content Sections -->
-		<div class="flex">
+		<div class="flex flex-col lg:flex-row">
 			<!-- Main Content -->
-			<div class="flex-1 px-8">
+			<div class="flex-1 px-4 md:px-8">
 				<!-- Section 1: Introducción -->
 				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
 					<div class="max-w-6xl mx-auto px-4">
@@ -264,6 +264,31 @@ import RiverPath from '../components/RiverPath.jsx';
 		@media (max-width: 1024px) {
 			.flex-1 {
 				margin-right: 0;
+			}
+		}
+		
+		/* Mejoras adicionales para móvil */
+		@media (max-width: 768px) {
+			.glass-container {
+				height: 200px;
+			}
+			
+			section {
+				min-height: auto;
+				padding: 2rem 0;
+			}
+			
+			.space-y-6 > * + * {
+				margin-top: 1rem;
+			}
+			
+			h2 {
+				font-size: 2rem;
+				margin-bottom: 2rem;
+			}
+			
+			.max-w-6xl {
+				padding: 0 1rem;
 			}
 		}
 	</style>
