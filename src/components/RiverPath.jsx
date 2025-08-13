@@ -6,7 +6,7 @@ const RiverPath = () => {
 
   // Coordenadas predefinidas para cada sección en el mapa
   const sectionCoordinates = {
-    "introduccion": { x: 450, y: 200 },     // Norte central de Colombia
+    "introduccion": { x: 1100, y: 200 },     // Norte central de Colombia
     "origen": { x: 320, y: 350 },           // Centro-oeste de Colombia
     "desafios": { x: 550, y: 400 },         // Centro-este de Colombia
     "cultura": { x: 400, y: 500 },          // Sur de Colombia

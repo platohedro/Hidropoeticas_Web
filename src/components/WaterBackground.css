@@ -21,11 +21,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/fondo.png');
-  background-size: cover;
+  background-image: url('/fondo2Colombia.png');
+ /* background-size: cover;*/
   background-position: center;
   opacity: 0.5;
   mix-blend-mode: overlay;
+
 }
 
 .surface {
@@ -46,7 +47,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1518837695005-2083093ee35b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEyMTIwOTZ8&ixlib=rb-4.0.3&q=80&w=400");
+  background-image: url("https://raw.githubusercontent.com/platohedro/Hidropoeticas_Web/refs/heads/main/public/quebrada.png");
   background-repeat: repeat-x;
 
   --duration: 8s;
@@ -92,7 +93,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1568145675395-66a2eda0c6d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTEyMTAwNjh8&ixlib=rb-4.0.3&q=80&w=400");
+  background-image: url("https://raw.githubusercontent.com/platohedro/Hidropoeticas_Web/refs/heads/main/public/quebrada.png");
   background-repeat: repeat;
 
   --duration: 10s;
