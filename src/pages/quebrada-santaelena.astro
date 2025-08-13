@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import RiverPath from '../components/RiverPath.jsx';
+import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
 import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 ---
 
@@ -9,7 +9,12 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8">
 			<nav class="mb-4 md:mb-8">
-				<a href="/" class="text-[#1b7895] hover:text-[#2e3331] transition-colors duration-300 text-sm md:text-base">← Volver al inicio</a>
+				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Volver al inicio
+				</a>
 			</nav>
 			<div class="text-center">
 				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Quebrada Santa Elena</h1>
@@ -18,7 +23,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 		</header>
 
 		<!-- River Navigation -->
-		<RiverPath client:load />
+		<VerticalRiverNav client:load />
 
 		<!-- Content Sections -->
 		<div class="flex flex-col lg:flex-row">
@@ -271,9 +276,11 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 	</script>
 
 	<style>
+		@import url("../styles/river-flow.css");
+		
 		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
 		.flex-1 {
-			margin-right: 280px;
+			margin-left: 280px;
 		}
 
 		/* Estilos para mejorar la legibilidad */
@@ -301,7 +308,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 		/* Ajustes para pantallas pequeñas */
 		@media (max-width: 1024px) {
 			.flex-1 {
-				margin-right: 0;
+				margin-left: 0;
 			}
 		}
 
