@@ -17,18 +17,27 @@ const { cx, cy } = Astro.props;
     </linearGradient>
     
     <!-- Enhanced shadow filter for video circles -->
-    <filter id="videoShadow-oro" x="-200%" y="-200%" width="500%" height="500%">
-      <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000" flood-opacity="0.6"/>
-      <feDropShadow dx="0" dy="8" stdDeviation="15" flood-color="#4fe9ab" flood-opacity="0.3"/>
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0ea5e9" flood-opacity="0.2"/>
+    <filter id="videoShadow-oro" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offset"/>
+      <feFlood flood-color="#000" flood-opacity="0.3"/>
+      <feComposite in2="offset" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
     
     <!-- Intense hover shadow filter -->
-    <filter id="videoShadowHover-oro" x="-300%" y="-300%" width="700%" height="700%">
-      <feDropShadow dx="0" dy="20" stdDeviation="35" flood-color="#000" flood-opacity="0.8"/>
-      <feDropShadow dx="0" dy="15" stdDeviation="25" flood-color="#4fe9ab" flood-opacity="0.5"/>
-      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0ea5e9" flood-opacity="0.4"/>
-      <feDropShadow dx="0" dy="5" stdDeviation="12" flood-color="#06b6d4" flood-opacity="0.3"/>
+    <filter id="videoShadowHover-oro" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+      <feOffset dx="0" dy="8" result="offset"/>
+      <feFlood flood-color="#4fe9ab" flood-opacity="0.4"/>
+      <feComposite in2="offset" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
   
@@ -42,11 +51,22 @@ const { cx, cy } = Astro.props;
   <circle cx={cx} cy={cy} r="45" 
           fill="rgba(0, 0, 0, 0.3)" 
           filter="url(#videoShadow-oro)"
-          class="transition-all duration-500 group-hover:r-55 group-hover:[filter:url(#videoShadowHover-oro)] md:r-35 md:group-hover:r-45"/>
+          class="transition-all duration-500 group-hover:r-80 group-hover:[filter:url(#videoShadowHover-oro)] md:r-35 md:group-hover:r-70"/>
   
-  <foreignObject x={Number(cx) - 45} y={Number(cy) - 45} width="90" height="90" class="pointer-events-none group-hover:opacity-100 opacity-75 transition-all duration-500">
-    <div class="w-full h-full rounded-full overflow-hidden border-2 border-cyan-400/50 group-hover:border-cyan-300 group-hover:border-4 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_50px_rgba(79,233,171,0.6)]">
-      <img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover group-hover:scale-115 transition-transform duration-700">
+  <foreignObject x={Number(cx) - 45} y={Number(cy) - 45} width="90" height="90" class="pointer-events-none transition-all duration-500 group-hover:scale-150 origin-center" style="overflow: visible;">
+    <div class="w-full h-full rounded-full overflow-hidden border-2 border-cyan-400/50 group-hover:border-cyan-300 group-hover:border-4 transition-all duration-500 shadow-2xl group-hover:shadow-[0_0_50px_rgba(79,233,171,0.6)] relative">
+      <!-- Static Image -->
+      <img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 absolute inset-0">
+      <!-- Video on Hover -->
+      <video 
+        src="/prueba.mp4" 
+        class="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0" 
+        autoplay 
+        muted 
+        loop
+        onmouseenter="this.play()"
+        onmouseleave="this.pause(); this.currentTime = 0;"
+      ></video>
     </div>
   </foreignObject>
   
