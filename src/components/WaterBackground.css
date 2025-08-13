@@ -21,13 +21,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(
-    to bottom,
-    white,
-    gray 25%,
-    gray 60%,
-    khaki
-  );
+  background-image: url('/fondo.png');
+  background-size: cover;
+  background-position: center;
   opacity: 0.5;
   mix-blend-mode: overlay;
 }
