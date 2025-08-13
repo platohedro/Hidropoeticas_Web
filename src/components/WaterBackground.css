@@ -10,8 +10,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: 5;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .bg {
@@ -21,12 +22,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/fondo2Colombia.png');
- /* background-size: cover;*/
+  background-image: url('/fondo3Colombia.png');
+  background-size: cover; 
   background-position: center;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .surface {
@@ -36,6 +37,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
 }
 
 .surface::before,
@@ -82,6 +84,7 @@
   width: 100vw;
   height: 100vh;
   filter: url(#noise1);
+  z-index: 0;
 }
 
 .caustics::before,
@@ -125,6 +128,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 1;
 }
 
 .sun div {
