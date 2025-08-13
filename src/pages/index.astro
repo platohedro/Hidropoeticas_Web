@@ -1,96 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import RioQuilichao from '../components/RioQuilichao.astro';
-import RioDeOro from '../components/RioDeOro.astro';
-import QuebradaSantaElena from '../components/QuebradaSantaElena.astro';
+import Layout from "../layouts/Layout.astro";
+import RioQuilichao from "../components/RioQuilichao.astro";
+import RioDeOro from "../components/RioDeOro.astro";
+import QuebradaSantaElena from "../components/QuebradaSantaElena.astro";
 ---
 
 <Layout title="Hidropoeticas - Inicio">
   <main class="h-screen w-screen flex flex-col overflow-hidden fixed inset-0">
     <!-- Header -->
-   
 
     <!-- Main Content - Colombia Hydrographic Map -->
-    <section class="flex-1 flex items-center justify-center relative w-full h-full">
+    <section
+      class="flex-1 flex items-center justify-center relative w-full h-full"
+    >
       <!-- Background water effect removido para mejor visibilidad del mapa -->
-      
-      
+
       <!-- Water Background Effect with Colombia Map -->
       <div class="water-background">
-        <div class="surface"></div>
+        <!-- <div class="surface"></div>
         <div class="caustics"></div>
         <div class="bg"></div>
         <div class="sun">
           <div class="sun-layer1"></div>
           <div class="sun-layer2"></div>
           <div class="sun-layer3"></div>
-        </div>
-        
+        </div> -->
+
         <svg style="display: none;">
           <filter id="noise1">
-            <feTurbulence 
-              type="turbulence" 
-              baseFrequency=".05" 
-              numOctaves="1" 
-              seed="3" 
-              stitchTiles='stitch' 
-            />
-            <feDisplacementMap in="SourceGraphic" scale="10" />
+            <feTurbulence
+              type="turbulence"
+              baseFrequency=".05"
+              numOctaves="1"
+              seed="3"
+              stitchTiles="stitch"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="10"
+            ></feDisplacementMap>
           </filter>
         </svg>
       </div>
-      
+
       <div class="relative w-full h-full flex items-center justify-center z-20">
         <!-- Colombia Map Container -->
         <div class="relative w-full h-full flex items-center justify-center">
           <!-- Colombia Map SVG -->
-          <svg viewBox="0 0 1000 700" class="w-full h-full max-w-none max-h-none opacity-90">
-            <!-- Gradient definitions -->
-            <defs>
-              <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:0.3" />
-                <stop offset="50%" style="stop-color:#0891b2;stop-opacity:0.4" />
-                <stop offset="100%" style="stop-color:#0f766e;stop-opacity:0.3" />
-              </linearGradient>
-              
-              <!-- Enhanced shadow filter for video circles -->
-              <filter id="videoShadow" x="-200%" y="-200%" width="500%" height="500%">
-                <feDropShadow dx="0" dy="12" stdDeviation="20" flood-color="#000" flood-opacity="0.6"/>
-                <feDropShadow dx="0" dy="8" stdDeviation="15" flood-color="#4fe9ab" flood-opacity="0.3"/>
-                <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0ea5e9" flood-opacity="0.2"/>
-              </filter>
-              
-              <!-- Intense hover shadow filter -->
-              <filter id="videoShadowHover" x="-300%" y="-300%" width="700%" height="700%">
-                <feDropShadow dx="0" dy="20" stdDeviation="35" flood-color="#000" flood-opacity="0.8"/>
-                <feDropShadow dx="0" dy="15" stdDeviation="25" flood-color="#4fe9ab" flood-opacity="0.5"/>
-                <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#0ea5e9" flood-opacity="0.4"/>
-                <feDropShadow dx="0" dy="5" stdDeviation="12" flood-color="#06b6d4" flood-opacity="0.3"/>
-              </filter>
-            </defs>
-          
-            
-            
-          
-   
-            
+          <svg
+            viewBox="0 0 1000 700"
+            class="w-full h-full max-w-none max-h-none opacity-90"
+          >
             <!-- Rio Quilichao - Southwest (Cauca) -->
             <RioQuilichao cx="320" cy="445" />
-            
+
             <!-- Rio de Oro - Northeast (Norte de Santander/Cesar) -->
             <RioDeOro cx="440" cy="180" />
-            
+
             <!-- Quebrada Santa Elena - Northwest (Medellín, Antioquia) -->
             <QuebradaSantaElena cx="380" cy="300" />
-
           </svg>
-          
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-  
+   
   </main>
 </Layout>
 
@@ -99,157 +70,20 @@ import QuebradaSantaElena from '../components/QuebradaSantaElena.astro';
   function updateRatioW() {
     const aspectRatio = window.innerWidth / window.innerHeight;
     let ratioW = 1;
-    
+
     if (aspectRatio >= 5) ratioW = 5;
     else if (aspectRatio >= 4) ratioW = 4;
     else if (aspectRatio >= 3) ratioW = 3;
     else if (aspectRatio >= 2) ratioW = 2;
     else if (aspectRatio >= 1) ratioW = 1;
-    
-    document.documentElement.style.setProperty('--ratioW', ratioW.toString());
+
+    document.documentElement.style.setProperty("--ratioW", ratioW.toString());
   }
 
   updateRatioW();
-  window.addEventListener('resize', updateRatioW);
+  window.addEventListener("resize", updateRatioW);
 </script>
 
 <style>
-  /* Import Water Background CSS */
-  @import url('../components/WaterBackground.css');
-
-  /* Water background animation */
-  @keyframes waterFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  .water-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #0a2e38 0%, #0a1a1f 50%, #051217 100%);
-    background-size: 400% 400%;
-    animation: waterFlow 20s ease infinite;
-  }
-
-  /* River Card Styles */
-  .river-card {
-    perspective: 1000px;
-    height: 400px;
-    display: block;
-    position: relative;
-    transition: transform 0.6s ease;
-  }
-
-  .river-card:hover {
-    transform: translateY(-10px);
-  }
-
-  .river-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-
-  .river-card:hover .river-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .river-card-front,
-  .river-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  }
-
-  .river-card-front {
-    background-color: #0a2e38;
-    color: white;
-  }
-
-  .river-card-back {
-    background: linear-gradient(135deg, #0a2e38 0%, #0a1a1f 100%);
-    color: white;
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    border: 1px solid rgba(79, 233, 171, 0.2);
-  }
-
-  .river-image {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .river-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem 1rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-  }
-
-  .river-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  }
-
-  .river-location {
-    font-size: 1rem;
-    opacity: 0.9;
-    font-weight: 300;
-  }
-
-  .river-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-
-  .river-more {
-    display: inline-block;
-    color: #4fe9ab;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-
-  .river-card:hover .river-more {
-    transform: translateX(5px);
-  }
-
-  @media (max-width: 768px) {
-    .river-card {
-      height: 350px;
-      margin-bottom: 2rem;
-    }
-    
-    .river-title {
-      font-size: 1.5rem;
-    }
-    
-    .river-card-back {
-      padding: 1.5rem;
-    }
-    
-    .river-description {
-      font-size: 1rem;
-    }
-  }
+  @import url("../styles/index.css");
 </style>
-
