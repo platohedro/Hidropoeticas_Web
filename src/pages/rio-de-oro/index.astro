@@ -1,13 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
-import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
+import Layout from '../../layouts/Layout.astro';
+import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import WaterSectionTransition from '../../components/WaterSectionTransition.jsx';
 ---
 
 <Layout title="Rio de Oro - Hidropoeticas">
 	<main class="min-h-screen">
 		<!-- Header -->
-		<header class="py-4 md:py-8 px-4 md:px-8">
+		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8">
 				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,7 +18,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 			</nav>
 			<div class="text-center">
 				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio de Oro</h1>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4">lorem ipsum dolor sit amet Lorem i adipisicing elit. Eligendi magni, a delectues neque porro cum, doloribus at facilis</p>
+				<p class="text-lg md:text-xl text-white opacity-90 px-4">lorem ipsum dolor sit amet Lorem i adipisicing elit. Eligendi magni, a delectues neque porro cum, doloribus at facilis, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim et, nihil soluta sint reiciendis vitae sequi, unde atque illum error esse autem magni, deleniti corporis dolorem repellat nam eveniet animi?</p>
 			</div>
 		</header>
 
@@ -29,7 +29,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 		<div class="flex flex-col lg:flex-row">
 			<!-- Main Content -->
 			<div class="flex-1 px-4 md:px-8">
-				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
+				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-de-oro/introduccion'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
 							Introducción
@@ -76,10 +76,10 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 					</div>
 				</section>
 
-				<section id="origen" class="min-h-screen flex items-center justify-center py-16">
+				<section id="origen" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-de-oro/origen'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
+							<span class="bg-gradient-to-r from-[#c9c9c9] to-[#ffffff] text-transparent bg-clip-text">
 								Origen Natural
 							</span>
 						</h2>
@@ -124,22 +124,22 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 						</p>
 					</div>
 				</section>
-					<section id="cultura" class="min-h-screen flex items-center justify-center py-16">
+					<section id="cultura" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-de-oro/conexion-cultural'">
 					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
 								Conexión Cultural
 							</span>
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500">
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 group-hover:border-cyan-400/50 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
 											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
 												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+												<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 											</div>
 										</div>
 										<div class="w-full md:w-1/2 flex flex-col justify-between">
@@ -156,6 +156,14 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 													<span class="text-sm">• Historias locales</span>
 													<span class="text-sm">• Prácticas tradicionales</span>
 												</div>
+												<div class="mt-4">
+													<span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50">
+														Explorar más
+														<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+															<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+														</svg>
+													</span>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -163,7 +171,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 							</div>
 						</div>
 
-						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10 group-hover:border-cyan-400/30 transition-all duration-500">
 							<p class="text-lg text-white leading-relaxed">
 							Para las comunidades que habitan sus riberas, el Rio de Oro representa mucho más que agua;
 							es una fuente de inspiración, leyendas y tradiciones que se transmiten de generación en generación.
@@ -172,7 +180,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 					</div>
 				</section>
 
-				<section id="desafios" class="min-h-screen flex items-center justify-center py-16">
+				<section id="desafios" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-de-oro/desafios'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
@@ -276,7 +284,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 	</script>
 
 	<style>
-		@import url("../styles/river-flow.css");
+		@import url("/src/styles/river-flow.css");
 		
 		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
 		.flex-1 {

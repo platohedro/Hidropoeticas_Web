@@ -1,13 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
-import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
+import Layout from '../../layouts/Layout.astro';
+import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import WaterSectionTransition from '../../components/WaterSectionTransition.jsx';
 ---
 
 <Layout title="Quebrada Santa Helena - Hidropoeticas">
 	<main class="min-h-screen">
 		<!-- Header -->
-		<header class="py-4 md:py-8 px-4 md:px-8">
+		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8">
 				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,7 +18,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 			</nav>
 			<div class="text-center">
 				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Quebrada Santa Elena</h1>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4">La quebrada que conecta montaña y valle en el corazón del Cauca</p>
+				<p class="text-lg md:text-xl text-white opacity-90 px-4">La quebrada que desciende desde el páramo hasta el corazón de Medellín</p>
 			</div>
 		</header>
 
@@ -36,28 +36,28 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.location.href='/quebrada-santaelena/introduccion'">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
 											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
 												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+												<img src="/quebrada-santaelena-preview.jpg" alt="Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
 											</div>
 										</div>
 										<div class="w-full md:w-1/2 flex flex-col justify-between">
 											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">El Río Dorado</h3>
+												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Corriente Andina</h3>
 												<p class="text-lg text-white/90 leading-relaxed">
-													El Rio de Oro serpentea majestuosamente a través de las montañas del Cauca,
-													llevando consigo sedimentos dorados que le dan su nombre característico.
+													La Quebrada Santa Elena nace en los páramos andinos y desciende
+													por las laderas orientales hasta llegar al valle de Aburrá.
 												</p>
 											</div>
 											<div class="mt-6 space-y-4">
 												<div class="flex flex-wrap gap-4 text-white/80">
-													<span class="text-sm">• Biodiversidad única</span>
-													<span class="text-sm">• Sedimentos dorados</span>
-													<span class="text-sm">• Fuente de vida</span>
+													<span class="text-sm">• Ecosistema de páramo</span>
+													<span class="text-sm">• Corredor biológico</span>
+													<span class="text-sm">• Recurso hídrico vital</span>
 												</div>
 											</div>
 										</div>
@@ -68,10 +68,10 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 
 						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
-							El Rio de Oro serpentea majestuosamente a través de las montañas del Cauca,
-							llevando consigo sedimentos dorados que le dan su nombre característico.
-							Este río es testigo de la biodiversidad única de la región y ha sido fuente de vida
-							para las comunidades que han habitado sus riberas durante generaciones.
+							La Quebrada Santa Elena serpentea desde los páramos andinos hasta el corazón de Medellín,
+							llevando consigo la vida y la historia de los ecosistemas de alta montaña.
+							Esta quebrada es testigo de la biodiversidad única de la región y ha sido fuente de vida
+							para las comunidades que han habitado su cuenca durante generaciones.
 						</p>
 					</div>
 				</section>
@@ -85,13 +85,13 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.location.href='/quebrada-santaelena/origen'">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
 											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
 												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/riodeoro.jpg" alt="Origen del Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+												<img src="/quebrada-santaelena-preview.jpg" alt="Origen Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
 											</div>
 										</div>
 										<div class="w-full md:w-1/2 flex flex-col justify-between">
@@ -99,13 +99,13 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 												<h3 class="text-2xl font-semibold text-white">Nacimiento en las Alturas</h3>
 												<p class="text-lg text-white/90 leading-relaxed">
 													En las alturas de la cordillera, donde los vientos andinos moldean el paisaje
-													y la vegetación de páramo abraza las alturas, nacen las aguas del Rio de Oro.
+													y la vegetación de páramo abraza las alturas, nacen las aguas de la Quebrada Santa Elena.
 												</p>
 											</div>
 											<div class="mt-6 space-y-4">
 												<div class="flex flex-wrap gap-4 text-white/80">
 													<span class="text-sm">• Ecosistema de páramo</span>
-													<span class="text-sm">• Minerales naturales</span>
+													<span class="text-sm">• Filtración natural</span>
 													<span class="text-sm">• Aguas cristalinas</span>
 												</div>
 											</div>
@@ -118,9 +118,9 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
 							En las alturas de la cordillera, donde los vientos andinos moldean el paisaje
-							y la vegetación de páramo abraza las alturas, nacen las aguas del Rio de Oro.
-							Los minerales naturales de la montaña se mezclan con las aguas creando esa
-							tonalidad dorada única que da nombre al río.
+							y la vegetación de páramo abraza las alturas, nacen las aguas de la Quebrada Santa Elena.
+							Los suelos orgánicos ricos en materia vegetal filtran naturalmente las aguas,
+							creando un recurso hídrico de excepcional calidad para el valle de Aburrá.
 						</p>
 					</div>
 				</section>
@@ -133,28 +133,28 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.location.href='/quebrada-santaelena/conexion-cultural'">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
 											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
 												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/rio-de-oro.jpg" alt="Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+												<img src="/quebrada-santaelena-preview.jpg" alt="Conexión Cultural Quebrada Santa Elena" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
 											</div>
 										</div>
 										<div class="w-full md:w-1/2 flex flex-col justify-between">
 											<div class="space-y-6">
 												<h3 class="text-2xl font-semibold text-white">Historia y Tradición</h3>
 												<p class="text-lg text-white/90 leading-relaxed">
-													Para las comunidades que habitan sus riberas, el Rio de Oro representa mucho más que agua;
+													Para las comunidades que habitan su cuenca, la Quebrada Santa Elena representa mucho más que agua;
 													es una fuente de inspiración, leyendas y tradiciones que se transmiten de generación en generación.
 												</p>
 											</div>
 											<div class="mt-6 space-y-4">
 												<div class="flex items-center space-x-4 text-white/80">
 													<span class="text-sm">• Rituales ancestrales</span>
-													<span class="text-sm">• Historias locales</span>
-													<span class="text-sm">• Prácticas tradicionales</span>
+													<span class="text-sm">• Saberes tradicionales</span>
+													<span class="text-sm">• Prácticas culturales</span>
 												</div>
 											</div>
 										</div>
@@ -165,9 +165,9 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 
 						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
-							Para las comunidades que habitan sus riberas, el Rio de Oro representa mucho más que agua;
+							Para las comunidades que habitan su cuenca, la Quebrada Santa Elena representa mucho más que agua;
 							es una fuente de inspiración, leyendas y tradiciones que se transmiten de generación en generación.
-							Sus aguas doradas han sido testigo de historias y celebraciones que forman parte del patrimonio cultural.
+							Sus aguas cristalinas han sido testigo de historias y celebraciones que forman parte del patrimonio cultural.
 						</p>
 					</div>
 				</section>
@@ -181,7 +181,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1 cursor-pointer hover:scale-105 transition-transform duration-300" onclick="window.location.href='/quebrada-santaelena/desafios'">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
@@ -191,9 +191,9 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 													<div class="h-full w-full flex items-center justify-center">
 														<div class="text-white text-opacity-80 space-y-4">
 															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
 															</svg>
-															<p class="text-lg font-medium">Conservación Activa</p>
+															<p class="text-lg font-medium">Protección Activa</p>
 														</div>
 													</div>
 												</div>
@@ -201,17 +201,17 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 										</div>
 										<div class="w-full md:w-1/2 flex flex-col justify-between">
 											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white">Protegiendo Nuestro Río</h3>
+												<h3 class="text-2xl font-semibold text-white">Protegiendo Nuestra Quebrada</h3>
 												<p class="text-lg text-white/90 leading-relaxed">
-													Como muchos ríos colombianos, el Rio de Oro ha enfrentado desafíos por el
-													crecimiento urbano y los cambios ambientales.
+													La Quebrada Santa Elena enfrenta desafíos por el crecimiento urbano
+													y los efectos del cambio climático en su cuenca de alta montaña.
 												</p>
 											</div>
 											<div class="mt-6 space-y-4">
 												<div class="flex flex-wrap gap-4 text-white/80">
-													<span class="text-sm">• Conservación comunitaria</span>
-													<span class="text-sm">• Protección ambiental</span>
-													<span class="text-sm">• Desarrollo sostenible</span>
+													<span class="text-sm">• Resiliencia climática</span>
+													<span class="text-sm">• Gestión participativa</span>
+													<span class="text-sm">• Soluciones naturales</span>
 												</div>
 											</div>
 										</div>
@@ -222,9 +222,9 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 
 						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
-							Como muchos ríos colombianos, el Rio de Oro ha enfrentado desafíos por el
-							crecimiento urbano y los cambios ambientales. Sin embargo, la comunidad y las
-							autoridades han unido fuerzas para su conservación y protección.
+							La Quebrada Santa Elena enfrenta desafíos contemporáneos por el crecimiento urbano
+							y los efectos del cambio climático. Sin embargo, la comunidad y las autoridades
+							han desarrollado estrategias innovadoras de adaptación y resiliencia territorial.
 						</p>
 					</div>
 				</section>
@@ -276,7 +276,7 @@ import WaterSectionTransition from '../components/WaterSectionTransition.jsx';
 	</script>
 
 	<style>
-		@import url("../styles/river-flow.css");
+		@import url("/src/styles/river-flow.css");
 		
 		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
 		.flex-1 {

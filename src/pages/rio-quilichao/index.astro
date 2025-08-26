@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
+import Layout from '../../layouts/Layout.astro';
+import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 ---
 
 <Layout title="Rio Quilichao - Hidropoeticas">
 	<main class="min-h-screen">
 		<!-- Header -->
-		<header class="py-4 md:py-8 px-4 md:px-8">
+		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8">
 				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -29,7 +29,7 @@ import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
 			<!-- Main Content -->
 			<div class="flex-1 px-4 md:px-8">
 				<!-- Section 1: Introducción -->
-				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16">
+				<section id="introduccion" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/introduccion'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
 							Introducción
@@ -77,7 +77,7 @@ import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
 				</section>
 
 				<!-- Section 2: Origen Natural -->
-				<section id="origen" class="min-h-screen flex items-center justify-center py-16">
+				<section id="origen" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/origen'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
@@ -135,7 +135,7 @@ import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
 						</p>
 					</div>
 				</section>
-					<section id="cultura" class="min-h-screen flex items-center justify-center py-16">
+					<section id="cultura" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/conexion-cultural'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
@@ -195,7 +195,7 @@ import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
 				</section>
 
 				<!-- Section 3: Desafíos Ambientales -->
-				<section id="desafios" class="min-h-screen flex items-center justify-center py-16">
+				<section id="desafios" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/desafios'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
@@ -260,7 +260,7 @@ import VerticalRiverNav from '../components/VerticalRiverNav.jsx';
 		</div>
 	</main>
 	<style>
-		@import url("../styles/river-flow.css");
+		@import url("/src/styles/river-flow.css");
 		
 		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
 		.flex-1 {
