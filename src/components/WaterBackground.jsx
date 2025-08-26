@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './WaterBackground.css';
 
 const WaterBackground = () => {
+  const [isHomePage, setIsHomePage] = useState(true);
+
   useEffect(() => {
     const updateRatioW = () => {
       const aspectRatio = window.innerWidth / window.innerHeight;
@@ -16,6 +18,13 @@ const WaterBackground = () => {
       document.documentElement.style.setProperty('--ratioW', ratioW.toString());
     };
 
+    // Check if current page is home page
+    const checkHomePage = () => {
+      const pathname = window.location.pathname;
+      setIsHomePage(pathname === '/' || pathname === '');
+    };
+
+    checkHomePage();
     updateRatioW();
     window.addEventListener('resize', updateRatioW);
 
@@ -28,7 +37,7 @@ const WaterBackground = () => {
     <div className="water-background">
       <div className="surface"></div>
       <div className="caustics"></div>
-      <div className="bg"></div>
+      {isHomePage && <div className="bg"></div>}
       <div className="sun">
         <div className="sun-layer1"></div>
         <div className="sun-layer2"></div>
