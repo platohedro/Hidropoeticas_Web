@@ -3,21 +3,33 @@
 ---
 
 <div class="fixed top-6 left-6 z-50 pointer-events-none opacity-80">
-  <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-300 tracking-wide">
+  <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-300 tracking-wide" style="font-family: 'Playfair Display', 'Georgia', serif !important; font-weight: 900 !important; letter-spacing: 0.05em !important;">
     <span class="bg-gradient-to-r from-cyan-300/70 via-blue-400/80 to-teal-300/70 bg-clip-text text-transparent drop-shadow-2xl">
       HIDROPOETICAS
     </span>
   </h1>
   <div class="h-1 w-full bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-teal-500/40 rounded-full mt-2 shadow-lg shadow-cyan-500/20"></div>
-  <div class="text-sm md:text-base text-cyan-400/60 font-light tracking-wider mt-2 drop-shadow-lg">
+  <div class="text-sm md:text-base text-cyan-400/60 font-light tracking-wider mt-2 drop-shadow-lg" style="font-family: 'Cormorant Garamond', 'Georgia', serif !important; font-weight: 400 !important; font-style: italic !important;">
    Un recorrido por los ríos de Colombia
   </div>
 </div>
 
 <style>
+  /* Force typography with inline styles */
   h1 {
     text-shadow: 0 0 30px rgba(79, 233, 171, 0.3);
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  }
+  
+  /* Test if CSS fonts work at all */
+  h1, h1 * {
+    font-family: 'Inter', 'Arial Black', sans-serif !important;
+    font-weight: 800 !important;
+  }
+  
+  div[style*="Open Sans"] {
+    font-family: 'Open Sans', 'Arial', sans-serif !important;
+    font-weight: 300 !important;
   }
   
   @media (max-width: 768px) {
