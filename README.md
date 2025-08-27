@@ -46,37 +46,74 @@ npm run build
 ```
 Hidropoeticas_Web/
 ├── src/
-│   ├── components/     # Componentes React reutilizables
-│   ├── layouts/       # Plantillas de página
-│   ├── pages/         # Páginas de la aplicación
-│   └── styles/        # Estilos globales
-├── public/           # Activos estáticos
-└── astro.config.mjs  # Configuración de Astro
+│   ├── components/           # Componentes React reutilizables
+│   │   ├── VerticalRiverNav.jsx    # Navbar dinámico con visualización de río
+│   │   ├── WaterSectionTransition.jsx # Transiciones entre secciones
+│   │   ├── RiverPath.jsx           # Elementos de navegación del río
+│   │   ├── ProjectTitle.astro      # Título principal del proyecto
+│   │   └── Modal.jsx               # Componente modal interactivo
+│   ├── layouts/             # Plantillas de página
+│   │   └── Layout.astro           # Layout principal con estilos globales
+│   ├── pages/               # Páginas de la aplicación
+│   │   ├── index.astro           # Página de inicio
+│   │   ├── rio-de-oro/          # Secciones del Río de Oro
+│   │   │   ├── index.astro        # Vista principal (IDs: juntxs, sandra, maria, sofia)
+│   │   │   ├── introduccion.astro # Página de introducción
+│   │   │   └── ...               # Otras subpáginas
+│   │   ├── rio-quilichao/       # Secciones del Río Quilichao  
+│   │   │   ├── index.astro        # Vista principal (IDs: quili1, quili2, quili3, quili4)
+│   │   │   ├── introduccion.astro # Página de introducción
+│   │   │   └── ...               # Otras subpáginas
+│   │   └── quebrada-santaelena/ # Secciones de la Quebrada Santa Elena
+│   │       ├── index.astro        # Vista principal (IDs: santa1, santa2, santa3, santa4)
+│   │       ├── introduccion.astro # Página de introducción
+│   │       └── ...               # Otras subpáginas
+│   └── styles/              # Estilos globales
+│       ├── global.css            # Estilos base
+│       └── river-flow.css        # Efectos específicos de río
+├── public/                  # Activos estáticos
+│   ├── videos/                   # Videos de los ríos
+│   └── images/                   # Imágenes de cada sección
+└── astro.config.mjs         # Configuración de Astro
 ```
 
 ## 🌊 Componentes Principales
 
-- **WaterTransition**: Efectos de transición de agua usando Three.js
-- **RiverPath**: Navegación interactiva para las secciones del río
-- **WaterRipples**: Efectos de ondulación de agua
+- **VerticalRiverNav**: Navbar dinámico que se adapta automáticamente a cada página, extrae los títulos H2 y genera la navegación del río con tributarios únicos por sección
+- **WaterSectionTransition**: Efectos de transición de agua usando Three.js entre secciones
+- **RiverPath**: Elementos de navegación interactiva inspirados en sistemas hidrográficos 
+- **ProjectTitle**: Componente del título principal con animaciones
 - **Modal**: Ventanas modales con efectos acuáticos
 
 ## 🎨 Características por Río
 
 ### Río de Oro
-- Diseño de filigrana
-- Efectos de agua dorados
-- Navegación fluida entre secciones
+- **Secciones**: Juntxs, Sandra, María, Sofía
+- **IDs dinámicos**: `juntxs`, `sandra`, `maria`, `sofia`
+- **Tema**: Red dendrítica aurífera con terrazas aluviales y sistemas de placer históricos
+- **Navegación**: Sistema hidrográfico complejo con quebradas auríferas
 
-### Río Quilichao
-- Diseño orgánico
-- Efectos de montaña
-- Transiciones naturales
+### Río Quilichao  
+- **Secciones**: Quili 1, Quili 2, Quili 3, Quili 4
+- **IDs dinámicos**: `quili1`, `quili2`, `quili3`, `quili4`
+- **Tema**: Red dendrítica desde Munchique hasta desembocadura en el Cauca
+- **Navegación**: Sistema con micro-cuencas urbanas y naturales desde la Reserva Natural
 
 ### Quebrada Santa Elena
-- Diseño arquitectónico
-- Elementos urbanos
-- Historia de transformación
+- **Secciones**: Santa 1, Santa 2, Santa 3, Santa 4
+- **IDs dinámicos**: `santa1`, `santa2`, `santa3`, `santa4`  
+- **Tema**: Red dendrítica completa de montaña con micro-cuencas detalladas
+- **Navegación**: Sistema desde páramo hasta valle urbano de Medellín
+
+## 🔧 Sistema de Navegación Dinámico
+
+El componente **VerticalRiverNav** implementa un sistema completamente dinámico que:
+
+1. **Detecta automáticamente** las secciones existentes en cada página
+2. **Extrae los títulos H2** para generar el texto del navbar
+3. **Crea visualizaciones únicas** de río para cada sección con tributarios específicos
+4. **Se adapta automáticamente** sin necesidad de configuración manual
+5. **Mantiene la estética visual** mientras permite flexibilidad total de contenido
 
 ## 🤝 Contribuir
 

@@ -21,57 +21,139 @@ const VerticalRiverNav = () => {
 
   // Detectar automáticamente las secciones existentes y sus títulos
   useEffect(() => {
-    const detectSections = () => {
-      // Buscar todas las secciones con ID
+    const detectSections = async () => {
+      // Verificar si estamos en una página principal (con secciones) o en una subpágina
       const sections = document.querySelectorAll('section[id]');
-      const sectionData = [];
+      
+      if (sections.length > 0) {
+        // Estamos en una página principal - usar las secciones existentes
+        const sectionData = [];
 
-      sections.forEach((section, index) => {
-        // Extraer el ID
-        const id = section.id;
-        
-        // Buscar el título H2 dentro de la sección
-        const h2 = section.querySelector('h2');
-        let text = id.toUpperCase(); // fallback
-        
-        if (h2) {
-          // Extraer el texto del H2, limpiando espacios y elementos innecesarios
-          const textContent = h2.textContent || h2.innerText;
-          text = textContent.trim();
-        }
+        sections.forEach((section, index) => {
+          // Extraer el ID
+          const id = section.id;
+          
+          // Buscar el título H2 dentro de la sección
+          const h2 = section.querySelector('h2');
+          let text = id.toUpperCase(); // fallback
+          
+          if (h2) {
+            // Extraer el texto del H2, limpiando espacios y elementos innecesarios
+            const textContent = h2.textContent || h2.innerText;
+            text = textContent.trim();
+          }
 
-        // Calcular posición Y basada en el índice (espaciado uniforme)
-        const baseY = 60;
-        const spacing = 80;
-        const y = baseY + (index * spacing);
-        
-        // Calcular posición X con variación según la página
-        let x = 0;
-        switch(currentPage) {
-          case 'quebrada':
-            x = [-7, -5, -15, -12][index] || 0;
-            break;
-          case 'oro':
-            x = [5, 10, 0, 15][index] || 0;
-            break;
-          case 'quilichao':
-            x = [-10, 5, -15, 10][index] || 0;
-            break;
-          default:
-            x = [5, 3, -7, 0][index] || 0;
-        }
+          // Calcular posición Y basada en el índice (espaciado uniforme)
+          const baseY = 60;
+          const spacing = 80;
+          const y = baseY + (index * spacing);
+          
+          // Calcular posición X con variación según la página
+          let x = 0;
+          switch(currentPage) {
+            case 'quebrada':
+              x = [-7, -5, -15, -12][index] || 0;
+              break;
+            case 'oro':
+              x = [5, 10, 0, 15][index] || 0;
+              break;
+            case 'quilichao':
+              x = [-10, 5, -15, 10][index] || 0;
+              break;
+            default:
+              x = [5, 3, -7, 0][index] || 0;
+          }
 
-        sectionData.push({
-          id,
-          text,
-          x,
-          y
+          sectionData.push({
+            id,
+            text,
+            x,
+            y,
+            isCurrentPage: true
+          });
         });
-      });
 
-      setExistingSections(sectionData);
-      if (sectionData.length > 0) {
-        setActiveSection(sectionData[0].id);
+        setExistingSections(sectionData);
+        if (sectionData.length > 0) {
+          setActiveSection(sectionData[0].id);
+        }
+      } else {
+        // Estamos en una subpágina - necesitamos obtener las secciones de la página principal
+        await fetchMainPageSections();
+      }
+    };
+
+    const fetchMainPageSections = async () => {
+      try {
+        let mainPageUrl = '';
+        const path = window.location.pathname;
+        
+        if (path.includes('quebrada-santaelena')) {
+          mainPageUrl = '/quebrada-santaelena/';
+        } else if (path.includes('rio-de-oro')) {
+          mainPageUrl = '/rio-de-oro/';
+        } else if (path.includes('rio-quilichao')) {
+          mainPageUrl = '/rio-quilichao/';
+        }
+
+        if (mainPageUrl) {
+          const response = await fetch(mainPageUrl);
+          const html = await response.text();
+          
+          // Crear un DOM parser para analizar el HTML de la página principal
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const mainSections = doc.querySelectorAll('section[id]');
+          
+          const sectionData = [];
+          
+          mainSections.forEach((section, index) => {
+            const id = section.id;
+            
+            // Buscar el título H2 dentro de la sección
+            const h2 = section.querySelector('h2');
+            let text = id.toUpperCase(); // fallback
+            
+            if (h2) {
+              const textContent = h2.textContent || h2.innerText;
+              text = textContent.trim();
+            }
+
+            // Calcular posición Y basada en el índice (espaciado uniforme)
+            const baseY = 60;
+            const spacing = 80;
+            const y = baseY + (index * spacing);
+            
+            // Calcular posición X con variación según la página
+            let x = 0;
+            switch(currentPage) {
+              case 'quebrada':
+                x = [-7, -5, -15, -12][index] || 0;
+                break;
+              case 'oro':
+                x = [5, 10, 0, 15][index] || 0;
+                break;
+              case 'quilichao':
+                x = [-10, 5, -15, 10][index] || 0;
+                break;
+              default:
+                x = [5, 3, -7, 0][index] || 0;
+            }
+
+            sectionData.push({
+              id,
+              text,
+              x,
+              y,
+              isCurrentPage: false,
+              mainPageUrl
+            });
+          });
+
+          setExistingSections(sectionData);
+        }
+      } catch (error) {
+        console.error('Error fetching main page sections:', error);
       }
     };
 
@@ -172,17 +254,25 @@ const VerticalRiverNav = () => {
 
   // Función para desplazarse a la sección
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const header = document.querySelector("header");
-      const headerHeight = header ? header.offsetHeight : 0;
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight - 50;
+    const sectionData = existingSections.find(s => s.id === sectionId);
+    
+    if (sectionData && sectionData.isCurrentPage) {
+      // Estamos en la página principal - hacer scroll normal
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const header = document.querySelector("header");
+        const headerHeight = header ? header.offsetHeight : 0;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerHeight - 50;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    } else if (sectionData && sectionData.mainPageUrl) {
+      // Estamos en una subpágina - navegar a la página principal con hash
+      window.location.href = `${sectionData.mainPageUrl}#${sectionId}`;
     }
   };
 
