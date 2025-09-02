@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-const VerticalRiverNav = () => {
+const VerticalRiverNav = ({ sections }) => {
   const [activeSection, setActiveSection] = useState("");
   const [existingSections, setExistingSections] = useState([]);
   const [currentPage, setCurrentPage] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Detectar la página actual
+  // Detectar la página actual y si es móvil
   useEffect(() => {
     const path = window.location.pathname;
     if (path.includes('quebrada-santaelena')) {
@@ -17,19 +18,79 @@ const VerticalRiverNav = () => {
     } else {
       setCurrentPage('default');
     }
+
+    // Detectar si es móvil
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   // Detectar automáticamente las secciones existentes y sus títulos
   useEffect(() => {
     const detectSections = async () => {
-      // Verificar si estamos en una página principal (con secciones) o en una subpágina
-      const sections = document.querySelectorAll('section[id]');
-      
-      if (sections.length > 0) {
-        // Estamos en una página principal - usar las secciones existentes
+      // Si se pasaron secciones como props, usar esas
+      if (sections && sections.length > 0) {
         const sectionData = [];
 
         sections.forEach((section, index) => {
+          let x, y;
+          
+          if (isMobile) {
+            // En móvil: posicionamiento horizontal
+            const baseX = 80; // Posición inicial
+            const spacing = 80; // Espaciado horizontal entre nodos
+            x = baseX + (index * spacing);
+            y = 40; // Altura fija centrada en el río horizontal
+          } else {
+            // En desktop: posicionamiento vertical (código original)
+            const baseY = 60;
+            const spacing = 80;
+            y = baseY + (index * spacing);
+            
+            switch(currentPage) {
+              case 'quebrada':
+                x = [-7, -5, -15, -12][index] || 0;
+                break;
+              case 'oro':
+                x = [5, 10, 0, 15][index] || 0;
+                break;
+              case 'quilichao':
+                x = [-10, 5, -15, 10][index] || 0;
+                break;
+              default:
+                x = [5, 3, -7, 0][index] || 0;
+            }
+          }
+
+          sectionData.push({
+            id: section.id,
+            text: section.text,
+            x,
+            y,
+            isCurrentPage: true
+          });
+        });
+
+        setExistingSections(sectionData);
+        if (sectionData.length > 0) {
+          setActiveSection(sectionData[0].id);
+        }
+        return;
+      }
+
+      // Verificar si estamos en una página principal (con secciones) o en una subpágina
+      const sectionsInPage = document.querySelectorAll('section[id]');
+      
+      if (sectionsInPage.length > 0) {
+        // Estamos en una página principal - usar las secciones existentes
+        const sectionData = [];
+
+        sectionsInPage.forEach((section, index) => {
           // Extraer el ID
           const id = section.id;
           
@@ -43,25 +104,33 @@ const VerticalRiverNav = () => {
             text = textContent.trim();
           }
 
-          // Calcular posición Y basada en el índice (espaciado uniforme)
-          const baseY = 60;
-          const spacing = 80;
-          const y = baseY + (index * spacing);
+          let x, y;
           
-          // Calcular posición X con variación según la página
-          let x = 0;
-          switch(currentPage) {
-            case 'quebrada':
-              x = [-7, -5, -15, -12][index] || 0;
-              break;
-            case 'oro':
-              x = [5, 10, 0, 15][index] || 0;
-              break;
-            case 'quilichao':
-              x = [-10, 5, -15, 10][index] || 0;
-              break;
-            default:
-              x = [5, 3, -7, 0][index] || 0;
+          if (isMobile) {
+            // En móvil: posicionamiento horizontal
+            const baseX = 80;
+            const spacing = 80;
+            x = baseX + (index * spacing);
+            y = 40;
+          } else {
+            // En desktop: posicionamiento vertical
+            const baseY = 60;
+            const spacing = 80;
+            y = baseY + (index * spacing);
+            
+            switch(currentPage) {
+              case 'quebrada':
+                x = [-7, -5, -15, -12][index] || 0;
+                break;
+              case 'oro':
+                x = [5, 10, 0, 15][index] || 0;
+                break;
+              case 'quilichao':
+                x = [-10, 5, -15, 10][index] || 0;
+                break;
+              default:
+                x = [5, 3, -7, 0][index] || 0;
+            }
           }
 
           sectionData.push({
@@ -160,15 +229,37 @@ const VerticalRiverNav = () => {
     // Esperar un poco para que el DOM esté completamente cargado
     const timer = setTimeout(detectSections, 100);
     return () => clearTimeout(timer);
-  }, [currentPage]);
+  }, [currentPage, sections]);
 
   // Generar datos del río basado en la página actual
   const getRiverData = () => {
+    // Crear paths horizontales para móvil
+    const createHorizontalPath = (variations) => {
+      if (!isMobile) return variations.vertical;
+      
+      // Path horizontal orgánico que fluye de izquierda a derecha
+      return "M0,40 Q50,35 100,40 Q150,45 200,40 Q250,35 300,40 Q350,45 400,40";
+    };
+
+    const createHorizontalTributaries = (baseTributaries) => {
+      if (!isMobile) return baseTributaries;
+      
+      // Tributarios horizontales distribuidos a lo largo del río
+      return [
+        { path: "M80,25 Q85,35 90,40", connectsAt: { x: 90, y: 40 }, order: 3, name: "Afluente 1" },
+        { path: "M160,55 Q165,45 170,40", connectsAt: { x: 170, y: 40 }, order: 4, name: "Afluente 2" },
+        { path: "M240,25 Q245,35 250,40", connectsAt: { x: 250, y: 40 }, order: 3, name: "Afluente 3" },
+        { path: "M320,55 Q325,45 330,40", connectsAt: { x: 330, y: 40 }, order: 4, name: "Afluente 4" }
+      ];
+    };
+
     switch(currentPage) {
       case 'quebrada':
         return {
-          path: "M35,0 L32,15 Q20,25 28,45 L25,65 Q15,75 30,95 L28,115 Q10,125 25,145 L22,165 Q8,175 20,195 L18,215 Q12,225 25,245 L23,265 Q15,275 28,295 L25,315 Q18,325 30,345 L28,365 Q20,375 32,395 L30,415 Q25,425 35,445 L33,465 Q30,475 35,495",
-          tributaries: [
+          path: createHorizontalPath({
+            vertical: "M35,0 L32,15 Q20,25 28,45 L25,65 Q15,75 30,95 L28,115 Q10,125 25,145 L22,165 Q8,175 20,195 L18,215 Q12,225 25,245 L23,265 Q15,275 28,295 L25,315 Q18,325 30,345 L28,365 Q20,375 32,395 L30,415 Q25,425 35,445 L33,465 Q30,475 35,495"
+          }),
+          tributaries: createHorizontalTributaries([
             { path: "M5,30 Q15,35 20,25", connectsAt: { x: 20, y: 25 }, order: 3, name: "Q. Los Pinos" },
             { path: "M50,40 Q40,42 28,45", connectsAt: { x: 28, y: 45 }, order: 4, name: "Q. El Salto" },
             { path: "M8,95 Q18,92 28,95", connectsAt: { x: 28, y: 95 }, order: 3, name: "Q. Las Flores" },
@@ -177,12 +268,14 @@ const VerticalRiverNav = () => {
             { path: "M3,245 Q13,247 23,245", connectsAt: { x: 23, y: 245 }, order: 3, name: "Q. Pueblo" },
             { path: "M8,295 Q18,297 28,295", connectsAt: { x: 28, y: 295 }, order: 3, name: "Q. La Escuela" },
             { path: "M50,400 Q40,395 32,395", connectsAt: { x: 32, y: 395 }, order: 4, name: "Q. Desembocadura" }
-          ]
+          ])
         };
       case 'oro':
         return {
-          path: "M35,0 Q50,20 40,50 Q25,70 45,100 Q60,120 35,150 Q15,170 50,200 Q70,220 30,250 Q10,270 55,300 Q75,320 25,350 Q5,370 45,400 Q65,420 35,450 Q20,470 45,500",
-          tributaries: [
+          path: createHorizontalPath({
+            vertical: "M35,0 Q50,20 40,50 Q25,70 45,100 Q60,120 35,150 Q15,170 50,200 Q70,220 30,250 Q10,270 55,300 Q75,320 25,350 Q5,370 45,400 Q65,420 35,450 Q20,470 45,500"
+          }),
+          tributaries: createHorizontalTributaries([
             { path: "M60,35 Q50,40 40,50", connectsAt: { x: 40, y: 50 }, order: 5, name: "Q. Dorada" },
             { path: "M5,80 Q20,85 25,70", connectsAt: { x: 25, y: 70 }, order: 4, name: "Rio Brillante" },
             { path: "M80,110 Q70,115 60,120", connectsAt: { x: 60, y: 120 }, order: 4, name: "Q. Placeres" },
@@ -191,12 +284,14 @@ const VerticalRiverNav = () => {
             { path: "M2,260 Q8,265 10,270", connectsAt: { x: 10, y: 270 }, order: 4, name: "Rio Tesoro" },
             { path: "M90,315 Q80,320 75,320", connectsAt: { x: 75, y: 320 }, order: 3, name: "Q. Moderna" },
             { path: "M75,410 Q70,415 65,420", connectsAt: { x: 65, y: 420 }, order: 4, name: "Rio Final" }
-          ]
+          ])
         };
       case 'quilichao':
         return {
-          path: "M35,0 Q45,25 25,60 Q20,85 40,120 Q55,145 20,180 Q15,205 45,240 Q60,265 25,300 Q20,325 40,360 Q50,385 30,420 Q25,445 40,480 Q45,500 35,520",
-          tributaries: [
+          path: createHorizontalPath({
+            vertical: "M35,0 Q45,25 25,60 Q20,85 40,120 Q55,145 20,180 Q15,205 45,240 Q60,265 25,300 Q20,325 40,360 Q50,385 30,420 Q25,445 40,480 Q45,500 35,520"
+          }),
+          tributaries: createHorizontalTributaries([
             { path: "M50,15 Q47,20 45,25", connectsAt: { x: 45, y: 25 }, order: 5, name: "Q. Munchique" },
             { path: "M60,50 Q45,55 25,60", connectsAt: { x: 25, y: 60 }, order: 5, name: "Rio Claro" },
             { path: "M5,75 Q15,80 20,85", connectsAt: { x: 20, y: 85 }, order: 3, name: "Q. Páramo Medio" },
@@ -205,17 +300,19 @@ const VerticalRiverNav = () => {
             { path: "M85,255 Q75,260 65,265", connectsAt: { x: 65, y: 265 }, order: 4, name: "Q. La Esperanza" },
             { path: "M5,290 Q15,295 20,325", connectsAt: { x: 20, y: 325 }, order: 3, name: "Q. Centro" },
             { path: "M10,440 Q20,442 25,445", connectsAt: { x: 25, y: 445 }, order: 4, name: "Q. Confluencia" }
-          ]
+          ])
         };
       default:
         return {
-          path: "M35,0 Q40,25 32,50 Q25,75 38,105 Q45,130 28,155 Q20,180 35,205 Q42,230 30,255 Q22,280 38,305 Q45,330 32,355 Q28,380 35,405 Q38,430 35,455 Q32,480 35,500",
-          tributaries: [
+          path: createHorizontalPath({
+            vertical: "M35,0 Q40,25 32,50 Q25,75 38,105 Q45,130 28,155 Q20,180 35,205 Q42,230 30,255 Q22,280 38,305 Q45,330 32,355 Q28,380 35,405 Q38,430 35,455 Q32,480 35,500"
+          }),
+          tributaries: createHorizontalTributaries([
             { path: "M50,20 Q45,22 40,25", connectsAt: { x: 40, y: 25 } },
             { path: "M10,45 Q20,48 25,75", connectsAt: { x: 25, y: 75 } },
             { path: "M55,100 Q50,102 45,130", connectsAt: { x: 45, y: 130 } },
             { path: "M5,150 Q15,152 20,180", connectsAt: { x: 20, y: 180 } }
-          ]
+          ])
         };
     }
   };
@@ -262,8 +359,13 @@ const VerticalRiverNav = () => {
       if (element) {
         const header = document.querySelector("header");
         const headerHeight = header ? header.offsetHeight : 0;
+        
+        // Considerar navbar móvil inferior
+        const isMobile = window.innerWidth <= 1024;
+        const mobileNavbarOffset = isMobile ? 100 : 0; // Espacio para navbar móvil inferior
+        
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerHeight - 50;
+        const offsetPosition = elementPosition - headerHeight - 50 - mobileNavbarOffset;
 
         window.scrollTo({
           top: offsetPosition,
@@ -278,13 +380,42 @@ const VerticalRiverNav = () => {
 
   if (existingSections.length === 0) return null;
 
+  // Estilos dinámicos para móvil vs desktop
+  const navStyles = isMobile ? {
+    position: 'fixed',
+    bottom: '20px',
+    left: '50%',
+    top: 'auto',
+    transform: 'translateX(-50%)',
+    width: 'auto',
+    height: 'auto',
+    maxHeight: '80px',
+    zIndex: 50,
+    padding: '10px 15px',
+    pointerEvents: 'auto'
+  } : {};
+
   return (
-    <div className="fixed left-12 top-36 z-30 pointer-events-none">
+    <div 
+      className={`vertical-river-nav ${isMobile ? '' : 'fixed left-12 top-36 z-30 pointer-events-none'}`}
+      style={navStyles}
+    >
       <div className="relative">
         {/* SVG para el río orgánico bifurcado */}
-        <svg width="120" height="500" className="absolute left-0 top-0" viewBox="0 0 120 500">
+        <svg 
+          width={isMobile ? "400" : "120"} 
+          height={isMobile ? "80" : "500"} 
+          className="absolute left-0 top-0" 
+          viewBox={isMobile ? "0 0 400 80" : "0 0 120 500"}
+        >
           <defs>
-            <linearGradient id="riverGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <linearGradient 
+              id="riverGradient" 
+              x1={isMobile ? "0%" : "0%"} 
+              y1={isMobile ? "0%" : "0%"} 
+              x2={isMobile ? "100%" : "0%"} 
+              y2={isMobile ? "0%" : "100%"}
+            >
               <stop offset="0%" stopColor="#67e8f9" stopOpacity="0.6" />
               <stop offset="30%" stopColor="#3b82f6" stopOpacity="0.7" />
               <stop offset="70%" stopColor="#06b6d4" stopOpacity="0.8" />
@@ -409,30 +540,32 @@ const VerticalRiverNav = () => {
             </animateMotion>
           </circle>
         </svg>
+        )}
 
         {/* Nodos de navegación dinámicos */}
-        <div className="relative">
+        <div className={`relative ${isMobile ? 'flex flex-row items-center gap-4 overflow-x-auto' : ''}`} 
+             style={isMobile ? { scrollbarWidth: 'none', msOverflowStyle: 'none' } : {}}>
           {existingSections.map((section, index) => {
             const isActive = activeSection === section.id;
             
             return (
               <div 
                 key={section.id} 
-                className="absolute"
-                style={{
+                className={isMobile ? "relative flex items-center gap-2" : "absolute"}
+                style={isMobile ? {} : {
                   left: `${45 + section.x}px`,
                   top: `${section.y - 15}px`
                 }}
               >
                 {/* Nodo principal */}
                 <div 
-                  className={`relative w-8 h-8 rounded-full border-2 cursor-pointer pointer-events-auto transition-all duration-500 group z-10 -translate-x-4 -translate-y-4
+                  className={`relative ${isMobile ? 'w-8 h-8' : 'w-8 h-8'} rounded-full border-2 cursor-pointer pointer-events-auto transition-all duration-500 group z-10 ${isMobile ? '' : '-translate-x-4 -translate-y-4'}
                     ${isActive 
                       ? "bg-gradient-to-br from-cyan-300 to-blue-400 border-cyan-200 scale-125 shadow-lg shadow-cyan-400/50" 
                       : "bg-gradient-to-br from-cyan-600/80 to-blue-600/80 border-cyan-400/60 hover:scale-110 hover:border-cyan-300"
                     }`}
                   onClick={() => scrollToSection(section.id)}
-                  style={{
+                  style={isMobile ? {} : {
                     transform: 'translate(-50%, -50%)'
                   }}
                 >
@@ -453,17 +586,18 @@ const VerticalRiverNav = () => {
                 </div>
 
                 {/* Etiqueta de texto */}
-                <div className={`absolute left-12 top-0 -translate-y-2 pointer-events-auto transition-all duration-500 whitespace-nowrap
-                  ${isActive ? "opacity-100 transform translate-x-0" : "opacity-70 transform -translate-x-2 hover:opacity-100 hover:translate-x-0"}`}>
+                <div className={isMobile 
+                  ? "pointer-events-auto transition-all duration-500" 
+                  : `absolute left-12 top-0 -translate-y-2 pointer-events-auto transition-all duration-500 whitespace-nowrap ${isActive ? "opacity-100 transform translate-x-0" : "opacity-70 transform -translate-x-2 hover:opacity-100 hover:translate-x-0"}`}>
                   <span 
-                    className={`text-sm font-medium tracking-wider cursor-pointer transition-all duration-300
+                    className={`${isMobile ? 'text-xs' : 'text-sm'} font-medium tracking-wider cursor-pointer transition-all duration-300
                       ${isActive 
                         ? "text-cyan-200 drop-shadow-lg" 
                         : "text-cyan-300/80 hover:text-cyan-200"
                       }`}
                     onClick={() => scrollToSection(section.id)}
                   >
-                    {section.text}
+                    {isMobile ? section.text.split(' ').slice(0, 2).join(' ') : section.text}
                   </span>
                 </div>
               </div>
@@ -471,7 +605,8 @@ const VerticalRiverNav = () => {
           })}
         </div>
 
-        {/* Delta/desembocadura al final */}
+        {/* Delta/desembocadura al final - oculto en móvil */}
+        {!isMobile && (
         <div className="absolute left-6 bottom-0 w-8 h-12 opacity-60">
           <svg width="32" height="48" viewBox="0 0 32 48">
             <path
@@ -483,6 +618,7 @@ const VerticalRiverNav = () => {
             />
           </svg>
         </div>
+        )}
       </div>
     </div>
   );

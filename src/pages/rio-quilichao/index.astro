@@ -22,7 +22,15 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav client:load />
+		<VerticalRiverNav 
+			client:load
+			sections={[
+				{ id: 'quili1', text: 'QUili 1' },
+				{ id: 'quili2', text: 'Quili 2' },
+				{ id: 'quili3', text: 'Quili 3' },
+				{ id: 'quili4', text: 'Quili 4' }
+			]}
+		/>
 
 		<!-- Content Sections -->
 		<div class="flex flex-col lg:flex-row">
@@ -31,7 +39,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				<!-- Section 1: Introducción -->
 				<section id="quili1" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/introduccion'">
 					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+						<h2 id="quili1" class="text-5xl font-bold text-white mb-12 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
 							QUili 1
 						</h2>
 						
@@ -79,7 +87,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				<!-- Section 2: Origen Natural -->
 				<section id="quili2" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/origen'">
 					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+						<h2 id="quili2" class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
 								Quili 2
 							</span>
@@ -137,7 +145,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				</section>
 					<section id="quili3" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/conexion-cultural'">
 					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+						<h2 id="quili3" class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
 							Quili 3
 							</span>
@@ -197,7 +205,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				<!-- Section 3: Desafíos Ambientales -->
 				<section id="quili4" class="min-h-screen flex items-center justify-center py-16 group cursor-pointer" onclick="window.location.href='/rio-quilichao/desafios'">
 					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
+						<h2 id="quili4" class="text-5xl font-bold text-white mb-12 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
 								Quili 4
 							</span>

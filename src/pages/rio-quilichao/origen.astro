@@ -28,7 +28,15 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav client:load />
+		<VerticalRiverNav 
+			client:load
+			sections={[
+				{ id: 'santuario-vida', text: 'Santuario de Vida' },
+				{ id: 'ecosistemas-unicos', text: 'Ecosistemas Únicos' },
+				{ id: 'corredor-biologico', text: 'Corredor Biológico' },
+				{ id: 'agua-cristalina', text: 'El Agua Cristalina' }
+			]}
+		/>
 
 		<!-- Content Section -->
 		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
@@ -38,7 +46,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Santuario de Vida -->
 						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Santuario de Vida</h2>
+								<h2 id="santuario-vida" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Santuario de Vida</h2>
 								<div class="grid md:grid-cols-2 gap-8">
 									<div class="space-y-6">
 										<p class="text-lg text-white/90 leading-relaxed">
@@ -65,7 +73,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Ecosistemas Únicos -->
 						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Ecosistemas Únicos</h2>
+								<h2 id="ecosistemas-unicos" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Ecosistemas Únicos</h2>
 								<div class="space-y-6">
 									<p class="text-lg text-white/90 leading-relaxed">
 										La diversidad de ecosistemas en la cuenca alta del Rio Quilichao es extraordinaria. 
@@ -114,7 +122,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Corredor Biológico -->
 						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Corredor Biológico</h2>
+								<h2 id="corredor-biologico" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Corredor Biológico</h2>
 								<div class="grid md:grid-cols-2 gap-8">
 									<div class="space-y-6">
 										<p class="text-lg text-white/90 leading-relaxed">
@@ -165,7 +173,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Proceso de Formación del Agua -->
 						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">El Agua Cristalina</h2>
+								<h2 id="agua-cristalina" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">El Agua Cristalina</h2>
 								<div class="space-y-6">
 									<p class="text-lg text-white/90 leading-relaxed">
 										La pureza excepcional de las aguas del Rio Quilichao es resultado de un complejo 

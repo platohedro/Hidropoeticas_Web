@@ -28,7 +28,15 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav client:load />
+		<VerticalRiverNav 
+			client:load
+			sections={[
+				{ id: 'nacimiento-munchique', text: 'Nacimiento en Munchique' },
+				{ id: 'caracteristicas-rio', text: 'Características del Río' },
+				{ id: 'santuario-vida', text: 'Santuario de Vida' },
+				{ id: 'corazon-comunidad', text: 'Corazón de la Comunidad' }
+			]}
+		/>
 
 		<!-- Content Section -->
 		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
@@ -36,7 +44,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				<div class="max-w-6xl mx-auto px-4">
 					<div class="grid gap-12 mb-12">
 						<!-- Nacimiento en Munchique -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="nacimiento-munchique" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Nacimiento en Munchique</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -62,7 +70,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Características del Río -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="caracteristicas-rio" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Características del Río</h2>
 								<div class="grid md:grid-cols-3 gap-6">
@@ -98,7 +106,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- La Reserva de Munchique -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="santuario-vida" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Santuario de Vida</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -150,7 +158,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Importancia Regional -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="corazon-comunidad" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Corazón de la Comunidad</h2>
 								<div class="space-y-6">

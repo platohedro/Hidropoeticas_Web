@@ -28,7 +28,15 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav client:load />
+		<VerticalRiverNav 
+			client:load
+			sections={[
+				{ id: 'desafios-actuales', text: 'Desafíos Actuales' },
+				{ id: 'acciones-conservacion', text: 'Acciones de Conservación' },
+				{ id: 'resultados-tangibles', text: 'Resultados Tangibles' },
+				{ id: 'unete-conservacion', text: 'Únete a la Conservación' }
+			]}
+		/>
 
 		<!-- Content Section -->
 		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
@@ -36,7 +44,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				<div class="max-w-6xl mx-auto px-4">
 					<div class="grid gap-12 mb-12">
 						<!-- Desafíos Ambientales -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="desafios-actuales" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Desafíos Actuales</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -88,7 +96,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Iniciativas de Conservación -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="acciones-conservacion" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Acciones de Conservación</h2>
 								<div class="space-y-6">
@@ -146,7 +154,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Resultados y Esperanzas -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="resultados-tangibles" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Resultados Tangibles</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -198,7 +206,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Llamado a la Acción -->
-						<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="unete-conservacion" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500 text-center">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Únete a la Conservación</h2>
 								<p class="text-lg text-white/90 leading-relaxed mb-8">
