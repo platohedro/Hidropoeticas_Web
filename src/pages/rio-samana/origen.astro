@@ -1,0 +1,208 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Origen | Río Samaná | Hidropoéticas">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <!-- Hero Section -->
+    <div class="relative h-64 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/70 to-teal-900/70 z-10"></div>
+      <div class="absolute inset-0 bg-[url('/rio-samana-preview.jpg')] bg-cover bg-center"></div>
+      <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">Origen</h1>
+        <p class="text-lg md:text-xl text-cyan-100">Descubre los orígenes del Río Samaná</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-slate-800/80 backdrop-blur-sm border-b border-cyan-900/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center space-x-1 md:space-x-4 py-4 overflow-x-auto">
+          <a 
+            href="/rio-samana" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Inicio
+          </a>
+          <a 
+            href="/rio-samana/introduccion" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Introducción
+          </a>
+          <a 
+            href="/rio-samana/origen" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-300 bg-cyan-900/30 border border-cyan-700/50"
+          >
+            Origen
+          </a>
+          <a 
+            href="/rio-samana/conexion-cultural" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Conexión Cultural
+          </a>
+          <a 
+            href="/rio-samana/desafios" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Desafíos
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="prose prose-invert max-w-none">
+        <h2 class="text-3xl font-bold text-cyan-300 mb-6">Origen y formación del Río Samaná</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-12">
+          <div>
+            <p class="text-lg mb-6">
+              El Río Samaná tiene sus orígenes en la vertiente oriental de la Cordillera Central de los Andes colombianos, específicamente en el municipio de Santo Domingo, Antioquia. Sus aguas nacen a más de 2,800 metros sobre el nivel del mar, en medio de bosques de niebla y páramos que le otorgan sus características particulares.
+            </p>
+            <p class="mb-6">
+              A lo largo de su recorrido, el río recibe numerosos afluentes que incrementan su caudal, formando un sistema hídrico vital para la región nororiental de Antioquia.
+            </p>
+          </div>
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <img 
+              src="/rio-samana-preview.jpg" 
+              alt="Nacimiento del Río Samaná" 
+              class="rounded-lg shadow-xl w-full h-auto"
+            />
+            <p class="text-sm text-slate-400 mt-2 text-center">Nacimiento del Río Samaná en la Cordillera Central</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Características geológicas</h3>
+        
+        <p class="mb-6">
+          La cuenca del Río Samaná se caracteriza por su complejidad geológica, con formaciones rocosas que datan del período Cretácico. El río ha labrado profundos cañones a lo largo de millones de años, exponiendo estratos geológicos que cuentan la historia de la formación de los Andes colombianos.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <h4 class="text-xl font-medium text-cyan-300 mb-3">Geomorfología</h4>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300">
+              <li>Profundidad media del cañón: 200-300 metros</li>
+              <li>Pendiente media: 15-20% en su curso alto</li>
+              <li>Formaciones rocosas predominantes: Esquistos y rocas ígneas</li>
+              <li>Zonas de rápidos y cascadas notables</li>
+            </ul>
+          </div>
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <h4 class="text-xl font-medium text-cyan-300 mb-3">Hidrografía</h4>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300">
+              <li>Longitud total: Aproximadamente 120 km</li>
+              <li>Área de la cuenca: 2,800 km²</li>
+              <li>Principales afluentes: Río Nus, Río Santo Domingo</li>
+              <li>Caudal medio: 120 m³/s (varía estacionalmente)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Ecosistemas asociados</h3>
+        
+        <p class="mb-6">
+          El corredor del Río Samaná alberga una gran diversidad de ecosistemas que varían según la altitud, desde bosques andinos en las partes altas hasta bosques húmedos tropicales en las zonas más bajas. Esta variación altitudinal ha dado lugar a una notable biodiversidad.
+        </p>
+
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30 my-8">
+          <h4 class="text-xl font-medium text-cyan-300 mb-3">Zonas de vida presentes</h4>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h5 class="font-medium text-cyan-200 mb-2">Bosque muy húmedo Montano Bajo</h5>
+              <p class="text-sm text-slate-300 mb-4">Entre 2,000 y 3,000 msnm, caracterizado por árboles de hasta 25 metros de altura, abundantes epífitas y helechos arborescentes.</p>
+              
+              <h5 class="font-medium text-cyan-200 mb-2">Bosque húmedo Tropical</h5>
+              <p class="text-sm text-slate-300">Por debajo de los 1,000 msnm, con temperaturas cálidas y alta humedad durante todo el año.</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-cyan-200 mb-2">Bosque húmedo Premontano</h5>
+              <p class="text-sm text-slate-300 mb-4">Entre 1,000 y 2,000 msnm, con una mezcla de especies de tierras bajas y altas.</p>
+              
+              <h5 class="font-medium text-cyan-200 mb-2">Ecosistemas acuáticos</h5>
+              <p class="text-sm text-slate-300">Incluyen rápidos, pozos profundos, playas de guijarros y zonas de inundación estacional.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Importancia geológica</h3>
+        
+        <p class="mb-6">
+          El cañón del Río Samaná es considerado un laboratorio natural para el estudio de procesos geológicos activos. Sus paredes exponen fallas geológicas y pliegues que revelan la intensa actividad tectónica que ha moldeado la región. Además, el río desempeña un papel crucial en la formación de suelos aluviales en sus planicies de inundación.
+        </p>
+
+        <div class="bg-cyan-900/20 border-l-4 border-cyan-500 p-4 my-8 rounded-r">
+          <p class="text-cyan-100 italic">
+            "El cañón del Samaná es una ventana al pasado geológico de Colombia. Sus estratos cuentan la historia de la formación de los Andes y la evolución de los ecosistemas tropicales."
+          </p>
+          <p class="text-sm text-cyan-300 mt-2">- Dr. Carlos Andrés López, Geólogo</p>
+        </div>
+
+        <div class="flex justify-between mt-12 pt-6 border-t border-slate-700">
+          <a 
+            href="/rio-samana/introduccion" 
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-slate-700 hover:bg-slate-600 transition-colors"
+          >
+            <svg class="-ml-1 mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Anterior: Introducción
+          </a>
+          <a 
+            href="/rio-samana/conexion-cultural" 
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 transition-colors"
+          >
+            Siguiente: Conexión Cultural
+            <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 border-t border-cyan-900/30 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex justify-center md:justify-start space-x-6">
+            <a href="/" class="text-slate-400 hover:text-cyan-300">
+              <span class="sr-only">Inicio</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </a>
+          </div>
+          <div class="mt-8 md:mt-0">
+            <p class="text-center text-sm text-slate-500 md:text-right">
+              &copy; 2025 Hidropoéticas Ambientales. Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    color: #e2e8f0;
+  }
+  .prose h1, 
+  .prose h2, 
+  .prose h3, 
+  .prose h4 {
+    color: #e2e8f0;
+  }
+  .prose a {
+    color: #67e8f9;
+    text-decoration: none;
+  }
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>

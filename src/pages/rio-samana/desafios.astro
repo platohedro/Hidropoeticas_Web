@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Desafíos | Río Samaná | Hidropoéticas">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <!-- Hero Section -->
+    <div class="relative h-64 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/70 to-teal-900/70 z-10"></div>
+      <div class="absolute inset-0 bg-[url('/rio-samana-preview.jpg')] bg-cover bg-center"></div>
+      <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">Desafíos</h1>
+        <p class="text-lg md:text-xl text-cyan-100">Protegiendo el futuro del Río Samaná</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-slate-800/80 backdrop-blur-sm border-b border-cyan-900/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center space-x-1 md:space-x-4 py-4 overflow-x-auto">
+          <a 
+            href="/rio-samana" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Inicio
+          </a>
+          <a 
+            href="/rio-samana/introduccion" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Introducción
+          </a>
+          <a 
+            href="/rio-samana/origen" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Origen
+          </a>
+          <a 
+            href="/rio-samana/conexion-cultural" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Conexión Cultural
+          </a>
+          <a 
+            href="/rio-samana/desafios" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-300 bg-cyan-900/30 border border-cyan-700/50"
+          >
+            Desafíos
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="prose prose-invert max-w-none">
+        <h2 class="text-3xl font-bold text-cyan-300 mb-6">Desafíos ambientales del Río Samaná</h2>
+        
+        <p class="text-lg mb-6">
+          El Río Samaná enfrenta numerosos desafíos que amenazan su integridad ecológica y la calidad de vida de las comunidades que dependen de él. A continuación, exploramos los principales problemas y las iniciativas en marcha para su conservación.
+        </p>
+
+        <div class="bg-red-900/20 border-l-4 border-red-500 p-4 my-8 rounded-r">
+          <h3 class="text-xl font-semibold text-red-300 mb-2">Amenazas principales</h3>
+          <ul class="list-disc pl-5 space-y-2 text-red-100">
+            <li>Contaminación por vertimientos industriales y domésticos</li>
+            <li>Deforestación de las riberas</li>
+            <li>Minería ilegal de oro</li>
+            <li>Pérdida de biodiversidad acuática</li>
+            <li>Cambios en los patrones de precipitación debido al cambio climático</li>
+          </ul>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Contaminación del agua</h3>
+        
+        <p class="mb-6">
+          La calidad del agua del Río Samaná se ha visto afectada por diversos factores, incluyendo:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <h4 class="text-xl font-medium text-cyan-300 mb-3">Vertimientos industriales</h4>
+            <p class="text-slate-300">Las actividades mineras y manufactureras en la cuenca han generado contaminación por metales pesados como mercurio y plomo, que se acumulan en los sedimentos y la cadena alimenticia.</p>
+          </div>
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <h4 class="text-xl font-medium text-cyan-300 mb-3">Aguas residuales</h4>
+            <p class="text-slate-300">La falta de sistemas de tratamiento adecuados en muchas comunidades ribereñas ha llevado a la descarga de aguas residuales sin tratar, afectando la calidad del agua y la salud pública.</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Impacto de la minería</h3>
+        
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30 mb-8">
+          <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-4">
+            <img 
+              src="/rio-samana-mineria.jpg" 
+              alt="Impacto de la minería en el Río Samaná" 
+              class="w-full h-full object-cover"
+              onerror="this.src='/rio-samana-preview.jpg'"
+            />
+          </div>
+          <p class="text-sm text-slate-400 text-center">Zonas afectadas por la minería en la cuenca del Río Samaná</p>
+          
+          <div class="mt-6 space-y-4">
+            <p class="text-slate-300">La minería ilegal de oro ha dejado profundas cicatrices en el paisaje del Río Samaná. El uso de mercurio en el proceso de extracción ha generado una grave contaminación que afecta tanto a los ecosistemas acuáticos como a la salud de las comunidades locales.</p>
+            
+            <div class="bg-yellow-900/30 border-l-4 border-yellow-500 p-4 my-4 rounded-r">
+              <p class="text-yellow-100">
+                <span class="font-semibold">Dato alarmante:</span> Estudios recientes han detectado niveles de mercurio en peces del Río Samaná que superan hasta 5 veces los límites máximos permitidos para el consumo humano.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Iniciativas de conservación</h3>
+        
+        <p class="mb-6">
+          Frente a estos desafíos, diversas organizaciones y comunidades han emprendido acciones para proteger y restaurar el Río Samaná:
+        </p>
+
+        <div class="space-y-6 mb-8">
+          <div class="bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r">
+            <h4 class="text-xl font-medium text-green-300 mb-3">Guardianes del Samaná</h4>
+            <p class="text-green-100">Programa comunitario de monitoreo de la calidad del agua que involucra a pescadores y jóvenes locales en la recolección de datos y la denuncia de actividades contaminantes.</p>
+          </div>
+          
+          <div class="bg-blue-900/20 border-l-4 border-blue-500 p-6 rounded-r">
+            <h4 class="text-xl font-medium text-blue-300 mb-3">Restauración de riberas</h4>
+            <p class="text-blue-100">Proyectos de reforestación con especies nativas en las riberas del río para prevenir la erosión y restaurar el hábitat de la fauna acuática.</p>
+          </div>
+          
+          <div class="bg-purple-900/20 border-l-4 border-purple-500 p-6 rounded-r">
+            <h4 class="text-xl font-medium text-purple-300 mb-3">Educación ambiental</h4>
+            <p class="text-purple-100">Programas en escuelas y comunidades para fomentar prácticas sostenibles y el valor cultural del río entre las nuevas generaciones.</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Cómo puedes ayudar</h3>
+        
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30 mb-8">
+          <ul class="list-disc pl-5 space-y-3 text-slate-300">
+            <li><span class="font-medium text-cyan-300">Apoya a las organizaciones locales</span> que trabajan en la conservación del río a través de donaciones o voluntariado.</li>
+            <li><span class="font-medium text-cyan-300">Sé un turista responsable</span> cuando visites el río, llevando contigo toda la basura y respetando las normas de conservación.</li>
+            <li><span class="font-medium text-cyan-300">Difunde información</span> sobre la importancia de proteger el Río Samaná en tus redes sociales y círculos sociales.</li>
+            <li><span class="font-medium text-cyan-300">Denuncia actividades ilegales</span> como la minería no autorizada o la tala indiscriminada a las autoridades ambientales.</li>
+          </ul>
+        </div>
+
+        <div class="bg-cyan-900/20 border-l-4 border-cyan-500 p-4 my-8 rounded-r">
+          <p class="text-cyan-100 italic">
+            "La lucha por salvar el Río Samaná es una lucha por nuestro futuro. Cada acción cuenta, por pequeña que parezca. Juntos podemos asegurar que las generaciones futuras también puedan disfrutar de este tesoro natural."
+          </p>
+          <p class="text-sm text-cyan-300 mt-2">- Carlos Márquez, Líder comunitario</p>
+        </div>
+
+        <div class="flex justify-between mt-12 pt-6 border-t border-slate-700">
+          <a 
+            href="/rio-samana/conexion-cultural" 
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-slate-700 hover:bg-slate-600 transition-colors"
+          >
+            <svg class="-ml-1 mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Anterior: Conexión Cultural
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 border-t border-cyan-900/30 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex justify-center md:justify-start space-x-6">
+            <a href="/" class="text-slate-400 hover:text-cyan-300">
+              <span class="sr-only">Inicio</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </a>
+          </div>
+          <div class="mt-8 md:mt-0">
+            <p class="text-center text-sm text-slate-500 md:text-right">
+              &copy; 2025 Hidropoéticas Ambientales. Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    color: #e2e8f0;
+  }
+  .prose h1, 
+  .prose h2, 
+  .prose h3, 
+  .prose h4 {
+    color: #e2e8f0;
+  }
+  .prose a {
+    color: #67e8f9;
+    text-decoration: none;
+  }
+  .prose a:hover {
+    text-decoration: underline;
+  }
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  .aspect-h-9 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .aspect-w-16 img,
+  .aspect-w-16 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

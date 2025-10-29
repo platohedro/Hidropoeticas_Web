@@ -59,13 +59,14 @@ const { cx, cy } = Astro.props;
       <img src="/rio-quilichao-preview.jpg" alt="Rio Quilichao" class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 absolute inset-0">
       <!-- Video on Hover -->
       <video 
-        src="/Rio-Quilichao.MOV" 
+        src="/vidoes-rios/RIOQUILICHAOHOME.MOV" 
         class="w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute inset-0" 
         autoplay 
         muted 
         loop
         onmouseenter="this.play()"
         onmouseleave="this.pause(); this.currentTime = 0;"
+        playsinline
       ></video>
     </div>
   </foreignObject>

@@ -1,0 +1,193 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Introducción | Río Samaná | Hidropoéticas">
+  <main class="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800 text-white">
+    <!-- Hero Section -->
+    <div class="relative h-64 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/70 to-teal-900/70 z-10"></div>
+      <div class="absolute inset-0 bg-[url('/rio-samana-preview.jpg')] bg-cover bg-center"></div>
+      <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">Introducción</h1>
+        <p class="text-lg md:text-xl text-cyan-100">Conoce el Río Samaná y su importancia ecológica</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-slate-800/80 backdrop-blur-sm border-b border-cyan-900/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center space-x-1 md:space-x-4 py-4 overflow-x-auto">
+          <a 
+            href="/rio-samana" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Inicio
+          </a>
+          <a 
+            href="/rio-samana/introduccion" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-300 bg-cyan-900/30 border border-cyan-700/50"
+          >
+            Introducción
+          </a>
+          <a 
+            href="/rio-samana/origen" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Origen
+          </a>
+          <a 
+            href="/rio-samana/conexion-cultural" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Conexión Cultural
+          </a>
+          <a 
+            href="/rio-samana/desafios" 
+            class="px-3 py-2 text-sm md:text-base font-medium rounded-md text-cyan-100 hover:bg-slate-700/50 hover:text-white transition-colors"
+          >
+            Desafíos
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="prose prose-invert max-w-none">
+        <h2 class="text-3xl font-bold text-cyan-300 mb-6">El Río Samaná: Un tesoro de Antioquia</h2>
+        
+        <div class="bg-slate-800/50 rounded-xl p-6 border border-cyan-900/30 mb-8">
+          <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden mb-6">
+            <video 
+              class="w-full h-auto rounded-lg" 
+              controls 
+              poster="/rio-samana-preview.jpg"
+            >
+              <source src="/vidoes-rios/RIOSAMANAHOME.MOV" type="video/mp4">
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+          <p class="text-sm text-slate-400 text-center">Explorando las aguas del Río Samaná</p>
+        </div>
+
+        <p class="text-lg mb-6">
+          El Río Samaná es uno de los principales afluentes del departamento de Antioquia, destacándose por su importancia ecológica y su belleza escénica. Nace en la cordillera Central de los Andes colombianos y recorre un trayecto de aproximadamente 120 kilómetros antes de unirse al Río Nare para formar el Río Magdalena.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-10 mb-4">Características principales</h3>
+        
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <h4 class="text-xl font-medium text-cyan-300 mb-3">Biodiversidad</h4>
+            <p class="text-slate-300">El Río Samaná alberga una gran diversidad de especies acuáticas y terrestres, incluyendo varias especies endémicas y en peligro de extinción. Sus aguas son el hogar de peces como el bagre y la sabaleta, además de ser un importante corredor biológico para aves migratorias.</p>
+          </div>
+          <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30">
+            <h4 class="text-xl font-medium text-cyan-300 mb-3">Geografía</h4>
+            <p class="text-slate-300">El río atraviesa un paisaje montañoso con profundos cañones y rápidos, creando espectaculares cascadas y pozos naturales. Su cuenca abarca diversos ecosistemas, desde bosques húmedos tropicales hasta zonas de páramo en sus nacimientos.</p>
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Importancia ecológica</h3>
+        
+        <p class="mb-6">
+          El Río Samaná desempeña un papel crucial en la regulación hídrica de la región, siendo fuente de agua para numerosas comunidades locales y para actividades agrícolas. Además, sus bosques ribereños actúan como corredores ecológicos que conectan diferentes hábitats y permiten el flujo genético entre poblaciones de fauna silvestre.
+        </p>
+
+        <div class="bg-cyan-900/20 border-l-4 border-cyan-500 p-4 my-8 rounded-r">
+          <p class="text-cyan-100 italic">
+            "El Río Samaná no es solo una fuente de agua, es la vida misma para nuestras comunidades. Su conservación es fundamental para las generaciones presentes y futuras."
+          </p>
+          <p class="text-sm text-cyan-300 mt-2">- Líder comunitario de la región</p>
+        </div>
+
+        <h3 class="text-2xl font-semibold text-cyan-200 mt-12 mb-4">Exploración y turismo</h3>
+        
+        <p class="mb-6">
+          En los últimos años, el Río Samaná se ha convertido en un importante destino para el turismo de naturaleza y aventura. Sus rápidos son ideales para la práctica de deportes como el rafting y el kayak, mientras que sus alrededores ofrecen excelentes oportunidades para el senderismo y el avistamiento de aves.
+        </p>
+
+        <div class="bg-slate-800/50 p-6 rounded-xl border border-cyan-900/30 mt-8">
+          <h4 class="text-xl font-medium text-cyan-300 mb-3">¿Sabías que...?</h4>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300">
+            <li>El Río Samaná es uno de los pocos ríos en Colombia que conserva su cauce natural en gran parte de su recorrido.</li>
+            <li>Su cuenca alberga más de 300 especies de aves, incluyendo varias endémicas de la región andina.</li>
+            <li>Las aguas del Samaná son famosas por su color verde esmeralda, resultado de los minerales que arrastra desde la cordillera.</li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between mt-12 pt-6 border-t border-slate-700">
+          <div></div>
+          <a 
+            href="/rio-samana/origen" 
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 transition-colors"
+          >
+            Siguiente: Origen del Río Samaná
+            <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 border-t border-cyan-900/30 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="md:flex md:items-center md:justify-between">
+          <div class="flex justify-center md:justify-start space-x-6">
+            <a href="/" class="text-slate-400 hover:text-cyan-300">
+              <span class="sr-only">Inicio</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </a>
+          </div>
+          <div class="mt-8 md:mt-0">
+            <p class="text-center text-sm text-slate-500 md:text-right">
+              &copy; 2025 Hidropoéticas Ambientales. Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    color: #e2e8f0;
+  }
+  .prose h1, 
+  .prose h2, 
+  .prose h3, 
+  .prose h4 {
+    color: #e2e8f0;
+  }
+  .prose a {
+    color: #67e8f9;
+    text-decoration: none;
+  }
+  .prose a:hover {
+    text-decoration: underline;
+  }
+  .aspect-w-16 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  .aspect-h-9 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .aspect-w-16 iframe,
+  .aspect-w-16 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

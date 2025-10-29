@@ -2,24 +2,25 @@
 // ProjectTitle Component
 ---
 
-<div class="fixed top-6 left-6 z-50 opacity-80">
-  <div class="pointer-events-none">
-    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-300 tracking-wide" style="font-family: 'Oswald', sans-serif !important; font-weight: 700 !important; letter-spacing: 0.02em !important;">
-      <span class="bg-gradient-to-r from-cyan-300/70 via-blue-400/80 to-teal-300/70 bg-clip-text text-transparent drop-shadow-2xl">
+<!-- Título y subtítulo - Posicionado más abajo -->
+<div class="fixed bottom-16 left-6 z-50">
+  <div class="pointer-events-none bg-slate-900/80 backdrop-blur-sm p-4 rounded-xl border border-cyan-500/20 shadow-2xl">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-cyan-300 tracking-wide mb-1" style="font-family: 'Oswald', sans-serif !important; font-weight: 700 !important; letter-spacing: 0.02em !important;">
+      <span class="bg-gradient-to-r from-cyan-300 via-blue-400 to-teal-300 bg-clip-text text-transparent">
         HIDROPOETICAS <br>AMBIENTALES
       </span>
     </h1>
-    <div class="h-1 w-full bg-gradient-to-r from-cyan-500/40 via-blue-500/30 to-teal-500/40 rounded-full mt-2 shadow-lg shadow-cyan-500/20"></div>
-    <div class="text-sm md:text-base text-cyan-400/60 font-light tracking-wider mt-2 drop-shadow-lg" style="font-family: 'Roboto Condensed', sans-serif !important; font-weight: 300 !important; font-style: normal !important;">
+    <div class="h-1 w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-teal-500 rounded-full my-2"></div>
+    <div class="text-base md:text-lg text-cyan-100 font-medium tracking-wider" style="font-family: 'Roboto Condensed', sans-serif !important;">
       Arte y Ciencia para el Cuidado Común
     </div>
   </div>
+</div>
 
-  <div class="pt-10">
-    <a href="/acerca-de" class="text-cyan-300/80 hover:text-cyan-200 hover:underline transition-all duration-300 text-sm md:text-base font-medium">
-      Acerca De / Manifiesto
-    </a>
-  </div>
+<!-- Botón del Manifiesto - Posicionado arriba a la derecha -->
+<a href="/acerca-de" class="fixed top-6 right-6 z-50 bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-6 rounded-full border-2 border-cyan-400 hover:border-white transition-all duration-300 shadow-lg hover:shadow-cyan-500/50 transform hover:scale-105">
+  LEER MANIFIESTO →
+</a>
 </div>
 
 <style>

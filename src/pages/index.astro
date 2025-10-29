@@ -3,20 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import RioQuilichao from "../components/RioQuilichao.astro";
 import RioDeOro from "../components/RioDeOro.astro";
 import QuebradaSantaElena from "../components/QuebradaSantaElena.astro";
+import RioSamana from "../components/RioSamana.astro";
 import ProjectTitle from "../components/ProjectTitle.astro";
 ---
 
 <Layout title="Hidropoeticas - Inicio">
-  <main class="h-screen w-screen flex flex-col overflow-hidden fixed inset-0">
-    <!-- Project Title -->
-    <ProjectTitle />
-    
-    <!-- Header -->
-
+  <main class="h-screen w-screen overflow-hidden fixed inset-0">
     <!-- Main Content - Colombia Hydrographic Map -->
-    <section
-      class="flex-1 flex items-center justify-center relative w-full h-full"
-    >
+    <div class="relative w-full h-full">
       <!-- Background water effect removido para mejor visibilidad del mapa -->
 
       <!-- Water Background Effect with Colombia Map -->
@@ -52,14 +46,47 @@ import ProjectTitle from "../components/ProjectTitle.astro";
             viewBox="0 0 1000 700"
             class="w-full h-full max-w-none max-h-none opacity-90"
           >
-            <!-- Rio Quilichao - Southwest (Cauca) -->
-            <RioQuilichao cx="320" cy="445" />
+            <!-- Título centrado en el mapa -->
+            <g class="pointer-events-none" style="transform-box: fill-box; transform-origin: center;">
+              <text x="500" y="100" 
+                    font-family="'Oswald', sans-serif" 
+                    font-size="48" 
+                    font-weight="700" 
+                    text-anchor="middle" 
+                    fill="#4fe9ab"
+                    style="text-shadow: 0 0 10px rgba(0,0,0,0.5);">
+                HIDROPOETICAS AMBIENTALES
+              </text>
+              <text x="500" y="130" 
+                    font-family="'Roboto Condensed', sans-serif" 
+                    font-size="20" 
+                    font-weight="300" 
+                    text-anchor="middle" 
+                    fill="#7dd3fc" 
+                    style="opacity: 0.9;">
+                Arte y Ciencia para el Cuidado Común
+              </text>
+            </g>
 
-            <!-- Rio de Oro - Northeast (Norte de Santander/Cesar) -->
-            <RioDeOro cx="440" cy="180" />
-
-            <!-- Quebrada Santa Elena - Northwest (Medellín, Antioquia) -->
-            <QuebradaSantaElena cx="380" cy="300" />
+            <!-- Puntos ubicados según la geografía de Colombia -->
+            <!-- 1. Quebrada Santa Elena - Noroccidente (Medellín) -->
+            <QuebradaSantaElena cx="350" cy="280" />
+            
+            <!-- 2. Río de Oro - Nororiente (Norte de Santander) - Movido más abajo -->
+            <RioDeOro cx="600" cy="250" />
+            
+            <!-- 3. Río Quilichao - Suroccidente (Cauca) -->
+            <RioQuilichao cx="300" cy="450" />
+            
+            <!-- 4. Río Samaná - Centro-oriente (Antioquia) -->
+            <RioSamana cx="500" cy="350" />
+            
+            <!-- Botón del Manifiesto - Posicionado a la derecha -->
+            <foreignObject x="750" y="500" width="200" height="50" class="pointer-events-auto">
+              <a href="/acerca-de" class="inline-block bg-cyan-600/90 hover:bg-cyan-500 text-white font-medium py-2 px-4 rounded-lg border-2 border-cyan-400/60 hover:border-cyan-200 transition-all duration-300 shadow-lg hover:shadow-cyan-500/40 transform hover:-translate-y-0.5">
+                LEER MANIFIESTO →
+              </a>
+            </foreignObject>
           </svg>
         </div>
       </div>

@@ -1,0 +1,27 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  "javascript.suggestion.autoImports": false,
+  "typescript.suggestion.autoImports": false,
+  "typescript.tsserver.log": "off",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  "typescript.tsserver.pluginPaths": [],
+  "typescript.tsserver.maxTsServerMemory": 4096,
+  "typescript.tsserver.watchOptions": {
+    "watchFile": "dynamicPriorityPolling",
+    "watchDirectory": "dynamicPriorityPolling",
+    "fallbackPolling": "dynamicPriority"
+  },
+  "typescript.tsserver.experimental.suppressDiagnosticScope": [
+    "file"
+  ],
+  "typescript.tsserver.experimental.suppressDiagnosticCode": [
+    2307,  // Cannot find module
+    7006,  // Parameter implicitly has an 'any' type
+    2339,  // Property does not exist on type
+    2345,  // Argument of type is not assignable to parameter of type
+    2552,  // Cannot find name
+    2304   // Cannot find name
+  ]
+}

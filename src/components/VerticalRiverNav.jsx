@@ -540,7 +540,6 @@ const VerticalRiverNav = ({ sections }) => {
             </animateMotion>
           </circle>
         </svg>
-        )}
 
         {/* Nodos de navegación dinámicos */}
         <div className={`relative ${isMobile ? 'flex flex-row items-center gap-4 overflow-x-auto' : ''}`} 

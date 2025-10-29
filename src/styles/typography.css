@@ -1,0 +1,147 @@
+/* Typography and Text Colors */
+
+/* Base text color for better readability */
+:root {
+  --text-primary: #f0f9ff;      /* Light blue-white for primary text */
+  --text-secondary: #bae6fd;   /* Lighter blue for secondary text */
+  --text-muted: #7dd3fc;       /* Muted blue for less important text */
+  --text-accent: #38bdf8;      /* Accent color for highlights */
+  --text-on-dark: #0c4a6e;     /* Dark blue for text on light backgrounds */
+}
+
+/* Global text styles */
+body {
+  color: var(--text-primary);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  h4 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+/* Paragraphs */
+p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  max-width: 65ch;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a {
+  color: var(--text-accent);
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+a:hover {
+  color: var(--text-primary);
+}
+
+/* Muted/Secondary text */
+.text-muted,
+.text-secondary {
+  color: var(--text-muted);
+}
+
+/* Text on dark backgrounds */
+.text-on-dark {
+  color: var(--text-on-dark);
+}
+
+/* Text shadows for better contrast */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Text contrast utilities */
+.text-highlight {
+  font-weight: 500;
+  color: var(--text-accent);
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+  html {
+    font-size: 95%;
+  }
+  
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
