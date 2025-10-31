@@ -21,30 +21,16 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 					Rio de Oro
 				</a>
 			</nav>
-			<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Correspondencia entre Aguas</h1>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4">Sandra Ramírez Giraldo</p>
-			
-			
-				<img 
-					src="/sandra1.png" 
-					alt="Sandra 1"
-					class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg object-cover"
-					style="max-height: 70vh;"
-				/>
-			
-			
-			</div>
+		
 		</header>
 
 		<!-- River Navigation -->
 		<VerticalRiverNav 
 			client:load
 			sections={[
-				{ id: 'nacimiento-alturas', text: 'Nacimiento en las Alturas' },
-				{ id: 'ecosistema-paramo', text: 'Ecosistema de Páramo' },
-				{ id: 'oro-agua', text: 'El Oro en el Agua' },
-				{ id: 'descenso', text: 'El Descenso' }
+				{ id: 'nacimiento-alturas', text: 'Correspondencias del agua' },
+			
+			
 			]}
 		/>
 
@@ -59,13 +45,47 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 							
 									<div class="grid md:grid-cols-1 gap-6">
 									<div class="space-y-6">
-											<p class="text-lg text-white/90 leading-relaxed max-w-none">
+											<div class="text-center">
+				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Correspondencia entre Aguas</h1>
+				<p class="text-lg md:text-xl text-white opacity-90 px-4">Sandra Ramírez Giraldo</p>
+			
+			
+				
+			
+			
+			</div>
+										<img 
+					src="/sandra1.png" 
+					alt="Sandra 1"
+					class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg object-cover"
+					style="max-height: 70vh;"
+				/>
+                                <p class="text-lg text-white/90 leading-relaxed max-w-none mb-4 md:mb-6">
 										“Correspondencia entre Aguas”, como Laboratorio Creativo, nos ha convocado al junte para hilar y reconectar con las memorias locales de la Quebrada Santa Elena, en Medellín y el Río de Oro, en Piedecuesta. Una búsqueda por revincularnos con estos importantes cuerpos de agua, con las memorias vivas que aún les habitan y el profundo significado en la identidad local y la historia territorial.
 Desde el caminar como pedagogía y convencidxs de que sin vínculo no hay cuidado, Correspondencia entre Aguas integró recorridos, pagamentos, voces, imágenes de archivo, intervenciones y experiencias sensoriales, en las que sus Aguas atravesaron todos los sentidos. Con sus murmullos —gritos cubiertos por el asfalto, la extracción o el olvido— nos preguntan si sus aguas volverán a correr en libertad.
 
 										</p>
 									
 							
+							</div>
+							
+						</div>
+
+						<!-- Galería: Correspondencias -->
+                            <div id="galeria-correspondencias" class="rounded-xl p-1 mt-8 md:mt-10">
+							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-6 border border-white/20 hover:border-white/40 transition-all duration-500">
+								<h2 class="text-3xl font-bold text-white mb-4 drop-shadow-lg">Galería: Correspondencias</h2>
+								<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" data-gallery="correspondencias">
+									<a href="/galeria-correspondencias/corres1.png" class="group block relative overflow-hidden rounded-lg">
+										<img src="/galeria-correspondencias/corres1.png" alt="Correspondencias 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+									</a>
+									<a href="/galeria-correspondencias/corres2.png" class="group block relative overflow-hidden rounded-lg">
+										<img src="/galeria-correspondencias/corres2.png" alt="Correspondencias 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+									</a>
+									<a href="/galeria-correspondencias/corres3.png" class="group block relative overflow-hidden rounded-lg">
+										<img src="/galeria-correspondencias/corres3.png" alt="Correspondencias 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+									</a>
+								</div>
 							</div>
 						</div>
 
@@ -82,6 +102,49 @@ Desde el caminar como pedagogía y convencidxs de que sin vínculo no hay cuidad
 			</section>
 		</div>
 	</main>
+
+	<!-- Lightbox simple para la galería -->
+	<div id="lightbox-correspondencias" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+		<img id="lightbox-correspondencias-img" src="" alt="Imagen" class="max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl" />
+	</div>
+
+    <script is:inline>
+        const gallery = document.querySelector('[data-gallery="correspondencias"]');
+        if (gallery) {
+            const overlay = document.getElementById('lightbox-correspondencias');
+            const overlayImg = document.getElementById('lightbox-correspondencias-img');
+
+            // Manejo sobre enlaces y/o imágenes, evitando navegación por defecto
+            gallery.querySelectorAll('a').forEach(a => {
+                const img = a.querySelector('img');
+                if (img) {
+                    img.style.cursor = 'zoom-in';
+                }
+                a.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const src = img ? img.src : a.getAttribute('href');
+                    if (src) {
+                        overlayImg.src = src;
+                        overlay.classList.remove('hidden');
+                        overlay.classList.add('flex');
+                    }
+                });
+            });
+
+            // Cerrar overlay con click o tecla ESC
+            overlay?.addEventListener('click', () => {
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    overlay?.classList.add('hidden');
+                    overlay?.classList.remove('flex');
+                }
+            });
+        }
+    </script>
 
 	<style>
 		@import url("/src/styles/river-flow.css");
