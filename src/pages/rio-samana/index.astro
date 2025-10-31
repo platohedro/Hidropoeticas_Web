@@ -1,125 +1,184 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
-import WaterSectionTransition from '../../components/WaterSectionTransition.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import WaterSectionTransition from "../../components/WaterSectionTransition.jsx";
 ---
 
 <Layout title="Río Samaná - Hidropoéticas">
-    <main class="pl-0 lg:pl-[280px] w-full relative z-10">
+	<main class="pl-0 lg:pl-[280px] w-full relative z-10">
 		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 w-full">
 			<nav class="mb-4 md:mb-8">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Volver al inicio
 				</a>
 			</nav>
-			<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Río Samaná</h1>
-				<video 
-					src="/vidoes-rios/RIOSAMANAHOME.MOV" 
-					autoplay
-					loop
-					muted
-					class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
-					style="max-height: 70vh;"
-				/>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4 mt-4">El Río Samaná en Antioquia es un corredor de vida que conecta ecosistemas y culturas. Sus aguas cristalinas esconden historias de resistencia y conservación en el corazón de la montaña.</p>
-			</div>
 		</header>
 
 		<!-- River Navigation -->
 		<div class="fixed left-0 top-0 h-full w-[280px] z-20">
-		<VerticalRiverNav 
-			client:load
-			sections={[
-				{ id: 'introduccion', text: 'Introducción' },
-				{ id: 'origen', text: 'Origen' },
-				{ id: 'conexion-cultural', text: 'Conexión Cultural' },
-				{ id: 'desafios', text: 'Desafíos' }
-			]}
-		/>
+			<VerticalRiverNav
+				client:load
+				sections={[{ id: "introduccion", text: "Rio Sámana" }]}
+			/>
 		</div>
 
 		<!-- Content Sections -->
 		<div class="w-full">
 			<!-- Main Content -->
 			<div class="w-full max-w-7xl mx-auto px-4 md:px-8">
-                <section id="introduccion" class="py-6 group cursor-pointer w-full" onclick="window.location.href='/rio-samana/introduccion'">
+				<section
+					id="introduccion"
+					class="py-6 group cursor-pointer w-full"
+					onclick="window.location.href='/rio-samana/introduccion'"
+				>
 					<div class="max-w-6xl mx-auto px-4">
-                    <h2 class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+						<!-- <h2 class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
 								Introducción
 							</span>
-						</h2>
-						
-                    <div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/rios/samana/riosamana1.jpg" alt="Río Samaná" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
+						</h2> -->
+
+						<div class="grid gap-6 mb-6">
+							<div class="rounded-xl p-1">
+								<div
+									class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+								>
+									<div
+										class="flex flex-col md:flex-row gap-8"
+									>
+										<div
+											class="w-full flex flex-col justify-between"
+										>
 											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">El Corazón de la Montaña</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-												tras largos periodos de conflicto armado, se entretejen trabajos colectivos para defender el territorio y promover la conservación de sus riquezas naturales. Entre los municipios de Sonsón, El Carmen, Santuario, Cocorná, Granada, San Francisco, Caracolí, San Luis, San Carlos y Puerto Nare fluye el último afluente del río Magdalena que no está contenido por una presa. El río Samaná, que por más de 20 años fue la línea divisoria entre guerrillas, paramilitares y fuerza pública, cuenta con una cuenca de 2.656,9 km2 y es la única fuente hídrica del departamento donde aún no hay grandes muros de contención que se interpongan en su cauce natural.</p>
+												<div class="text-center">
+													<h1
+														class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+													>
+														Río Samaná
+													</h1>
+													<video
+														src="/vidoes-rios/RIOSAMANAHOME.MOV"
+														autoplay
+														loop
+														muted
+														class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
+														style="max-height: 70vh;"
+													></video>
+													<p
+														class="text-lg md:text-xl text-white opacity-90 px-4 mt-4"
+													>
+														Al Oriente de Antioquia,
+														en Colombia, tras largos
+														periodos de conflicto
+														armado, se entretejen
+														trabajos colectivos para
+														defender el territorio y
+														promover la conservación
+														de sus riquezas
+														naturales. Entre los
+														municipios de Sonsón, El
+														Carmen, Santuario,
+														Cocorná, Granada, San
+														Francisco, Caracolí, San
+														Luis, San Carlos y
+														Puerto Nare fluye el
+														último afluente del río
+														Magdalena que no está
+														contenido por una presa.
+														El río Samaná, que por
+														más de 20 años fue la
+														línea divisoria entre
+														guerrillas,
+														paramilitares y fuerza
+														pública, cuenta con una
+														cuenca de 2.656,9 km2 y
+														es la única fuente
+														hídrica del departamento
+														donde aún no hay grandes
+														muros de contención que
+														se interpongan en su
+														cauce natural.
+														<br />
+														<br />Con el despeje de
+														la zona han llegado
+														multinacionales y grupos
+														empresariales que se
+														disputan la
+														utilitarización de los
+														recursos con
+														megaproyectos para el
+														represamiento de ríos y
+														la explotación minera, y
+														aunque hoy la empresa
+														Celsia dice no ir más
+														con el proyecto
+														hidroeléctrico Porvenir
+														II, las comunidades y
+														líderes creen que es el
+														momento de estar más
+														alertas y reafirmar que
+														el río no está en venta.
+														A su vez, algunas
+														organizaciones exponen
+														alternativas de
+														desarrollo sostenible y
+														producción de energías
+														limpias para que el
+														último río libre de
+														Antioquia, el Samaná,
+                                                siga fluyendo.
+                                            </p>
+
+                                            <!-- Galería: Río Samaná -->
+                                            <div id="galeria-samana" class="rounded-xl p-1 mt-8 md:mt-10">
+                                                <div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-6 border border-white/20 hover:border-white/40 transition-all duration-500">
+                                                    <h2 class="text-3xl font-bold text-white mb-4 drop-shadow-lg">Galería: Río Samaná</h2>
+                                                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" data-gallery="samana">
+                                                        <a href="/galeria-samana/galeria-samana1.png" class="group block relative overflow-hidden rounded-lg">
+                                                            <img src="/galeria-samana/galeria-samana1.png" alt="Río Samaná 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+                                                        </a>
+                                                        <a href="/galeria-samana/galeria-samana2.png" class="group block relative overflow-hidden rounded-lg">
+                                                            <img src="/galeria-samana/galeria-samana2.png" alt="Río Samaná 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+                                                        </a>
+                                                        <a href="/galeria-samana/galeria-samana3.png" class="group block relative overflow-hidden rounded-lg">
+                                                            <img src="/galeria-samana/galeria-samana3.png" alt="Río Samaná 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+                                                        </a>
+                                                        <a href="/galeria-samana/galeria-samana4.png" class="group block relative overflow-hidden rounded-lg">
+                                                            <img src="/galeria-samana/galeria-samana4.png" alt="Río Samaná 4" class="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+												</div>
+												
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class=" p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
-							<p class="text-lg text-white leading-relaxed">
-								Explora las historias y el legado del Río Samaná
-							</p>
-						</div>
 					</div>
 				</section>
 
-                <section id="origen" class="py-6 group cursor-pointer w-full" onclick="window.location.href='/rio-samana/origen'">
-					<div class="max-w-6xl mx-auto px-4">
-                    <h2 class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
-								Origen
-							</span>
-						</h2>
-						
-                    <div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/rios/samana/origen.jpg" alt="Origen del Río Samaná" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Nacimiento y Trayectoria</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													Nacido en las estribaciones de la cordillera Central, el Río Samaná ha tallado su camino a través de la geografía antioqueña durante milenios. Su cuenca alberga ecosistemas únicos y especies endémicas que dependen de sus aguas.
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-                <!-- Sección 3: Conexión Cultural -->
-                <section id="conexion-cultural" class="py-6 group cursor-pointer w-full" onclick="window.location.href='/rio-samana/conexion-cultural'">
+				<!-- Sección 3: Conexión Cultural -->
+				<!-- <section id="conexion-cultural" class="py-6 group cursor-pointer w-full" onclick="window.location.href='/rio-samana/conexion-cultural'">
                     <div class="max-w-6xl mx-auto px-4">
                         <h2 class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
                             <span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
@@ -150,9 +209,9 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
-                <!-- Sección 4: Desafíos -->
+				<!-- Sección 4: Desafíos 
                 <section id="desafios" class="py-6 group cursor-pointer w-full" onclick="window.location.href='/rio-samana/desafios'">
                     <div class="max-w-6xl mx-auto px-4">
                         <h2 class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
@@ -182,134 +241,129 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-				<section id="origen" class="py-6 group cursor-pointer w-full" onclick="window.location.href='/rio-samana/origen'">
-					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-6 text-center">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
-								Origen
-							</span>
-						</h2>
-						<div class="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-cyan-900/30">
-							<p class="text-xl text-white leading-relaxed mb-8 text-center max-w-4xl mx-auto">
-								Nacido en las estribaciones de la cordillera Central, el Río Samaná ha tallado su camino a través de la geografía antioqueña durante milenios. Su cuenca alberga ecosistemas únicos y especies endémicas que dependen de sus aguas.
-							</p>
-							<div class="flex justify-center">
-								<span class="text-cyan-300 text-sm font-medium">Haz clic para conocer el origen del río</span>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Section 3: Conexión Cultural -->
-                <section id="conexion-cultural" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-samana/conexion-cultural'">
-					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-6 text-center">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
-								Conexión Cultural
-							</span>
-						</h2>
-						<div class="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-cyan-900/30">
-							<p class="text-xl text-white leading-relaxed mb-8 text-center max-w-4xl mx-auto">
-								Las comunidades ribereñas han tejido una relación profunda con el Río Samaná. Sus tradiciones, saberes ancestrales y formas de vida giran en torno a este cuerpo de agua que es fuente de identidad y sustento.
-							</p>
-							<div class="flex justify-center">
-								<span class="text-cyan-300 text-sm font-medium">Haz clic para explorar la conexión cultural</span>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<!-- Section 4: Desafíos -->
-                <section id="desafios" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-samana/desafios'">
-					<div class="max-w-6xl mx-auto px-4">
-						<h2 class="text-5xl font-bold text-white mb-6 text-center">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
-								Desafíos
-							</span>
-						</h2>
-						<div class="bg-black/40 backdrop-blur-sm p-8 rounded-xl border border-cyan-900/30">
-							<p class="text-xl text-white leading-relaxed mb-8 text-center max-w-4xl mx-auto">
-								El Río Samaná enfrenta amenazas como la minería ilegal, la deforestación y la contaminación. Sin embargo, las comunidades y organizaciones locales trabajan incansablemente en su protección y conservación.
-							</p>
-							<div class="flex justify-center">
-								<span class="text-cyan-300 text-sm font-medium">Haz clic para conocer los desafíos y soluciones</span>
-							</div>
-						</div>
-					</div>
-				</section>
+                        </div> -->
 			</div>
 		</div>
 	</main>
+</Layout>
 
-	<WaterSectionTransition client:load />
+<WaterSectionTransition client:load />
 
-	<style>
-		@import url("/src/styles/river-flow.css");
-		
-		/* Efecto de vidrio */
-		.glass-container {
-			background: rgba(255, 255, 255, 0.05);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.1);
+<!-- Lightbox para galería de Samaná -->
+<div id="lightbox-samana" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+  <img id="lightbox-samana-img" src="" alt="Imagen" class="max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl" />
+  </div>
+
+<script is:inline>
+  const gallerySamana = document.querySelector('[data-gallery="samana"]');
+  if (gallerySamana) {
+    const overlay = document.getElementById('lightbox-samana');
+    const overlayImg = document.getElementById('lightbox-samana-img');
+    gallerySamana.querySelectorAll('a').forEach(a => {
+      const img = a.querySelector('img');
+      if (img) img.style.cursor = 'zoom-in';
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // evita que el click dispare el onClick del section
+        const src = img ? img.src : a.getAttribute('href');
+        if (src) {
+          overlayImg.src = src;
+          overlay.classList.remove('hidden');
+          overlay.classList.add('flex');
+        }
+      });
+    });
+    overlay?.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        overlay?.classList.add('hidden');
+        overlay?.classList.remove('flex');
+      }
+    });
+  }
+</script>
+
+<style>
+	@import url("/src/styles/river-flow.css");
+
+	/* Efecto de vidrio */
+	.glass-container {
+		background: rgba(255, 255, 255, 0.05);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	/* Efecto de brillo al pasar el mouse */
+	.hover-glow {
+		transition: box-shadow 0.3s ease;
+	}
+
+	.hover-glow:hover {
+		box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+	}
+
+	/* Animación de flotación */
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
 		}
-
-		/* Efecto de brillo al pasar el mouse */
-		.hover-glow {
-			transition: box-shadow 0.3s ease;
+		50% {
+			transform: translateY(-10px);
 		}
-
-		.hover-glow:hover {
-			box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+		100% {
+			transform: translateY(0px);
 		}
+	}
 
-		/* Animación de flotación */
-		@keyframes float {
-			0% { transform: translateY(0px); }
-			50% { transform: translateY(-10px); }
-			100% { transform: translateY(0px); }
-		}
+	.animate-float {
+		animation: float 6s ease-in-out infinite;
+	}
 
-		.animate-float {
-			animation: float 6s ease-in-out infinite;
-		}
+	/* Efecto de ola */
+	.wave {
+		animation: wave 8s linear infinite;
+	}
 
-		/* Efecto de ola */
-		.wave {
-			animation: wave 8s linear infinite;
+	@keyframes wave {
+		0% {
+			transform: translateX(0) translateZ(0) scaleY(1);
 		}
+		50% {
+			transform: translateX(-25%) translateZ(0) scaleY(0.5);
+		}
+		100% {
+			transform: translateX(-50%) translateZ(0) scaleY(1);
+		}
+	}
 
-		@keyframes wave {
-			0% { transform: translateX(0) translateZ(0) scaleY(1); }
-			50% { transform: translateX(-25%) translateZ(0) scaleY(0.5); }
-			100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
-		}
+	/* Efecto de hover en las secciones */
+	section {
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+	}
 
-		/* Efecto de hover en las secciones */
-		section {
-			transition: transform 0.3s ease, box-shadow 0.3s ease;
-		}
+	section:hover {
+		transform: translateY(-5px);
+	}
 
-		section:hover {
-			transform: translateY(-5px);
-		}
+	/* Estilos para los títulos */
+	h1,
+	h2,
+	h3 {
+		letter-spacing: -0.025em;
+	}
 
-		/* Estilos para los títulos */
-		h1, h2, h3 {
-			letter-spacing: -0.025em;
-		}
+	/* Efecto de gradiente en los botones */
+	a {
+		transition: all 0.3s ease;
+	}
 
-		/* Efecto de gradiente en los botones */
-		a {
-			transition: all 0.3s ease;
-		}
-
-		a:hover {
-			transform: translateY(-2px);
-		}
-	</style>
+	a:hover {
+		transform: translateY(-2px);
+	}
+</style>
