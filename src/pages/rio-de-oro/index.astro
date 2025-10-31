@@ -17,8 +17,8 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 				</a>
 			</nav>
 			<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio de Oro</h1>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4">ACÁ VA UN VIDEO DEL RIO </p>
+		
+				
 			</div>
 		</header>
 
@@ -26,9 +26,9 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 		<VerticalRiverNav 
 			client:load
 			sections={[
-				{ id: 'juntxs', text: 'Juntxs' },
-				{ id: 'sandra', text: 'Sandra' },
-				{ id: 'maria', text: 'MARIA ARTISTA' },
+				{ id: 'juntxs', text: 'INTRODUCCIÓN' },
+				{ id: 'sandra', text: 'SANDRA' },
+				{ id: 'maria', text: 'MARIA ' },
 				{ id: 'sofia', text: 'LAURA SOFIA' }
 			]}
 		/>
@@ -40,26 +40,30 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 				<section id="juntxs" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/introduccion'">
 					<div class="max-w-6xl mx-auto px-4">
 							<h2 id="juntxs" class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
-							Introducción
+							Río de Oro
 						</h2>
 						
 							<div class="grid gap-6 mb-6">
 							<div class="">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/rios/de-oro/riodeoro1.png" alt="Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">El Río Dorado</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													El Río de Oro se abre como un cauce de memorias compartidas. Aguas de cañón y de páramo que tejen una correspondencia sensible avivada por el arte y la comunidad convocadas por el agua. El Río de Oro, nos invita a escucharlo, a activar acciones urgentes para reimaginarlo, cuidarlo.</p>
-											</div>
+								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-6 border border-white/20 hover:border-white/40 transition-all duration-500">
+									<div class="space-y-4">
+										<!-- Video principal: Río de Oro Home -->
+										<video 
+											src="/vidoes-rios/RIODEOROHOME.mp4" 
+											autoplay
+											loop
+											muted
+											playsinline
+											class="w-full max-w-4xl mx-auto rounded-lg shadow-lg aspect-video object-cover"
+											style="max-height: 70vh;"
+										></video>
+
+										<!-- Descripción debajo del video -->
+										<div class="pt-2">
 											
+											<p class="text-lg text-white/90 leading-relaxed">
+												El Río de Oro se abre como un cauce de memorias compartidas. Aguas de cañón y de páramo que tejen una correspondencia sensible avivada por el arte y la comunidad convocadas por el agua. El Río de Oro nos invita a escucharlo, a activar acciones urgentes para reimaginarlo y cuidarlo.
+											</p>
 										</div>
 									</div>
 								</div>

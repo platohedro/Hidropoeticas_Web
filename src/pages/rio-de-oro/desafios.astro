@@ -7,7 +7,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 	<main class="min-h-screen">
 		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
-			<nav class="mb-4 md:mb-8 flex gap-4">
+			<!-- <nav class="mb-4 md:mb-8 flex gap-4">
 				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -22,7 +22,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				</a>
 			</nav>
 			<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Desafíos y Resiliencia</h1>
+				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Campana de Agua</h1>
 				<p class="text-lg md:text-xl text-white opacity-90 px-4">Enfrentando retos ambientales con esperanza y acción comunitaria</p>
 			
 			
@@ -33,17 +33,17 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
 				style="max-height: 70vh;"
 			/>
-			</div>
+			</div> -->
 		</header>
 
 		<!-- River Navigation -->
 		<VerticalRiverNav 
 			client:load
 			sections={[
-				{ id: 'desafios-actuales', text: 'Desafíos Actuales' },
-				{ id: 'acciones-conservacion', text: 'Acciones de Conservación' },
-				{ id: 'resultados-tangibles', text: 'Resultados Tangibles' },
-				{ id: 'unete-conservacion', text: 'Únete a la Conservación' }
+				{ id: 'desafios-actuales', text: 'Campana de Agua' },
+				{ id: 'acciones-conservacion', text: 'Baraja Solar' },
+				{ id: 'resultados-tangibles', text: 'Recorridos' },
+				{ id: 'unete-conservacion', text: 'Asamblea del agua' }
 			]}
 		/>
 
@@ -55,7 +55,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Desafíos Ambientales -->
 						<div id="desafios-actuales" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Desafíos Actuales</h2>
+								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Campana de Agua</h2>
 								<div class="grid md:grid-cols-2 gap-8">
 									<div class="space-y-6">
 										<p class="text-lg text-white/90 leading-relaxed">
@@ -107,7 +107,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Iniciativas de Conservación -->
 						<div id="acciones-conservacion" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Acciones de Conservación</h2>
+								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Baraja Solar</h2>
 								<div class="space-y-6">
 									<p class="text-lg text-white/90 leading-relaxed">
 										Sin embargo, la comunidad y las autoridades no han permanecido pasivas ante estos desafíos. 
@@ -165,7 +165,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Resultados y Esperanzas -->
 						<div id="resultados-tangibles" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Resultados Tangibles</h2>
+								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Recorridos</h2>
 								<div class="grid md:grid-cols-2 gap-8">
 									<div class="space-y-6">
 										<p class="text-lg text-white/90 leading-relaxed">
@@ -217,7 +217,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						<!-- Llamado a la Acción -->
 						<div id="unete-conservacion" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500 text-center">
-								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Únete a la Conservación</h2>
+								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Asamblea del agua</h2>
 								<p class="text-lg text-white/90 leading-relaxed mb-8">
 									La restauración del Rio de Oro es una responsabilidad compartida. Cada acción individual, 
 									por pequeña que sea, contribuye al gran esfuerzo colectivo de preservar este tesoro natural.

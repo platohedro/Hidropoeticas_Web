@@ -3,8 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+/* Google Fonts import removed to satisfy PostCSS rule that @import
+   must precede all other statements. Fonts are already loaded via
+   <link> tags in src/layouts/Layout.astro. */
 
 /* Base Styles */
 @layer base {
