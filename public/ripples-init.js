@@ -13,16 +13,27 @@
         if (typeof $ !== 'undefined' && $.fn.ripples) {
             try {
                 $('body').ripples({
-                    resolution: 512,
-                    dropRadius: 20,
-                    perturbance: 0.04,
+                    resolution: 768,      // sharper simulation grid
+                    dropRadius: 35,       // bigger waves per interaction
+                    perturbance: 0.09,    // stronger refraction/distortion
                     interactive: true,
                     crossOrigin: ''
                 });
 
-                // Add click event to create ripples
+                // Stronger ripple on click
                 $(document).on('click', function(e) {
-                    $('body').ripples('drop', e.pageX, e.pageY, 20, 0.04);
+                    $('body').ripples('drop', e.pageX, e.pageY, 45, 0.1);
+                });
+
+                // Extra ripples while moviendo el mouse (con limitador)
+                let lastDrop = 0;
+                const throttleMs = 80; // más bajo = más ondas
+                $(document).on('mousemove', function(e) {
+                    const now = Date.now();
+                    if (now - lastDrop > throttleMs) {
+                        lastDrop = now;
+                        $('body').ripples('drop', e.pageX, e.pageY, 25, 0.08);
+                    }
                 });
 
                 console.log('Water ripples effect initialized');
@@ -45,4 +56,3 @@
         }
     }
 })();
-

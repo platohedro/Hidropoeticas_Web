@@ -164,3 +164,36 @@ section, header, main, article, .prose, .content {
 h1, h2, h3, h4, h5, h6 {
   background: transparent !important;
 }
+
+/* -------------------------------------------------------
+   Vertical spacing harmonization across pages
+   Reduce oversized gaps created by `min-h-screen`, `py-16`, `mb-12`, `gap-12`.
+   Apply broadly to ensure it affects all subpáginas.
+-------------------------------------------------------- */
+.relative.z-10 section {
+  min-height: auto !important;
+  height: auto !important;
+  padding-top: 1.25rem !important;   /* 20px */
+  padding-bottom: 1.25rem !important;
+}
+.relative.z-10 section[class*="min-h-screen"],
+[class*="min-h-screen"] { min-height: auto !important; height: auto !important; }
+.relative.z-10 section[class*="items-center"] { align-items: flex-start !important; }
+.relative.z-10 section[class*="justify-center"] { justify-content: flex-start !important; }
+.relative.z-10 [class*="py-16"],
+[class*="py-16"] { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+.relative.z-10 [class*="py-12"],
+[class*="py-14"],
+[class*="py-20"] { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+.relative.z-10 [class*="mb-12"],
+[class*="mb-12"],
+.relative.z-10 section h1,
+.relative.z-10 section h2 { 
+  margin-bottom: 1rem !important; 
+}
+.relative.z-10 section + section { margin-top: 1.25rem !important; }
+.relative.z-10 [class*="gap-12"],
+[class*="gap-12"] { gap: 1rem !important; }
+.relative.z-10 [class*="gap-8"],
+[class*="gap-10"],
+[class*="gap-16"] { gap: 1rem !important; }
