@@ -82,3 +82,85 @@ h4, h5, h6 { font-weight: 500; }
 .font-medium { font-weight: 500; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
+
+/* -------------------------------------------------------
+   Sitewide card/panel background reset
+   Goal: Text directly over the water backdrop (no blue boxes)
+   This neutralizes Tailwind utility backgrounds used for cards
+   Focused only on the content wrapper `.relative.z-10` so the
+   body/water background styling is preserved.
+-------------------------------------------------------- */
+
+/* Transparency tuning for any gradient/background panels inside content */
+/* Common custom teal gradient */
+.relative.z-10 [class*="from-\[#1b7895\]"] {
+  --tw-gradient-from: rgba(27, 120, 149, 0.008) !important;
+  --tw-gradient-to: rgba(27, 120, 149, 0.00) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.relative.z-10 [class*="to-\[#2a97b8\]"] { --tw-gradient-to: rgba(42, 151, 184, 0.006) !important; }
+
+/* Any teal gradients that include explicit opacity like /90, /80, /20 */
+.relative.z-10 [class*="from-\[\#1b7895\]/"] {
+  --tw-gradient-from: rgba(27, 120, 149, 0.004) !important;
+  --tw-gradient-to: rgba(27, 120, 149, 0.000) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.relative.z-10 [class*="to-\[\#2a97b8\]/"] { --tw-gradient-to: rgba(42, 151, 184, 0.003) !important; }
+
+/* Whites used for inner “glass” blocks */
+.relative.z-10 [class*="from-white/"] {
+  --tw-gradient-from: rgba(255, 255, 255, 0.008) !important;
+  --tw-gradient-to: rgba(255, 255, 255, 0.00) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.relative.z-10 [class*="to-white/"] {
+  --tw-gradient-to: rgba(255, 255, 255, 0.006) !important;
+}
+.relative.z-10 [class*="bg-white/"] {
+  background-color: rgba(255, 255, 255, 0.006) !important;
+}
+
+/* Gradient links/pills (cyan/blue) – soften further */
+.relative.z-10 [class*="from-cyan-"],
+.relative.z-10 [class*="from-emerald-"],
+.relative.z-10 [class*="from-teal-"] {
+  --tw-gradient-from: rgba(8, 145, 178, 0.02) !important; /* cyan-600 base */
+}
+.relative.z-10 [class*="to-blue-"],
+.relative.z-10 [class*="to-indigo-"],
+.relative.z-10 [class*="to-teal-"] {
+  --tw-gradient-to: rgba(37, 99, 235, 0.015) !important; /* blue-600 base */
+}
+
+/* Soften/remove glass effect behind text */
+.relative.z-10 [class*="backdrop-blur"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+/* Remove heavy card borders and shadows in content */
+.relative.z-10 .rounded-lg[class*="border-"],
+.relative.z-10 .rounded-xl[class*="border-"],
+.relative.z-10 .rounded-2xl[class*="border-"] {
+  border-color: transparent !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+
+.relative.z-10 [class*="border-"] {
+  border-color: rgba(255,255,255,0.08) !important;
+  border-width: 0 !important;
+}
+
+.relative.z-10 [class*="shadow"] { box-shadow: none !important; }
+
+/* Ensure text is readable over dark water background */
+section, header, main, article, .prose, .content {
+  color: #f0f9ff; /* near-white */
+}
+
+/* Headings stronger and without background chips */
+h1, h2, h3, h4, h5, h6 {
+  background: transparent !important;
+}

@@ -53,7 +53,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				<div class="max-w-6xl mx-auto px-4">
 					<div class="grid gap-12 mb-12">
 						<!-- Historia y Tradición -->
-						<div id="historia-tradicion" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="historia-tradicion" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Historia y Tradición</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -77,7 +77,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Rituales y Celebraciones -->
-						<div id="rituales-ancestrales" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="rituales-ancestrales" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Rituales Ancestrales</h2>
 								<div class="space-y-6">
@@ -106,7 +106,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Patrimonio Cultural -->
-						<div id="patrimonio-cultural" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="patrimonio-cultural" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Patrimonio Cultural</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -157,7 +157,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 						</div>
 
 						<!-- Transmisión Cultural -->
-						<div id="transmision-saberes" class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+						<div id="transmision-saberes" class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Transmisión de Saberes</h2>
 								<p class="text-lg text-white/90 leading-relaxed mb-8">
@@ -206,17 +206,8 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 			overflow: hidden;
 		}
 
-		section::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(to bottom, rgba(27,120,149,0.1), rgba(27,120,149,0.2));
-			pointer-events: none;
-			z-index: -1;
-		}
+    /* Sin fondo extra detrás de las secciones */
+    section::before { content: none; }
 
 		.glass-container {
 			position: relative;

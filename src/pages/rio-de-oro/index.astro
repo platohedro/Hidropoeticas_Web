@@ -44,7 +44,7 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class="">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
@@ -66,7 +66,7 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 							</div>
 						</div>
 
-						<div class="bg-gradient-to-r from-[#1b7895]/80 to-[#2a97b8]/80 p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+						<div class="">
 							<p class="text-lg text-white leading-relaxed">
 								Obras y procesos
 						</p>
@@ -82,7 +82,7 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class="">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
@@ -123,7 +123,7 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500">
+							<div class=" rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 group-hover:border-cyan-400/50 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
@@ -168,7 +168,7 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 						</h2>
 						
 						<div class="grid gap-8 mb-12">
-							<div class="bg-gradient-to-br from-[#1b7895]/90 to-[#2a97b8]/90 rounded-xl p-1">
+							<div class=" rounded-xl p-1">
 								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 									<div class="flex flex-col md:flex-row gap-8">
 										<div class="w-full md:w-1/2">
@@ -275,17 +275,8 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 			overflow: hidden;
 		}
 
-		section::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(to bottom, rgba(27,120,149,0.1), rgba(27,120,149,0.2));
-			pointer-events: none;
-			z-index: -1;
-		}
+    /* Sin fondo extra detrás de las secciones */
+    section::before { content: none; }
 
 		/* Ajustes para pantallas pequeñas */
 		@media (max-width: 1024px) {
@@ -320,4 +311,3 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 		}
 	</style>
 </Layout>
-
