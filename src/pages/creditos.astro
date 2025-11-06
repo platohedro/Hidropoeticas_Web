@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Créditos - Hidropoeticas Ambientales">
+	<main class="min-h-screen">
+		<!-- Header -->
+		<header class="py-4 md:py-8 px-4 md:px-8">
+			<nav class="mb-4 md:mb-8">
+				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Volver al inicio
+				</a>
+			</nav>
+		</header>
+
+		<!-- Main Content -->
+		<div class="container mx-auto px-4 max-w-4xl">
+			<div class="py-4 px-4 md:px-8">
+				<h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-8 text-shadow">Créditos</h1>
+				
+				<div class="prose prose-invert max-w-none text-lg leading-relaxed space-y-8">
+                    <p class="text-center text-xl italic mb-8 text-white">Agradecemos a todas las personas que han hecho posible este proyecto, tejiendo redes de conocimiento y cuidado en torno a los cuerpos de agua que nos sostienen.</p>
+
+                    <!-- Equipo -->
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold uppercase tracking-wider mb-4 text-white">EQUIPO</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Columna 1 -->
+                            <div class="space-y-6">
+                                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Coordinación General</h3>
+                                    <p class="text-white">Nombre Apellido</p>
+                                    <p class="text-sm text-gray-300">Rol específico</p>
+                                </div>
+
+                                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Investigación</h3>
+                                    <p class="text-white">Nombre Apellido</p>
+                                    <p class="text-sm text-gray-300">Rol específico</p>
+                                </div>
+                            </div>
+
+                            <!-- Columna 2 -->
+                            <div class="space-y-6">
+                                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Desarrollo Web</h3>
+                                    <p class="text-white">Nombre Apellido</p>
+                                    <p class="text-sm text-gray-300">Diseño y programación</p>
+                                </div>
+
+                                <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                                    <h3 class="text-xl font-semibold text-cyan-300 mb-2">Diseño Gráfico</h3>
+                                    <p class="text-white">Nombre Apellido</p>
+                                    <p class="text-sm text-gray-300">Ilustración y diseño</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Agradecimientos -->
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-bold uppercase tracking-wider mb-4 text-white">AGRADECIMIENTOS</h2>
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <p class="text-white">A las comunidades que han compartido sus saberes y experiencias en torno a los cuerpos de agua.</p>
+                            <p class="text-white mt-4">A las instituciones que han apoyado y hecho posible este proyecto.</p>
+                        </div>
+                    </div>
+
+                    <!-- Colaboradores -->
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-bold uppercase tracking-wider mb-4 text-white">COLABORADORES</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-white/5 p-4 rounded-lg text-center">
+                                <p class="text-white font-medium">Institución 1</p>
+                                <p class="text-sm text-gray-300">Apoyo logístico</p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-lg text-center">
+                                <p class="text-white font-medium">Institución 2</p>
+                                <p class="text-sm text-gray-300">Aporte académico</p>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-lg text-center">
+                                <p class="text-white font-medium">Institución 3</p>
+                                <p class="text-sm text-gray-300">Financiamiento</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contacto -->
+                    <div class="space-y-4 pt-4">
+                        <h2 class="text-2xl font-bold uppercase tracking-wider mb-4 text-white">CONTACTO</h2>
+                        <div class="bg-white/5 p-6 rounded-xl border border-white/10">
+                            <p class="text-white">Para más información sobre el proyecto, puedes escribirnos a:</p>
+                            <a href="mailto:contacto@hidropoeticas.com" class="text-cyan-300 hover:text-cyan-200 transition-colors">contacto@hidropoeticas.com</a>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</main>
+
+	<style>
+		@import url("/src/styles/river-flow.css");
+
+		/* Estilos para la página de Créditos */
+		.text-shadow {
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		}
+
+		.prose {
+			color: inherit;
+		}
+
+		.prose p, .prose li {
+			margin-bottom: 1em;
+		}
+
+		.prose a {
+			color: #7dd3fc;
+			text-decoration: none;
+			transition: color 0.2s;
+		}
+
+		.prose a:hover {
+			color: #38bdf8;
+			text-decoration: underline;
+		}
+
+		/* Efecto de ondas en el fondo */
+		.wave-bg {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+	</style>
+</Layout>
