@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+---
+
+<Layout title="Rio de Oro - Asamblea del Agua">
+	<main class="min-h-screen">
+		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
+			<nav class="mb-4 md:mb-8 flex gap-4 flex-wrap">
+				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Inicio
+				</a>
+				<a href="/rio-de-oro" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-500/30 hover:to-blue-500/30 text-emerald-100 hover:text-white px-4 py-2 rounded-lg border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-emerald-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Río de Oro
+				</a>
+			</nav>
+			<div class="text-center mt-6">
+				<p class="text-sm uppercase tracking-[0.3em] text-cyan-200/80 mb-2">Acción colectiva</p>
+				<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Asamblea del Agua</h1>
+				<p class="text-lg text-white/80">Alienígenas en Santurbán</p>
+			</div>
+		</header>
+
+		<VerticalRiverNav
+			client:load
+			sections={[
+				{ id: 'contexto', text: 'Contexto vivo' },
+				{ id: 'acciones', text: 'Acciones performáticas' },
+				{ id: 'memorias', text: 'Memorias del páramo' },
+			]}
+		/>
+
+		<section id="contexto" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div class="max-w-5xl mx-auto bg-gradient-to-b from-white/10 to-white/5 rounded-3xl border border-white/15 p-8 backdrop-blur-xl">
+				<div class="grid md:grid-cols-2 gap-8">
+					<div class="space-y-5">
+						<h2 class="text-3xl font-semibold text-white">El páramo convoca</h2>
+						<p class="text-white/90 leading-relaxed">
+							Alienígenas en Santurbán nace como un llamado urgente a defender el sistema hídrico que abastece a miles de familias. 
+							Las comunidades imaginaron un tribunal interestelar para escuchar lo que el agua necesita y para denunciar la extracción minera que amenaza
+							al páramo.
+						</p>
+						<p class="text-white/80">
+							Cada intervención reconoce a Santurbán como territorio sensible, laboratorio de vida y archivo cósmico donde cualquier decisión resuena en
+							todos los cuerpos de agua conectados al Río de Oro.
+						</p>
+					</div>
+					<div class="rounded-2xl overflow-hidden relative h-64">
+						<div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-transparent"></div>
+						<img src="/fondo_agua5.png" alt="Asamblea del Agua" class="w-full h-full object-cover">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="acciones" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
+				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
+					<h3 class="text-2xl font-semibold text-white mb-4">Laboratorio Interestelar</h3>
+					<p class="text-white/90 leading-relaxed mb-4">
+						Un taller abierto con máscaras, radio experimental y arte textil donde se crean mensajes “alienígenas” que interpelan a autoridades
+						ambientales. Las piezas viajan por el territorio y regresan a la asamblea cargadas de testimonios.
+					</p>
+					<ul class="space-y-3 text-white/80">
+						<li>• Antenas y dispositivos DIY para “escanear” la humedad del páramo.</li>
+						<li>• Talismanes realizados con musgos y semillas recolectadas colectivamente.</li>
+						<li>• Bitácoras sonoras que mezclan cantos ancestrales con ruidos electrónicos.</li>
+					</ul>
+				</div>
+				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
+					<h3 class="text-2xl font-semibold text-white mb-4">Círculo de defensas</h3>
+					<p class="text-white/90 leading-relaxed mb-4">
+						Las lideresas de la cuenca relatan sus procesos jurídicos, pedagógicos y espirituales acompañadas de visuales proyectados sobre velos de agua.
+						El círculo concluye con un manifiesto colectivo que declara al páramo como zona libre de minería.
+					</p>
+					<div class="space-y-2">
+						<p class="text-emerald-200 font-semibold">Momentos clave</p>
+						<ul class="text-white/80 space-y-2">
+							<li>1. Mapa de conflictos hídricos trazado en vivo.</li>
+							<li>2. Lectura performática del manifiesto alienígena.</li>
+							<li>3. Juramento de cuidado firmado sobre agua y sal.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="memorias" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div class="max-w-5xl mx-auto bg-gradient-to-r from-cyan-900/60 via-blue-900/50 to-emerald-900/60 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-xl">
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div>
+						<h3 class="text-3xl font-semibold text-white mb-4">Memorias del páramo</h3>
+						<p class="text-white/90 leading-relaxed mb-4">
+							La asamblea dejó un archivo multimedia consultable: cápsulas de audio, registros fotográficos y un mapa interactivo donde se ubican los
+							compromisos adquiridos. Todo el material será compartido con procesos comunitarios y escuelas rurales.
+						</p>
+						<a href="mailto:contacto@hidropoeticas.com" class="inline-flex items-center gap-2 text-cyan-200 hover:text-white transition-colors">
+							<span>Solicitar material pedagógico</span>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+							</svg>
+						</a>
+					</div>
+					<div class="bg-black/30 rounded-2xl overflow-hidden">
+						<video 
+							src="/vidoes-rios/RIODEOROHOME.mp4"
+							controls
+							poster="/fondo_agua.png"
+							class="w-full h-full object-cover">
+						</video>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<style>
+		@import url("/src/styles/river-flow.css");
+
+		section {
+			position: relative;
+		}
+
+		@media (max-width: 1024px) {
+			header {
+				margin-left: 0;
+			}
+		}
+
+		@media (max-width: 768px) {
+			section {
+				padding: 2rem 1rem;
+			}
+
+			.rounded-3xl {
+				border-radius: 1.25rem;
+			}
+		}
+	</style>
+</Layout>

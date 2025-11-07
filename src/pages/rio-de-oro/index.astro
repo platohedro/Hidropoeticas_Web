@@ -26,10 +26,11 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 		<VerticalRiverNav 
 			client:load
 			sections={[
-				{ id: 'juntxs', text: 'JSandra' },
-				{ id: 'sandra', text: 'Maria ' },
-				{ id: 'maria', text: 'Laura Sofia ' },
-				{ id: 'sofia', text: 'Mandala' }
+				{ id: 'sandra', text: 'Correspondencia entre Aguas' },
+				{ id: 'maria', text: 'Agüeros del Río de Oro' },
+				{ id: 'sofia', text: 'Campana de Agua / Baraja Solar' },
+				{ id: 'asamblea', text: 'Asamblea del Agua: Alienígenas en Santurbán' },
+				{ id: 'caravana', text: 'Caravana: Cuando El Río Suena ' }
 			]}
 		/>
 
@@ -212,7 +213,124 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 
 				</section>
 
-			
+				<section id="asamblea" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/asamblea'">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 id="asamblea" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300">
+							<span class="text-white">
+								Asamblea del Agua
+							</span>
+						</h2>
+
+						<div class="grid gap-6 mb-6">
+							<div class="rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-500">
+								<div class="bg-gradient-to-br from-blue-900/40 via-cyan-800/40 to-emerald-700/40 rounded-lg backdrop-blur-lg p-8 border border-white/20 group-hover:border-cyan-300/50 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/40 to-transparent"></div>
+												<div class="h-full w-full flex items-center justify-center bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
+													<div class="text-center text-white space-y-2 px-6">
+														<p class="text-sm uppercase tracking-[0.4em] opacity-70">Alienígenas en Santurbán</p>
+														<p class="text-3xl font-semibold">Asamblea del Agua</p>
+														<p class="text-base opacity-80">Un encuentro interestelar para defender el páramo</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-5">
+												<h3 class="text-2xl font-semibold text-white">Alienígenas en Santurbán</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													Una asamblea expandida donde comunidades, artistas y guardianes del agua invocan voces alienígenas para narrar la defensa del páramo de Santurbán. 
+													Las intervenciones performáticas convierten el territorio en un organismo vivo que exige protección.
+												</p>
+												<ul class="space-y-2 text-white/90">
+													<li class="flex items-start gap-2">
+														<span class="mt-1 h-2 w-2 rounded-full bg-cyan-300"></span>
+														<span>Laboratorios sonoros y visuales que imaginan alianzas con otras especies.</span>
+													</li>
+													<li class="flex items-start gap-2">
+														<span class="mt-1 h-2 w-2 rounded-full bg-cyan-300"></span>
+														<span>Cartografía colectiva para nombrar amenazas y rutas de cuidado.</span>
+													</li>
+													<li class="flex items-start gap-2">
+														<span class="mt-1 h-2 w-2 rounded-full bg-cyan-300"></span>
+														<span>Diálogos con lideresas ambientales que sostienen la defensa del agua.</span>
+													</li>
+												</ul>
+											</div>
+											<div class="mt-6">
+												<span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50">
+													Explorar más
+													<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+													</svg>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="caravana" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/caravana'">
+					<div class="max-w-6xl mx-auto px-4">
+						<h2 id="caravana" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300">
+							<span class="text-white">
+								Caravana: Cuando el Río Suena
+							</span>
+						</h2>
+
+						<div class="grid gap-6 mb-6">
+							<div class="rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500">
+								<div class="bg-gradient-to-b from-emerald-900/40 via-cyan-900/30 to-blue-900/40 rounded-lg backdrop-blur-lg p-8 border border-white/20 group-hover:border-emerald-300/50 transition-all duration-500">
+									<div class="flex flex-col md:flex-row gap-8">
+										<div class="w-full md:w-1/2">
+											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+												<div class="absolute inset-0 bg-gradient-to-t from-emerald-600/30 to-transparent"></div>
+												<img src="/campanadeagua.png" alt="Caravana del Río de Oro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+											</div>
+										</div>
+										<div class="w-full md:w-1/2 flex flex-col justify-between">
+											<div class="space-y-5">
+												<h3 class="text-2xl font-semibold text-white">Caravana: Cuando el Río Suena</h3>
+												<p class="text-lg text-white/90 leading-relaxed">
+													Recorrido festivo y pedagógico que acompaña el cauce del Río de Oro con música, radio abierta y acciones de cuidado.
+													La caravana activa relatos comunitarios y hace visible la urgencia de desminar los ríos del extractivismo.
+												</p>
+												<div class="grid gap-3">
+													<div class="flex items-start gap-3">
+														<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/30 text-white">1</span>
+														<p class="text-white/90">Paradas artísticas en barrios ribereños con talleres de señalética afectiva.</p>
+													</div>
+													<div class="flex items-start gap-3">
+														<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/30 text-white">2</span>
+														<p class="text-white/90">Radio-caravana que recoge testimonios y los amplifica en vivo.</p>
+													</div>
+													<div class="flex items-start gap-3">
+														<span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/30 text-white">3</span>
+														<p class="text-white/90">Mapa sonoro colaborativo para seguir escuchando el río después del recorrido.</p>
+													</div>
+												</div>
+											</div>
+											<div class="mt-6">
+												<span class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 text-emerald-100 px-4 py-2 rounded-lg border border-emerald-400/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-emerald-500/30 group-hover:border-emerald-300/50">
+													Explorar más
+													<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+													</svg>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
 			</div>
 		</div>
 	</main>

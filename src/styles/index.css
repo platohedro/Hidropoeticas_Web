@@ -1,6 +1,14 @@
 /* Import Water Background CSS */
 @import url("../components/WaterBackground.css");
 
+/* Gradient styling for main hero title */
+.title-gradient {
+  background: linear-gradient(120deg, #0a7cc2 0%, #1bb5d9 50%, #7dd3fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Water background animation */
 @keyframes waterFlow {
   0% {
