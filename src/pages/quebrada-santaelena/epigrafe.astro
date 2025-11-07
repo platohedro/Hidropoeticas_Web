@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+---
+
+<Layout title="Quebrada Santa Elena - Epígrafe de los cuerpos">
+	<main class="min-h-screen">
+		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
+			<nav class="mb-4 md:mb-8 flex gap-4 flex-wrap">
+				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Inicio
+				</a>
+				<a href="/quebrada-santaelena" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-500/30 hover:to-blue-500/30 text-emerald-100 hover:text-white px-4 py-2 rounded-lg border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-emerald-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Quebrada Santa Elena
+				</a>
+			</nav>
+			<div class="text-center mt-6">
+				<p class="text-sm uppercase tracking-[0.3em] text-cyan-200/80 mb-2">Poéticas del cuidado</p>
+				<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Epígrafe de los cuerpos</h1>
+				<p class="text-lg text-white/80">Acciones performáticas para agradecer a quienes sostienen la quebrada.</p>
+			</div>
+		</header>
+
+		<VerticalRiverNav
+			client:load
+			sections={[
+				{ id: 'escrituras', text: 'Escrituras sumergidas' },
+				{ id: 'performance', text: 'Acción colectiva' },
+				{ id: 'archivo', text: 'Archivo de voces' },
+			]}
+		/>
+
+		<section id="escrituras" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div class="max-w-5xl mx-auto bg-gradient-to-b from-white/10 to-white/5 rounded-3xl border border-white/15 p-8 backdrop-blur-xl">
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div class="space-y-5">
+						<h2 class="text-3xl font-semibold text-white">Escrituras sumergidas</h2>
+						<p class="text-white/90 leading-relaxed">
+							Se elaboraron epígrafes sobre telas de algodón que luego se sumergieron brevemente en la quebrada.
+							El agua difumina la tinta generando nuevas formas que se digitalizan y se convierten en afiches.
+						</p>
+					</div>
+					<div class="rounded-2xl overflow-hidden relative h-64">
+						<div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-transparent"></div>
+						<img src="/correspondencias1.png" alt="Escrituras sumergidas" class="w-full h-full object-cover" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="performance" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
+				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
+					<h3 class="text-2xl font-semibold text-white mb-4">Caminata performativa</h3>
+					<p class="text-white/90 leading-relaxed">
+						Corresponsales del agua caminaron desde la parte alta hasta el centro portando las telas con epígrafes.
+						En cada parada se compartieron manifiestos y se activaron coreografías lentas que seguían el curso del agua.
+					</p>
+				</div>
+				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
+					<h3 class="text-2xl font-semibold text-white mb-4">Ofrendas sonoras</h3>
+					<p class="text-white/90 leading-relaxed">
+						Se grabaron respiraciones, cantos y lecturas que luego acompañaron la caminata a través de parlantes portátiles.
+						El sonido envolvió la experiencia creando una atmósfera íntima.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="archivo" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div class="max-w-5xl mx-auto bg-gradient-to-r from-cyan-900/60 via-blue-900/50 to-emerald-900/60 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-xl">
+				<div class="grid md:grid-cols-2 gap-8 items-center">
+					<div>
+						<h3 class="text-3xl font-semibold text-white mb-4">Archivo de voces</h3>
+						<p class="text-white/90 leading-relaxed mb-4">
+							Todos los epígrafes se registraron en audio y texto. El archivo está disponible para descargar y proyectar en otras cuencas.
+						</p>
+						<a href="mailto:contacto@hidropoeticas.com" class="inline-flex items-center gap-2 text-cyan-200 hover:text-white transition-colors">
+							<span>Solicitar acceso</span>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+							</svg>
+						</a>
+					</div>
+					<div class="bg-black/30 rounded-2xl overflow-hidden">
+						<video 
+							src="/Rio-de-Oro.MOV"
+							controls
+							class="w-full h-full object-cover"
+						></video>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<style>
+		@import url("/src/styles/river-flow.css");
+
+		section {
+			position: relative;
+		}
+
+		@media (max-width: 1024px) {
+			header {
+				margin-left: 0;
+			}
+		}
+
+		@media (max-width: 768px) {
+			section {
+				padding: 2rem 1rem;
+			}
+
+			.rounded-3xl {
+				border-radius: 1.25rem;
+			}
+		}
+	</style>
+</Layout>

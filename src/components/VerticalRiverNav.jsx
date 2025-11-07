@@ -318,6 +318,15 @@ const VerticalRiverNav = ({ sections }) => {
   };
 
   const riverData = getRiverData();
+  const baseSvgHeight = isMobile ? 80 : 500;
+  const maxSectionY = !isMobile && existingSections.length > 0
+    ? Math.max(...existingSections.map((section) => section.y))
+    : 0;
+  const svgHeight = isMobile ? 80 : Math.max(baseSvgHeight, maxSectionY + 80);
+  const viewBoxHeight = svgHeight;
+  const adjustedRiverPath = !isMobile
+    ? `${riverData.path} L35,${svgHeight - 5}`
+    : riverData.path;
 
   // Actualizar sección activa basada en el scroll
   useEffect(() => {
@@ -400,13 +409,16 @@ const VerticalRiverNav = ({ sections }) => {
       className={`vertical-river-nav ${isMobile ? '' : 'fixed left-12 top-36 z-30 pointer-events-none'}`}
       style={navStyles}
     >
-      <div className="relative">
+      <div 
+        className="relative"
+        style={isMobile ? {} : { height: `${svgHeight}px` }}
+      >
         {/* SVG para el río orgánico bifurcado */}
         <svg 
           width={isMobile ? "400" : "120"} 
-          height={isMobile ? "80" : "500"} 
+          height={svgHeight} 
           className="absolute left-0 top-0" 
-          viewBox={isMobile ? "0 0 400 80" : "0 0 120 500"}
+          viewBox={isMobile ? "0 0 400 80" : `0 0 120 ${viewBoxHeight}`}
         >
           <defs>
             <linearGradient 
@@ -432,7 +444,7 @@ const VerticalRiverNav = ({ sections }) => {
           
           {/* Río principal con curvas orgánicas */}
           <path
-            d={riverData.path}
+            d={adjustedRiverPath}
             fill="none"
             stroke="url(#riverGradient)"
             strokeWidth="6"
@@ -441,7 +453,7 @@ const VerticalRiverNav = ({ sections }) => {
           />
           
           <path
-            d={riverData.path}
+            d={adjustedRiverPath}
             fill="none"
             stroke="url(#riverGradient)"
             strokeWidth="3"
@@ -449,7 +461,7 @@ const VerticalRiverNav = ({ sections }) => {
           />
           
           <path
-            d={riverData.path}
+            d={adjustedRiverPath}
             fill="none"
             stroke="#67e8f9"
             strokeWidth="1.5"
@@ -536,7 +548,7 @@ const VerticalRiverNav = ({ sections }) => {
           {/* Efectos de flujo animado */}
           <circle r="2" fill="#67e8f9" opacity="0.7">
             <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-              <path d={riverData.path}/>
+              <path d={adjustedRiverPath}/>
             </animateMotion>
           </circle>
         </svg>
