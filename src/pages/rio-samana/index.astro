@@ -30,14 +30,18 @@ import WaterSectionTransition from "../../components/WaterSectionTransition.jsx"
 				</a>
 			</nav>
 		</header>
+			<VerticalRiverNav 
+			client:load
+			sections={[
+				{ id: 'nacimiento-munchique', text: 'Río Samaná' },
+				{ id: 'caracteristicas-rio', text: 'Samaná Fest' },
+				{ id: 'santuario-vida', text: 'Festival del Agua' },
+			
+			]}
+		/>
 
 		<!-- River Navigation -->
-		<div class="fixed left-0 top-0 h-full w-[280px] z-20">
-			<VerticalRiverNav
-				client:load
-				sections={[{ id: "introduccion", text: "Rio Sámana" }]}
-			/>
-		</div>
+	
 
 		<!-- Content Sections -->
 		<div class="w-full">
