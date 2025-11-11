@@ -1,44 +1,42 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 ---
 
 <Layout title="Rio Quilichao - Hidropoeticas">
-    <main>
+	<main>
 		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Volver al inicio
 				</a>
 			</nav>
-			<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Rio Quilichao</h1>
-				
-				<video 
-					src="/cotidiano_rio_quilichao.mov" 
-					autoplay
-					loop
-					muted
-					class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
-					style="max-height: 70vh;"
-				/>
-				
-				<p class="text-lg md:text-xl text-white opacity-90 px-4 max-w-4xl mx-auto">El Río Quilichao resguarda memorias del Cauca: aguas atravesadas por luchas, músicas y espiritualidades que sostienen a su gente. Sus orillas son territorio de resistencia y encuentro.</p> 
-			</div>
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav 
+		<VerticalRiverNav
 			client:load
 			sections={[
-				{ id: 'quili1', text: 'QUili 1' },
-				{ id: 'quili2', text: 'Quili 2' },
-				{ id: 'quili3', text: 'Quili 3' },
-				{ id: 'quili4', text: 'Quili 4' }
+				{ id: "rio-quilichao", text: "Río Quilichao" },
+				{ id: "memorias", text: "Memorias y Patrimonio Biocultural" },
+				{ id: "sonidos-del-terreno", text: "Sonidos del Territorio" },
 			]}
 		/>
 
@@ -47,103 +45,147 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 			<!-- Main Content -->
 			<div class="flex-1 px-4 md:px-8">
 				<!-- Section 1: Introducción -->
-                <section id="quili1" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-quilichao/introduccion'">
+				<section
+					id="rio-quilichao"
+					class="py-6 group cursor-pointer"
+					onclick="window.location.href='/rio-quilichao/introduccion'"
+				>
 					<div class="max-w-6xl mx-auto px-4">
-                    <h2 id="quili1" class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
-							QUili 1
+						<h2
+							id="quili1"
+							class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]"
+						>
+							Río Quilichao
 						</h2>
-						
-                    <div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container">
-												<img src="/rio-quilichao.jpg" alt="Rio Quilichao" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">Nacimiento en Munchique</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													El Rio Quilichao fluye a través del municipio de Santander de Quilichao en el departamento del Cauca, 
-													llevando consigo las aguas cristalinas que nacen en la majestuosa Reserva Natural de Munchique.
-												</p>
-											</div>
-											<div class="mt-6 space-y-4">
-												<div class="flex flex-wrap gap-4 text-white/80">
-													<span class="text-sm">• Aguas cristalinas</span>
-													<span class="text-sm">• Biodiversidad única</span>
-													<span class="text-sm">• Fuente de vida</span>
-												</div>
-											</div>
-										</div>
+
+						<div class="grid gap-6 mb-6">
+							<div class="rounded-xl p-1">
+								<div
+									class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+								>
+									<div class="text-center">
+										<video
+											src="/cotidiano_rio_quilichao.mov"
+											autoplay
+											loop
+											muted
+											class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
+											style="max-height: 70vh;"></video>
+
+										<p
+											class="text-lg md:text-xl text-white opacity-90 pt-8 px-4 max-w-4xl mx-auto"
+										>
+											El Río Quilichao resguarda memorias
+											profundas del Cauca: aguas
+											atravesadas por luchas, músicas y
+											espiritualidades que sostienen a su
+											gente. Entre samanes, ceibas y
+											carboneros, este río ha sido
+											territorio de encuentro, refugio y
+											abundancia —donde ardillas, aves,
+											libélulas, renacuajos, sabaletas y
+											guabinos danzan entre sus aguas.
+											Hoy, enfrenta desafíos que amenazan
+											su cauce y su vida: el crecimiento
+											urbano, la ocupación de sus orillas,
+											el sobrepastoreo y prácticas que han
+											debilitado su equilibrio natural.
+										</p>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class=" p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+						<!-- <div class=" p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
 							El Rio Quilichao fluye a través del municipio de Santander de Quilichao en el departamento del Cauca, 
 							llevando consigo las aguas cristalinas que nacen en la majestuosa Reserva Natural de Munchique. 
 							Este río es testigo de la biodiversidad única de la región y ha sido fuente de vida 
 							para las comunidades que han habitado sus riberas durante generaciones.
 						</p>
+					</div> -->
 					</div>
-				</section>
 
-				<!-- Section 2: Origen Natural -->
-                <section id="quili2" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-quilichao/origen'">
-					<div class="max-w-6xl mx-auto px-4">
-                    <h2 id="quili2" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
-								Quili 2
-							</span>
-						</h2>
-						
-                    <div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
-													<div class="h-full w-full flex items-center justify-center">
-														<div class="text-white text-opacity-80 space-y-4">
-															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-															</svg>
-															<p class="text-lg font-medium">Reserva Natural de Munchique</p>
+					<!-- Section 2: Origen Natural -->
+					<section
+						id="memorias"
+						class="py-6 group cursor-pointer"
+						onclick="window.location.href='/rio-quilichao/memorias-y-patrimonio-biocultural'"
+					>
+						<div class="max-w-6xl mx-auto px-4">
+							<h2
+								id="memorias"
+								class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center"
+							>
+								<span
+									class="text-white text-transparent bg-clip-text"
+								>
+									Memorias y Patrimonio Biocultural
+								</span>
+							</h2>
+
+							<div class="grid gap-6 mb-6">
+								<div class="rounded-xl p-1">
+									<div
+										class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+									>
+										<div
+											class="flex flex-col md:flex-row gap-8"
+										>
+											<div class="w-full md:w-1/2">
+												<div
+													class="h-64 rounded-lg overflow-hidden glass-container relative"
+												>
+													<div
+														class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"
+													>
+													</div>
+													<div
+														class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm"
+													>
+														<div
+															class="h-full w-full flex items-center justify-center"
+														>
+															<div
+																class="text-white text-opacity-80 space-y-4"
+															>
+																<img src="/memorias-patrimonio.jpg" alt="Memorias y Patrimonio Biocultural del Rio Quilichao" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+															
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white">Santuario de Vida</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													En las alturas de la Reserva Natural de Munchique, donde la niebla abraza las montañas 
-													y la biodiversidad alcanza su máxima expresión, nacen las aguas del Rio Quilichao.
-												</p>
-											</div>
-											<div class="mt-6 space-y-4">
-												<div class="flex flex-wrap gap-4 text-white/80">
-													<span class="text-sm">• Especies endémicas</span>
-													<span class="text-sm">• Ecosistemas únicos</span>
-													<span class="text-sm">• Corredor biológico</span>
+											<div
+												class="w-full md:w-1/2 flex flex-col justify-between"
+											>
+												<div class="space-y-6">
+													<!-- <h3 class="text-2xl font-semibold text-white">Santuario de Vida</h3> -->
+													<p
+														class="text-lg text-white/90 leading-relaxed"
+													>
+														En el marco de
+														Hidropoéticas
+														Ambientales, hemos
+														activado conversaciones
+														con el Río Quilichao de
+														la mano del artista
+														Ronald Balanta
+														“Chambimbe”, cuyos
+														saberes y experiencia
+														territorial nutrieron el
+														primer ciclo: “Memorias
+														y Patrimonio
+														Biocultural”.
+													</p>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div class=" p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
+							<!-- <div class=" p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
 							En las alturas de la Reserva Natural de Munchique, donde la niebla abraza las montañas 
 							y la biodiversidad alcanza su máxima expresión, nacen las aguas del Rio Quilichao. 
@@ -151,56 +193,104 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 							alimenta al río con aguas puras que descienden por las laderas andinas, 
 							creando un corredor biológico de incalculable valor.
 						</p>
-					</div>
-				</section>
-                <section id="quili3" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-quilichao/conexion-cultural'">
-					<div class="max-w-6xl mx-auto px-4">
-                    <h2 id="quili3" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center">
-							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
-							Quili 3
-							</span>
-						</h2>
-						
-                    <div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
-													<div class="h-full w-full flex items-center justify-center">
-														<div class="text-white text-opacity-80 space-y-4">
-															<svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-																<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-															</svg>
-															<p class="text-lg font-medium">Comunidad Local</p>
+					</div> -->
+						</div>
+						<section
+							id="sonidos-del-terreno"
+							class="py-6 group cursor-pointer"
+							onclick="window.location.href='/rio-quilichao/sonidos-del-territorio'"
+						>
+							<div class="max-w-6xl mx-auto px-4">
+								<h2
+									id="sonidos-del-terreno"
+									class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center"
+								>
+									<span
+										class="text-white text-transparent bg-clip-text"
+									>
+										Sonidos del Territorio
+									</span>
+								</h2>
+
+								<div class="grid gap-6 mb-6">
+									<div class="rounded-xl p-1">
+										<div
+											class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+										>
+											<div
+												class="flex flex-col md:flex-row gap-8"
+											>
+												<div class="w-full md:w-1/2">
+													<div
+														class="h-64 rounded-lg overflow-hidden glass-container relative"
+													>
+														<div
+															class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"
+														>
+														</div>
+														<div
+															class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm"
+														>
+															<div
+																class="h-full w-full flex items-center justify-center"
+															>
+																<div
+																	class="text-white text-opacity-80 space-y-4"
+																>
+																	<svg
+																		xmlns="http://www.w3.org/2000/svg"
+																		class="h-16 w-16 mx-auto"
+																		fill="none"
+																		viewBox="0 0 24 24"
+																		stroke="currentColor"
+																	>
+																		<path
+																			stroke-linecap="round"
+																			stroke-linejoin="round"
+																			stroke-width="1"
+																			d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+																		></path>
+																	</svg>
+																	<p
+																		class="text-lg font-medium"
+																	>
+																		Comunidad
+																		Local
+																	</p>
+																</div>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white">Corazón de la Comunidad</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													El Rio Quilichao no es solo una fuente de agua; es el corazón que late en el centro 
-													de la vida comunitaria de Santander de Quilichao.
-												</p>
-											</div>
-											<div class="mt-6 space-y-4">
-												<div class="flex flex-wrap gap-4 text-white/80">
-													<span class="text-sm">• Tradiciones ancestrales</span>
-													<span class="text-sm">• Celebraciones familiares</span>
-													<span class="text-sm">• Identidad territorial</span>
+												<div
+													class="w-full md:w-1/2 flex flex-col justify-between"
+												>
+													<div class="space-y-6">
+														<h3
+															class="text-2xl font-semibold text-white"
+														>
+															Corazón de la
+															Comunidad
+														</h3>
+														<p
+															class="text-lg text-white/90 leading-relaxed"
+														>
+															El Rio Quilichao no
+															es solo una fuente
+															de agua; es el
+															corazón que late en
+															el centro de la vida
+															comunitaria de
+															Santander de
+															Quilichao.
+														</p>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-
+								<!-- 
 						<div class=" p-6 rounded-xl backdrop-blur-md shadow-xl border border-white/10">
 							<p class="text-lg text-white leading-relaxed">
 							El Rio Quilichao no es solo una fuente de agua; es el corazón que late en el centro 
@@ -209,11 +299,11 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 							de miles de personas que encuentran en este río no solo sustento, 
 							sino también identidad y pertenencia a un territorio único en Colombia.
 						</p>
-					</div>
-				</section>
+					</div> -->
+							</div>
 
-				<!-- Section 3: Desafíos Ambientales -->
-                <section id="quili4" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-quilichao/desafios'">
+							<!-- Section 3: Desafíos Ambientales -->
+							<!-- <section id="quili4" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-quilichao/desafios'">
 					<div class="max-w-6xl mx-auto px-4">
                     <h2 id="quili4" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center">
 							<span class="bg-gradient-to-r from-[#1b7895] to-[#2a97b8] text-transparent bg-clip-text">
@@ -270,51 +360,53 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 							puedan disfrutar de aguas limpias y ecosistemas saludables.
 						</p>
 					</div>
-				</section>
+				</section> -->
 
-				<!-- Section 4: Conexión Cultural -->
-			
+							<!-- Section 4: Conexión Cultural -->
+						</section>
+					</section>
+				</section>
+				<style>
+					@import url("/src/styles/river-flow.css");
+
+					/* Asegurar que el contenido principal no se oculte detrás de la navegación */
+					.flex-1 {
+						margin-left: 280px;
+					}
+
+					/* Ajustes para pantallas pequeñas */
+					@media (max-width: 1024px) {
+						.flex-1 {
+							margin-left: 0;
+						}
+					}
+
+					/* Mejoras adicionales para móvil */
+					@media (max-width: 768px) {
+						.glass-container {
+							height: 200px;
+						}
+
+						section {
+							min-height: auto;
+							padding: 2rem 0;
+						}
+
+						.space-y-6 > * + * {
+							margin-top: 1rem;
+						}
+
+						h2 {
+							font-size: 2rem;
+							margin-bottom: 2rem;
+						}
+
+						.max-w-6xl {
+							padding: 0 1rem;
+						}
+					}
+				</style>
 			</div>
 		</div>
-	</main>
-	<style>
-		@import url("/src/styles/river-flow.css");
-		
-		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
-		.flex-1 {
-			margin-left: 280px;
-		}
-
-		/* Ajustes para pantallas pequeñas */
-		@media (max-width: 1024px) {
-			.flex-1 {
-				margin-left: 0;
-			}
-		}
-		
-		/* Mejoras adicionales para móvil */
-		@media (max-width: 768px) {
-			.glass-container {
-				height: 200px;
-			}
-			
-			section {
-				min-height: auto;
-				padding: 2rem 0;
-			}
-			
-			.space-y-6 > * + * {
-				margin-top: 1rem;
-			}
-			
-			h2 {
-				font-size: 2rem;
-				margin-bottom: 2rem;
-			}
-			
-			.max-w-6xl {
-				padding: 0 1rem;
-			}
-		}
-	</style>
-</Layout>
+	</main></Layout
+>

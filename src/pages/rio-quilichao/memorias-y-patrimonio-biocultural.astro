@@ -6,7 +6,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 <Layout title="Rio Quilichao - Origen Natural - Hidropoeticas">
 	<main class="min-h-screen">
 		<!-- Header -->
-		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
+		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px] ">
 			<nav class="mb-4 md:mb-8 flex gap-4">
 				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
 					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -22,22 +22,22 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				</a>
 			</nav>
 			<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Origen Natural</h1>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4">En las alturas de Munchique donde la niebla abraza las montañas</p>
-			
+				
+
+<!-- 			
 				<video 
 				src="/Quebrada-SantaElena.MOV" 
 				autoplay
 				class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
 				style="max-height: 70vh;"
-			/>
+			/> -->
 			
 			
 			</div>
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav 
+		<!-- <VerticalRiverNav 
 			client:load
 			sections={[
 				{ id: 'santuario-vida', text: 'Santuario de Vida' },
@@ -45,7 +45,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				{ id: 'corredor-biologico', text: 'Corredor Biológico' },
 				{ id: 'agua-cristalina', text: 'El Agua Cristalina' }
 			]}
-		/>
+		/> -->
 
 		<!-- Content Section -->
 		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
@@ -54,33 +54,31 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 					<div class="grid gap-12 mb-12">
 						<!-- Santuario de Vida -->
 						<div class=" rounded-xl p-1">
+							<h1 class="text-center text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Memorias Y patrimonio Biocultural </h1>
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<h2 id="santuario-vida" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Santuario de Vida</h2>
-								<div class="grid md:grid-cols-2 gap-8">
+					
+								<div class="gap-8">
+									
 									<div class="space-y-6">
-										<p class="text-lg text-white/90 leading-relaxed">
-											En las alturas de la Reserva Natural de Munchique, donde la niebla abraza las montañas 
-											y la biodiversidad alcanza su máxima expresión, nacen las aguas del Rio Quilichao. 
-											Este santuario natural, considerado uno de los hotspots de biodiversidad más importantes 
-											del mundo, es el origen de aguas que han moldeado la vida en el valle del Cauca.
-										</p>
-										<p class="text-lg text-white/90 leading-relaxed">
-											La reserva, con sus bosques nublados permanentemente envueltos en bruma, 
-											actúa como una fábrica natural de agua. La vegetación especializada captura 
-											la humedad del aire y la convierte en arroyos cristalinos que se unen para 
-											formar el nacimiento del río.
-										</p>
-									</div>
-									<div class="h-64 rounded-lg overflow-hidden glass-container relative">
+										<div class="h-64 rounded-lg overflow-hidden glass-container relative">
 										<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-										<img src="/rio-quilichao-preview.jpg" alt="Origen del Rio Quilichao" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
+										<img src="/memorias-patrimonio.jpg" alt="Origen del Rio Quilichao" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
 									</div>
+
+										<p class="text-lg text-white/90 leading-relaxed">
+											En el marco de Hidropoéticas Ambientales, hemos activado conversaciones con el Río Quilichao de la mano del artista Ronald Balanta “Chambimbe”, cuyos saberes y experiencia territorial nutrieron el primer ciclo: “Memorias y Patrimonio Biocultural”. Su acompañamiento alimentó el proceso de La Mirla — Grupo Musical en Residencia Artística, aportando una mirada sensible, histórica y comunitaria sobre la relación entre agua, territorio y memoria.
+										</p>
+										<p class="text-lg text-white/90 leading-relaxed">
+									“En casa de  mi abuela todos los domingos en horas de la tarde mientras jugábamos en el parque, mis tíos sentados en la calle  escuchaban sus  viejos y nuevos vinilos de música  con golpe, el propio Guateque, así poco a poco por ósmosis nos hicieron melómanos. Los Discos que tanta fiesta alegraron fueron quedando en el olvido, de la nada un día la Matriarca Doña Cristina me dice llévese todo eso mijo y entre tanto Disco "empolvao" encontré  Música del Pacífico con data desde los años 70"s hasta los 90”s. He querido hacer esta curaduría para rendir homenaje a mi familia, a los músicos juglares del Pacífico Colombiano y a uds que seguramente van disfrutar de este bello sonido... El Sonido del Agua”. CHAMBIMBE
+										</p>
+									</div>
+									
 								</div>
 							</div>
 						</div>
 
 						<!-- Ecosistemas Únicos -->
-						<div class=" rounded-xl p-1">
+						<!-- <div class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 id="ecosistemas-unicos" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Ecosistemas Únicos</h2>
 								<div class="space-y-6">
@@ -126,10 +124,10 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Corredor Biológico -->
-						<div class=" rounded-xl p-1">
+						<!-- <div class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 id="corredor-biologico" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">Corredor Biológico</h2>
 								<div class="grid md:grid-cols-2 gap-8">
@@ -177,10 +175,10 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Proceso de Formación del Agua -->
-						<div class=" rounded-xl p-1">
+						<!-- <div class=" rounded-xl p-1">
 							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
 								<h2 id="agua-cristalina" class="text-3xl font-bold text-white mb-6 drop-shadow-lg">El Agua Cristalina</h2>
 								<div class="space-y-6">
@@ -214,7 +212,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</section>
