@@ -1,6 +1,16 @@
 ---
+import { readdirSync } from 'node:fs';
 import Layout from '../../layouts/Layout.astro';
 import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+
+const galleryDirectory = new URL('../../../public/galeria-memorias/', import.meta.url);
+const galleryImages = readdirSync(galleryDirectory)
+	.filter((file) => /\.(png|jpe?g|webp|avif)$/i.test(file))
+	.sort()
+	.map((file) => ({
+		src: `/galeria-memorias/${file}`,
+		alt: `Memorias y Patrimonio Biocultural ${file.replace(/\.[^/.]+$/, '')}`,
+	}));
 ---
 
 <Layout title="Rio Quilichao - Origen Natural - Hidropoeticas">
@@ -65,12 +75,20 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 										<img src="/memorias-patrimonio.jpg" alt="Origen del Rio Quilichao" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
 									</div>
 
-										<p class="text-lg text-white/90 leading-relaxed">
-											En el marco de Hidropoéticas Ambientales, hemos activado conversaciones con el Río Quilichao de la mano del artista Ronald Balanta “Chambimbe”, cuyos saberes y experiencia territorial nutrieron el primer ciclo: “Memorias y Patrimonio Biocultural”. Su acompañamiento alimentó el proceso de La Mirla — Grupo Musical en Residencia Artística, aportando una mirada sensible, histórica y comunitaria sobre la relación entre agua, territorio y memoria.
-										</p>
-										<p class="text-lg text-white/90 leading-relaxed">
-									“En casa de  mi abuela todos los domingos en horas de la tarde mientras jugábamos en el parque, mis tíos sentados en la calle  escuchaban sus  viejos y nuevos vinilos de música  con golpe, el propio Guateque, así poco a poco por ósmosis nos hicieron melómanos. Los Discos que tanta fiesta alegraron fueron quedando en el olvido, de la nada un día la Matriarca Doña Cristina me dice llévese todo eso mijo y entre tanto Disco "empolvao" encontré  Música del Pacífico con data desde los años 70"s hasta los 90”s. He querido hacer esta curaduría para rendir homenaje a mi familia, a los músicos juglares del Pacífico Colombiano y a uds que seguramente van disfrutar de este bello sonido... El Sonido del Agua”. CHAMBIMBE
-										</p>
+									<p class="text-lg text-white/90 leading-relaxed">
+										En el marco de Hidropoéticas Ambientales, hemos activado conversaciones con el Río Quilichao de la mano del artista Ronald Balanta “Chambimbe”, cuyos saberes y experiencia territorial nutrieron el primer ciclo: “Memorias y Patrimonio Biocultural”. Su acompañamiento alimentó el proceso de La Mirla — Grupo Musical en Residencia Artística, aportando una mirada sensible, histórica y comunitaria sobre la relación entre agua, territorio y memoria.
+									</p>
+									<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6">
+										{galleryImages.map((image) => (
+											<figure class="relative overflow-hidden rounded-lg border border-white/20 bg-white/5 backdrop-blur">
+												<img src={image.src} alt={image.alt} loading="lazy" class="w-full h-64 object-cover transition duration-500 ease-out hover:scale-105" />
+												<figcaption class="sr-only">{image.alt}</figcaption>
+											</figure>
+										))}
+									</div>
+									<p class="text-lg text-white/90 leading-relaxed">
+								“En casa de  mi abuela todos los domingos en horas de la tarde mientras jugábamos en el parque, mis tíos sentados en la calle  escuchaban sus  viejos y nuevos vinilos de música  con golpe, el propio Guateque, así poco a poco por ósmosis nos hicieron melómanos. Los Discos que tanta fiesta alegraron fueron quedando en el olvido, de la nada un día la Matriarca Doña Cristina me dice llévese todo eso mijo y entre tanto Disco "empolvao" encontré  Música del Pacífico con data desde los años 70"s hasta los 90”s. He querido hacer esta curaduría para rendir homenaje a mi familia, a los músicos juglares del Pacífico Colombiano y a uds que seguramente van disfrutar de este bello sonido... El Sonido del Agua”. CHAMBIMBE
+									</p>
 									</div>
 									
 								</div>
