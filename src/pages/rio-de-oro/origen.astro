@@ -104,46 +104,101 @@ Desde el caminar como pedagogía y convencidxs de que sin vínculo no hay cuidad
 	</main>
 
 	<!-- Lightbox simple para la galería -->
-	<div id="lightbox-correspondencias" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+	<div id="lightbox-correspondencias" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4 relative">
+		<button type="button" class="absolute left-6 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 transition" data-lightbox-prev aria-label="Imagen anterior">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+			</svg>
+		</button>
 		<img id="lightbox-correspondencias-img" src="" alt="Imagen" class="max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl" />
+		<button type="button" class="absolute right-6 top-1/2 -translate-y-1/2 text-white bg-black/40 hover:bg-black/60 rounded-full p-3 transition" data-lightbox-next aria-label="Imagen siguiente">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+			</svg>
+		</button>
 	</div>
 
     <script is:inline>
-        const gallery = document.querySelector('[data-gallery="correspondencias"]');
-        if (gallery) {
-            const overlay = document.getElementById('lightbox-correspondencias');
-            const overlayImg = document.getElementById('lightbox-correspondencias-img');
+		const setupGalleryLightbox = (name) => {
+			const gallery = document.querySelector(`[data-gallery="${name}"]`);
+			const overlay = document.getElementById(`lightbox-${name}`);
+			if (!gallery || !overlay) return;
+			if (overlay.parentElement !== document.body) {
+				document.body.appendChild(overlay);
+			}
 
-            // Manejo sobre enlaces y/o imágenes, evitando navegación por defecto
-            gallery.querySelectorAll('a').forEach(a => {
-                const img = a.querySelector('img');
-                if (img) {
-                    img.style.cursor = 'zoom-in';
-                }
-                a.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const src = img ? img.src : a.getAttribute('href');
-                    if (src) {
-                        overlayImg.src = src;
-                        overlay.classList.remove('hidden');
-                        overlay.classList.add('flex');
-                    }
-                });
-            });
+			const overlayImg = overlay.querySelector('img');
+			const prevBtn = overlay.querySelector('[data-lightbox-prev]');
+			const nextBtn = overlay.querySelector('[data-lightbox-next]');
+			const links = Array.from(gallery.querySelectorAll('a'));
+			let currentIndex = 0;
+			const bodyOriginalOverflow = document.body.style.overflow;
 
-            // Cerrar overlay con click o tecla ESC
-            overlay?.addEventListener('click', () => {
-                overlay.classList.add('hidden');
-                overlay.classList.remove('flex');
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    overlay?.classList.add('hidden');
-                    overlay?.classList.remove('flex');
-                }
-            });
-        }
+			const openAt = (index) => {
+				const link = links[index];
+				if (!link || !overlayImg) return;
+				const img = link.querySelector('img');
+				const src = link.getAttribute('href') || (img ? img.src : '');
+				if (!src) return;
+				currentIndex = index;
+				overlayImg.src = src;
+				overlay.classList.remove('hidden');
+				overlay.classList.add('flex');
+				document.body.style.overflow = 'hidden';
+			};
+
+			const closeOverlay = () => {
+				overlay.classList.add('hidden');
+				overlay.classList.remove('flex');
+				document.body.style.overflow = bodyOriginalOverflow;
+			};
+
+			const changeImage = (direction) => {
+				if (!links.length) return;
+				const nextIndex = (currentIndex + direction + links.length) % links.length;
+				openAt(nextIndex);
+			};
+
+			links.forEach((link, index) => {
+				const img = link.querySelector('img');
+				if (img) img.style.cursor = 'zoom-in';
+				link.addEventListener('click', (event) => {
+					event.preventDefault();
+					event.stopPropagation();
+					openAt(index);
+				});
+			});
+
+			prevBtn?.addEventListener('click', (event) => {
+				event.stopPropagation();
+				changeImage(-1);
+			});
+			nextBtn?.addEventListener('click', (event) => {
+				event.stopPropagation();
+				changeImage(1);
+			});
+
+			overlay.addEventListener('click', (event) => {
+				if (event.target === overlay) {
+					closeOverlay();
+				}
+			});
+
+			document.addEventListener('keydown', (event) => {
+				if (overlay.classList.contains('hidden')) return;
+				if (event.key === 'Escape') {
+					closeOverlay();
+				} else if (event.key === 'ArrowLeft') {
+					event.preventDefault();
+					changeImage(-1);
+				} else if (event.key === 'ArrowRight') {
+					event.preventDefault();
+					changeImage(1);
+				}
+			});
+		};
+
+		setupGalleryLightbox('correspondencias');
     </script>
 
 	<style>
