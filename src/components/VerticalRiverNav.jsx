@@ -406,7 +406,7 @@ const VerticalRiverNav = ({ sections }) => {
 
   return (
     <div 
-      className={`vertical-river-nav ${isMobile ? '' : 'fixed left-12 top-36 z-30 pointer-events-none'}`}
+      className={`vertical-river-nav ${isMobile ? '' : 'fixed left-12 top-24 z-30 pointer-events-none'}`}
       style={navStyles}
     >
       <div 
