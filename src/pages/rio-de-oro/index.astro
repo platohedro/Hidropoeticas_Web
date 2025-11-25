@@ -1,35 +1,45 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
-import WaterSectionTransition from '../../components/WaterSectionTransition.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import WaterSectionTransition from "../../components/WaterSectionTransition.jsx";
 ---
 
 <Layout title="Rio de Oro - Hidropoeticas">
-    <main>
+	<main>
 		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Volver al inicio
 				</a>
 			</nav>
-			<div class="text-center">
-		
-				
-			</div>
+			<div class="text-center"></div>
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav 
+		<VerticalRiverNav
 			client:load
 			sections={[
-				{ id: 'sandra', text: 'Correspondencia entre Aguas' },
-				{ id: 'maria', text: 'Agüeros del Río de Oro' },
-				{ id: 'sofia', text: 'Campana de Agua / Baraja Solar' },
-				{ id: 'asamblea', text: 'Asamblea del Agua' },
+				{ id: "sandra", text: "Correspondencia entre Aguas" },
+				{ id: "maria", text: "Agüeros del Río de Oro" },
+				{ id: "sofia", text: "Campana de Agua / Baraja Solar" },
+				{ id: "asamblea", text: "Asamblea del Agua" },
 				// { id: 'caravana', text: 'Caravana: Cuando El Río Suena ' }
 			]}
 		/>
@@ -38,229 +48,540 @@ import WaterSectionTransition from '../../components/WaterSectionTransition.jsx'
 		<div class="flex flex-col lg:flex-row">
 			<!-- Main Content -->
 			<div class="flex-1 px-4 md:px-8">
-				<section id="juntxs" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/introduccion'">
+				<section
+					id="juntxs"
+					class="py-6 group cursor-pointer"
+					onclick="window.location.href='/rio-de-oro/introduccion'"
+				>
 					<div class="max-w-6xl mx-auto px-4">
-							<h2 id="juntxs" class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
+						<h2
+							id="juntxs"
+							class="text-5xl font-bold text-white mb-6 text-center drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]"
+						>
 							Río de Oro
 						</h2>
-						
-							<div class="grid gap-6 mb-6">
+
+						<div class="grid gap-6 mb-6">
 							<div class="">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-6 border border-white/20 hover:border-white/40 transition-all duration-500">
+								<div
+									class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-6 border border-white/20 hover:border-white/40 transition-all duration-500"
+								>
 									<div class="space-y-4">
 										<!-- Video principal: Río de Oro Home -->
-										<video 
-											src="/vidoes-rios/RIODEORO2.MP4" 
+										<video
+											src="/vidoes-rios/RIODEORO2.MP4"
 											autoplay
 											loop
 											muted
 											playsinline
 											class="w-full max-w-4xl mx-auto rounded-lg shadow-lg aspect-video object-cover"
-											style="max-height: 70vh;"
-										></video>
+											style="max-height: 70vh;"></video>
 
 										<!-- Descripción debajo del video -->
 										<div class="pt-2">
-											
-											<p class="text-lg text-white/90 leading-relaxed">
-										
-										El Río de Oro se abre como un cauce de memorias compartidas: aguas de cañón y de páramo que sostienen la vida y el territorio. Es uno de los afluentes del páramo de Santurbán, un ecosistema vital que abastece de agua a decenas de municipios y que hoy enfrenta diversas amenazas derivadas de la minería, la contaminación y la deforestación.
-<br>
-<br>
-Frente a estos desafíos, comunidades, procesos ambientales y expresiones artísticas se articulan para reimaginar y cuidar el río. Acciones colectivas como el Festival de La Tigra, las Asambleas del Agua y proyectos como Cuando el Río Suena han abierto espacios de diálogo, sensibilización y encuentro entre arte, educación y defensa territorial.
-											<br>
-											<br>
-											El Río de Oro nos convoca a escucharlo, a volver sobre sus orillas y a continuar tejiendo desde el arte y la comunidad caminos para su preservación. 
-<br>
-<br>
-Conoce algunas de las experiencias ….
-<br>
-<br>
-Hidropoéticas Ambientales es un repositorio vivo de residencias y artistas atravesadxs por las aguas. Un espacio que reúne procesos, obras y archivos sensibles nacidos del encuentro entre arte, territorio y comunidad. Creemos en el arte como un lenguaje vital que despierta sensibilidades, tejido comunitario y acciones colectivas para proteger el Río de Oro, su memoria y las aguas que nutren los territorios.
-	</p>
+											<p
+												class="text-lg text-white/90 leading-relaxed"
+											>
+												El Río de Oro se abre como un
+												cauce de memorias compartidas:
+												aguas de cañón y de páramo que
+												sostienen la vida y el
+												territorio. Es uno de los
+												afluentes del páramo de
+												Santurbán, un ecosistema vital
+												que abastece de agua a decenas
+												de municipios y que hoy enfrenta
+												diversas amenazas derivadas de
+												la minería, la contaminación y
+												la deforestación.
+												<br />
+												<br />
+												Frente a estos desafíos, comunidades,
+												procesos ambientales y expresiones
+												artísticas se articulan para reimaginar
+												y cuidar el río. Acciones colectivas
+												como el Festival de La Tigra, las
+												Asambleas del Agua y proyectos como
+												Cuando el Río Suena han abierto espacios
+												de diálogo, sensibilización y encuentro
+												entre arte, educación y defensa territorial.
+												<br />
+												<br />
+												El Río de Oro nos convoca a escucharlo,
+												a volver sobre sus orillas y a continuar
+												tejiendo desde el arte y la comunidad
+												caminos para su preservación.
+												<br />
+												<br />
+												Conoce algunas de las experiencias
+												….
+												<br />
+												<br />
+												Hidropoéticas Ambientales es un repositorio
+												vivo de residencias y artistas atravesadxs
+												por las aguas. Un espacio que reúne
+												procesos, obras y archivos sensibles
+												nacidos del encuentro entre arte,
+												territorio y comunidad. Creemos en
+												el arte como un lenguaje vital que
+												despierta sensibilidades, tejido
+												comunitario y acciones colectivas
+												para proteger el Río de Oro, su memoria
+												y las aguas que nutren los territorios.
+											</p>
 										</div>
-										<div class="w-full flex justify-center py-6">
-							<img 
-								src="/riodeoroevento.png" 
-								alt="Mapa Río de Oro" 
-								class="centered-content h-auto rounded-lg shadow-lg max-w-3xl w-full"
-							/>
-						</div>
+										<div
+											class="flex flex-col md:flex-row gap-6 py-6"
+										>
+											<!-- Columna izquierda: Imagen más pequeña -->
+											<div class="w-full md:w-2/5">
+												<img
+													src="/riodeoroevento.png"
+													alt="Mapa Río de Oro"
+													class="h-auto rounded-lg shadow-lg w-full"
+												/>
+											</div>
+
+											<!-- Columna derecha: Texto JUNTXS I -->
+											<div
+												class="w-full md:w-3/5 flex items-center"
+											>
+												<div class="space-y-4">
+													<h3
+														class="text-3xl font-bold text-white"
+													>
+														JUNTXS I
+													</h3>
+													<p
+														class="text-lg text-white/90 leading-relaxed"
+													>
+														En Juntxs I (2024)
+														comenzamos a tejer una
+														conversación
+														interterritorial
+														alrededor del agua y sus
+														memorias. Este primer
+														ciclo permitió abrir
+														vínculos entre artistas,
+														colectivos y
+														comunidades, activando
+														residencias, talleres y
+														acciones territoriales
+														que sembraron la base de
+														lo que hoy es
+														Hidropoéticas
+														Ambientales.
+													</p>
+													<p
+														class="text-lg text-white/90 leading-relaxed"
+													>
+														Desde allí se
+														consolidaron cruces
+														entre arte, educación y
+														defensa del territorio
+														entre Antioquia y
+														Santander, impulsando
+														procesos como Encuentros
+														Vivos: Cultura en
+														Movimiento, realizado
+														junto al colectivo El
+														Eje, y fortaleciendo
+														redes de colaboración
+														que continúan
+														expandiéndose.
+													</p>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						
 					</div>
 				</section>
 
-				<section id="sandra" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/correspondencias'">
+				<section
+					id="sandra"
+					class="py-6 group cursor-pointer"
+					onclick="window.location.href='/rio-de-oro/correspondencias'"
+				>
 					<div class="max-w-6xl mx-auto px-4">
-							<h2 id="sandra" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center">
-								<span class="text-white">
-							CORRESPONDENCIA ENTRE AGUAS
-								</span>
-							</h2>
-						
-							<div class="grid gap-6 mb-6">
-							<div class="">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/correspondencias1.png" alt="Origen del Rio de Oro" class="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white">Sandra Ramirez Giraldo</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-											Una corriente invisible conecta la Quebrada Santa Elena con el Río de Oro. Entre afluentes lejanos, la memoria fluye como un diálogo sobre defensa y cuidado.</p>
-											</div>
-											<div class="mt-4">
-												<span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50">
-													Explorar más
-													<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-													</svg>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					
-				</section>
-						<section id="maria" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/agueros'">
-					<div class="max-w-6xl mx-auto px-4">
-							<h2 id="maria" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300">
-								<span class="text-white">
-								Agüeros del Río de Oro 
-								</span>
-							</h2>
-						
-							<div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 group-hover:border-cyan-400/50 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<img src="/agueros1.png" alt="Rio de Oro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white">	Maria Carolina Ardila</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													Audiovisual que explora los presagios del río: señales, ecos y advertencias que emergen como memoria ancestral y potencia transformadora.
-												</p>
-											</div>
-											<div class="mt-6 space-y-4">
-												
-												<div class="mt-4">
-													<span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50">
-														Explorar más
-														<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-															<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-														</svg>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						
-				</section>
-
-					<section id="sofia" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/campanadeagua-barajasolar'">
-					<div class="max-w-6xl mx-auto px-4">
-							<h2 id="sofia" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center">
-								<span class="text-white">
-								Baraja Solar 	/Campana de Agua 
-								</span>
-							</h2>
-						
-							<div class="grid gap-6 mb-6">
-							<div class=" rounded-xl p-1">
-								<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
-										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"></div>
-												<div class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm">
-													<div class="h-full w-full flex items-center justify-center">
-														<div class="text-white text-opacity-80 space-y-4">
-															<img src="/campana1.png" alt="Rio de Oro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-											
-															
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-6">
-												<h3 class="text-2xl font-semibold text-white"> Laura Sofía Montoya </h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													La campana suena como alerta y cuidado. Un llamado colectivo frente al riesgo, donde el agua es nombrada como presencia y responsabilidad compartida.
-												</p>
-												<h3 class="text-2xl font-semibold text-white">
-													</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													La Baraja Solar es un juego de cartas que abre conversaciones sobre energía y agua. Una apuesta lúdica que siembra saberes para futuras generaciones.</p>
-											</div>
-											<div class="mt-4">
-												<span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50">
-													Explorar más
-													<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-													</svg>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-				</section>
-
-				<section id="asamblea" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/asamblea'">
-					<div class="max-w-6xl mx-auto px-4">
-						<h2 id="asamblea" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300">
+						<h2
+							id="sandra"
+							class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center"
+						>
 							<span class="text-white">
-								Asamblea del Agua
+								CORRESPONDENCIA ENTRE AGUAS
 							</span>
 						</h2>
 
 						<div class="grid gap-6 mb-6">
-							<div class="rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-500">
-								<div class="bg-gradient-to-br from-blue-900/40 via-cyan-800/40 to-emerald-700/40 rounded-lg backdrop-blur-lg p-8 border border-white/20 group-hover:border-cyan-300/50 transition-all duration-500">
-									<div class="flex flex-col md:flex-row gap-8">
+							<div class="">
+								<div
+									class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+								>
+									<div
+										class="flex flex-col md:flex-row gap-8"
+									>
 										<div class="w-full md:w-1/2">
-											<div class="h-64 rounded-lg overflow-hidden glass-container relative">
-												<div class="absolute inset-0 "></div>
-												<div class="h-full w-full flex items-center justify-center ">
-											<img src="/asamblea.png" alt="Asamblea del Agua" class="h-full  max-h-full mx-auto" />
+											<div
+												class="h-64 rounded-lg overflow-hidden glass-container relative"
+											>
+												<div
+													class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"
+												>
+												</div>
+												<img
+													src="/correspondencias1.png"
+													alt="Origen del Rio de Oro"
+													class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+												/>
+											</div>
+										</div>
+										<div
+											class="w-full md:w-1/2 flex flex-col justify-between"
+										>
+											<div class="space-y-6">
+												<h3
+													class="text-2xl font-semibold text-white"
+												>
+													Sandra Ramirez Giraldo
+												</h3>
+												<p
+													class="text-lg text-white/90 leading-relaxed"
+												>
+													Una corriente invisible
+													conecta la Quebrada Santa
+													Elena con el Río de Oro.
+													Entre afluentes lejanos, la
+													memoria fluye como un
+													diálogo sobre defensa y
+													cuidado.
+												</p>
+											</div>
+											<div class="mt-4">
+												<span
+													class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50"
+												>
+													Explorar más
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+														fill="none"
+														viewBox="0 0 24 24"
+														stroke="currentColor"
+													>
+														<path
+															stroke-linecap="round"
+															stroke-linejoin="round"
+															stroke-width="2"
+															d="M9 5l7 7-7 7"
+														></path>
+													</svg>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<section
+						id="maria"
+						class="py-6 group cursor-pointer"
+						onclick="window.location.href='/rio-de-oro/agueros'"
+					>
+						<div class="max-w-6xl mx-auto px-4">
+							<h2
+								id="maria"
+								class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300"
+							>
+								<span class="text-white">
+									Agüeros del Río de Oro
+								</span>
+							</h2>
+
+							<div class="grid gap-6 mb-6">
+								<div
+									class="rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 transition-all duration-500"
+								>
+									<div
+										class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 group-hover:border-cyan-400/50 transition-all duration-500"
+									>
+										<div
+											class="flex flex-col md:flex-row gap-8"
+										>
+											<div class="w-full md:w-1/2">
+												<div
+													class="h-64 rounded-lg overflow-hidden glass-container relative"
+												>
+													<div
+														class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"
+													>
+													</div>
+													<img
+														src="/agueros1.png"
+														alt="Rio de Oro"
+														class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+													/>
+												</div>
+											</div>
+											<div
+												class="w-full md:w-1/2 flex flex-col justify-between"
+											>
+												<div class="space-y-6">
+													<h3
+														class="text-2xl font-semibold text-white"
+													>
+														Maria Carolina Ardila
+													</h3>
+													<p
+														class="text-lg text-white/90 leading-relaxed"
+													>
+														Audiovisual que explora
+														los presagios del río:
+														señales, ecos y
+														advertencias que emergen
+														como memoria ancestral y
+														potencia transformadora.
+													</p>
+												</div>
+												<div class="mt-6 space-y-4">
+													<div class="mt-4">
+														<span
+															class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50"
+														>
+															Explorar más
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+																fill="none"
+																viewBox="0 0 24 24"
+																stroke="currentColor"
+															>
+																<path
+																	stroke-linecap="round"
+																	stroke-linejoin="round"
+																	stroke-width="2"
+																	d="M9 5l7 7-7 7"
+																></path>
+															</svg>
+														</span>
+													</div>
 												</div>
 											</div>
 										</div>
-										<div class="w-full md:w-1/2 flex flex-col justify-between">
-											<div class="space-y-5">
-												<h3 class="text-2xl font-semibold text-white">Alienígenas en Santurbán</h3>
-												<p class="text-lg text-white/90 leading-relaxed">
-													Una asamblea expandida donde comunidades, artistas y guardianes del agua invocan voces alienígenas para narrar la defensa del páramo de Santurbán. 
-													Las intervenciones performáticas convierten el territorio en un organismo vivo que exige protección.
-												</p>
-												<!-- <ul class="space-y-2 text-white/90">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<section
+							id="sofia"
+							class="py-6 group cursor-pointer"
+							onclick="window.location.href='/rio-de-oro/campanadeagua-barajasolar'"
+						>
+							<div class="max-w-6xl mx-auto px-4">
+								<h2
+									id="sofia"
+									class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center"
+								>
+									<span class="text-white">
+										Baraja Solar /Campana de Agua
+									</span>
+								</h2>
+
+								<div class="grid gap-6 mb-6">
+									<div class="rounded-xl p-1">
+										<div
+											class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+										>
+											<div
+												class="flex flex-col md:flex-row gap-8"
+											>
+												<div class="w-full md:w-1/2">
+													<div
+														class="h-64 rounded-lg overflow-hidden glass-container relative"
+													>
+														<div
+															class="absolute inset-0 bg-gradient-to-t from-[#1b7895]/20 to-transparent"
+														>
+														</div>
+														<div
+															class="h-full w-full bg-gradient-to-br from-[#1b7895]/40 to-[#2a97b8]/40 backdrop-blur-sm"
+														>
+															<div
+																class="h-full w-full flex items-center justify-center"
+															>
+																<div
+																	class="text-white text-opacity-80 space-y-4"
+																>
+																	<img
+																		src="/campana1.png"
+																		alt="Rio de Oro"
+																		class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+																	/>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="w-full md:w-1/2 flex flex-col justify-between"
+												>
+													<div class="space-y-6">
+														<h3
+															class="text-2xl font-semibold text-white"
+														>
+															Laura Sofía Montoya
+														</h3>
+														<p
+															class="text-lg text-white/90 leading-relaxed"
+														>
+															La campana suena
+															como alerta y
+															cuidado. Un llamado
+															colectivo frente al
+															riesgo, donde el
+															agua es nombrada
+															como presencia y
+															responsabilidad
+															compartida.
+														</p>
+														<h3
+															class="text-2xl font-semibold text-white"
+														>
+														</h3>
+														<p
+															class="text-lg text-white/90 leading-relaxed"
+														>
+															La Baraja Solar es
+															un juego de cartas
+															que abre
+															conversaciones sobre
+															energía y agua. Una
+															apuesta lúdica que
+															siembra saberes para
+															futuras
+															generaciones.
+														</p>
+													</div>
+													<div class="mt-4">
+														<span
+															class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50"
+														>
+															Explorar más
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+																fill="none"
+																viewBox="0 0 24 24"
+																stroke="currentColor"
+															>
+																<path
+																	stroke-linecap="round"
+																	stroke-linejoin="round"
+																	stroke-width="2"
+																	d="M9 5l7 7-7 7"
+																></path>
+															</svg>
+														</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<section
+								id="asamblea"
+								class="py-6 group cursor-pointer"
+								onclick="window.location.href='/rio-de-oro/asamblea'"
+							>
+								<div class="max-w-6xl mx-auto px-4">
+									<h2
+										id="asamblea"
+										class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300"
+									>
+										<span class="text-white">
+										Juntxs II
+										</span>
+									</h2>
+									<h2
+										id="asamblea"
+										class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300"
+									>
+										<span class="text-white">
+											Asamblea del Agua
+										</span>
+									</h2>
+
+									<div class="grid gap-6 mb-6">
+										<div
+											class="rounded-xl p-1 group-hover:shadow-2xl group-hover:shadow-blue-500/20 transition-all duration-500"
+										>
+											<div
+												class="bg-gradient-to-br from-blue-900/40 via-cyan-800/40 to-emerald-700/40 rounded-lg backdrop-blur-lg p-8 border border-white/20 group-hover:border-cyan-300/50 transition-all duration-500"
+											>
+												<div
+													class="flex flex-col md:flex-row gap-8"
+												>
+													<div
+														class="w-full md:w-1/2"
+													>
+														<div
+															class="h-64 rounded-lg overflow-hidden glass-container relative"
+														>
+															<div
+																class="absolute inset-0"
+															>
+															</div>
+															<div
+																class="h-full w-full flex items-center justify-center"
+															>
+																<img
+																	src="/asamblea.png"
+																	alt="Asamblea del Agua"
+																	class="h-full max-h-full mx-auto"
+																/>
+															</div>
+														</div>
+													</div>
+													<div
+														class="w-full md:w-1/2 flex flex-col justify-between"
+													>
+														<div class="space-y-5">
+															<h3
+																class="text-2xl font-semibold text-white"
+															>
+																Alienígenas en
+																Santurbán
+															</h3>
+															<p
+																class="text-lg text-white/90 leading-relaxed"
+															>
+																Una asamblea
+																expandida donde
+																comunidades,
+																artistas y
+																guardianes del
+																agua invocan
+																voces
+																alienígenas para
+																narrar la
+																defensa del
+																páramo de
+																Santurbán. Las
+																intervenciones
+																performáticas
+																convierten el
+																territorio en un
+																organismo vivo
+																que exige
+																protección.
+															</p>
+															<!-- <ul class="space-y-2 text-white/90">
 													<li class="flex items-start gap-2">
 														<span class="mt-1 h-2 w-2 rounded-full bg-cyan-300"></span>
 														<span>Laboratorios sonoros y visuales que imaginan alianzas con otras especies.</span>
@@ -274,24 +595,37 @@ Hidropoéticas Ambientales es un repositorio vivo de residencias y artistas atra
 														<span>Diálogos con lideresas ambientales que sostienen la defensa del agua.</span>
 													</li>
 												</ul> -->
-											</div>
-											<div class="mt-6">
-												<span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50">
-													Explorar más
-													<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-													</svg>
-												</span>
+														</div>
+														<div class="mt-6">
+															<span
+																class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-200 px-4 py-2 rounded-lg border border-cyan-500/30 transition-all duration-300 text-sm font-medium backdrop-blur-sm group-hover:bg-cyan-500/30 group-hover:border-cyan-400/50"
+															>
+																Explorar más
+																<svg
+																	xmlns="http://www.w3.org/2000/svg"
+																	class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
+																	fill="none"
+																	viewBox="0 0 24 24"
+																	stroke="currentColor"
+																>
+																	<path
+																		stroke-linecap="round"
+																		stroke-linejoin="round"
+																		stroke-width="2"
+																		d="M9 5l7 7-7 7"
+																	></path>
+																</svg>
+															</span>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+							</section>
 
-				<!-- <section id="caravana" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/caravana'">
+							<!-- <section id="caravana" class="py-6 group cursor-pointer" onclick="window.location.href='/rio-de-oro/caravana'">
 					<div class="max-w-6xl mx-auto px-4">
 						<h2 id="caravana" class="text-5xl font-bold text-white mb-6 text-shadow-lg text-center group-hover:scale-105 transition-transform duration-300">
 							<span class="text-white">
@@ -346,103 +680,119 @@ Hidropoéticas Ambientales es un repositorio vivo de residencias y artistas atra
 						</div>
 					</div>
 				</section> -->
+						</section>
+					</section>
+				</section>
 
+				<WaterSectionTransition client:load />
+
+				<script>
+					let currentSection = "";
+					let isTransitioning = false;
+
+					const observer = new IntersectionObserver(
+						(entries) => {
+							entries.forEach((entry) => {
+								if (
+									entry.isIntersecting &&
+									entry.intersectionRatio > 0.5
+								) {
+									const newSection = entry.target.id;
+									if (currentSection !== newSection) {
+										currentSection = newSection;
+										triggerTransition();
+									}
+								}
+							});
+						},
+						{
+							threshold: 0.5,
+						},
+					);
+
+					// Observar todas las secciones
+					document
+						.querySelectorAll("section[id]")
+						.forEach((section) => {
+							observer.observe(section);
+						});
+
+					function triggerTransition() {
+						if (isTransitioning) return;
+
+						const transitionComponent = document.querySelector(
+							"[data-water-transition]",
+						);
+						if (transitionComponent) {
+							isTransitioning = true;
+							transitionComponent.dispatchEvent(
+								new CustomEvent("startTransition"),
+							);
+
+							// La transición se resetea automáticamente en el componente cuando se completa
+							setTimeout(() => {
+								isTransitioning = false;
+							}, 2000); // Un poco más de tiempo para asegurar que la animación termine
+						}
+					}
+				</script>
+
+				<style>
+					@import url("/src/styles/river-flow.css");
+
+					/* Asegurar que el contenido principal no se oculte detrás de la navegación */
+					.flex-1 {
+						margin-left: 280px;
+					}
+
+					/* Estilos para mejorar la legibilidad */
+					.text-shadow-lg {
+						text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+					}
+
+					section {
+						position: relative;
+						overflow: hidden;
+					}
+
+					/* Sin fondo extra detrás de las secciones */
+					section::before {
+						content: none;
+					}
+
+					/* Ajustes para pantallas pequeñas */
+					@media (max-width: 1024px) {
+						.flex-1 {
+							margin-left: 0;
+						}
+					}
+
+					/* Mejoras adicionales para móvil */
+					@media (max-width: 768px) {
+						.glass-container {
+							height: 200px;
+						}
+
+						section {
+							min-height: auto;
+							padding: 2rem 0;
+						}
+
+						.space-y-6 > * + * {
+							margin-top: 1rem;
+						}
+
+						h2 {
+							font-size: 2rem;
+							margin-bottom: 2rem;
+						}
+
+						.max-w-6xl {
+							padding: 0 1rem;
+						}
+					}
+				</style>
 			</div>
 		</div>
-	</main>
-	
-	<WaterSectionTransition client:load />
-
-	<script>
-		let currentSection = '';
-		let isTransitioning = false;
-
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-					const newSection = entry.target.id;
-					if (currentSection !== newSection) {
-						currentSection = newSection;
-						triggerTransition();
-					}
-				}
-			});
-		}, {
-			threshold: 0.5
-		});
-
-		// Observar todas las secciones
-		document.querySelectorAll('section[id]').forEach(section => {
-			observer.observe(section);
-		});
-
-		function triggerTransition() {
-			if (isTransitioning) return;
-			
-			const transitionComponent = document.querySelector('[data-water-transition]');
-			if (transitionComponent) {
-				isTransitioning = true;
-				transitionComponent.dispatchEvent(new CustomEvent('startTransition'));
-				
-				// La transición se resetea automáticamente en el componente cuando se completa
-				setTimeout(() => {
-					isTransitioning = false;
-				}, 2000); // Un poco más de tiempo para asegurar que la animación termine
-			}
-		}
-	</script>
-
-	<style>
-		@import url("/src/styles/river-flow.css");
-		
-		/* Asegurar que el contenido principal no se oculte detrás de la navegación */
-		.flex-1 {
-			margin-left: 280px;
-		}
-
-		/* Estilos para mejorar la legibilidad */
-		.text-shadow-lg {
-			text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-		}
-
-		section {
-			position: relative;
-			overflow: hidden;
-		}
-
-    /* Sin fondo extra detrás de las secciones */
-    section::before { content: none; }
-
-		/* Ajustes para pantallas pequeñas */
-		@media (max-width: 1024px) {
-			.flex-1 {
-				margin-left: 0;
-			}
-		}
-
-		/* Mejoras adicionales para móvil */
-		@media (max-width: 768px) {
-			.glass-container {
-				height: 200px;
-			}
-			
-			section {
-				min-height: auto;
-				padding: 2rem 0;
-			}
-			
-			.space-y-6 > * + * {
-				margin-top: 1rem;
-			}
-			
-			h2 {
-				font-size: 2rem;
-				margin-bottom: 2rem;
-			}
-			
-			.max-w-6xl {
-				padding: 0 1rem;
-			}
-		}
-	</style>
-</Layout>
+	</main></Layout
+>

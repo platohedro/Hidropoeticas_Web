@@ -1,6 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import ImageGallery from "../../components/ImageGallery.jsx";
+
+// Definir las imágenes de la galería de agüeros
+const galleryImages = [
+	{ src: "/galeria-agueros/1.jpg", alt: "Agüeros del Río de Oro 1" },
+	{ src: "/galeria-agueros/2.png", alt: "Agüeros del Río de Oro 2" },
+	{ src: "/galeria-agueros/3.jpg", alt: "Agüeros del Río de Oro 3" },
+];
 ---
 
 <Layout title="Rio de Oro - Agüeros del Río de Oro - Hidropoeticas">
@@ -8,82 +16,148 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8 flex gap-4">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Inicio
 				</a>
-				<a href="/rio-de-oro" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600/20 to-yellow-600/20 hover:from-amber-500/30 hover:to-yellow-500/30 text-amber-200 hover:text-white px-4 py-2 rounded-lg border border-amber-500/30 hover:border-amber-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-amber-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/rio-de-oro"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600/20 to-yellow-600/20 hover:from-amber-500/30 hover:to-yellow-500/30 text-amber-200 hover:text-white px-4 py-2 rounded-lg border border-amber-500/30 hover:border-amber-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-amber-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Rio de Oro
 				</a>
 			</nav>
-		
 		</header>
 
 		<!-- River Navigation -->
-		<VerticalRiverNav 
+		<VerticalRiverNav
 			client:load
 			sections={[
-				{ id: 'historia-tradicion', text: 'Agüeros del Río de Oro' },
-				{ id: 'artista', text: 'Artista' },
+				{ id: "historia-tradicion", text: "Agüeros del Río de Oro" },
+				{ id: "artista", text: "Artista" },
 			]}
 		/>
 
 		<!-- Content Section -->
 		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
-			<section class="min-h-screen flex items-center justify-center py-16">
+			<section
+				class="min-h-screen flex items-center justify-center py-16"
+			>
 				<div class="max-w-6xl mx-auto px-4">
 					<div class="grid gap-12 mb-12">
 						<!-- Historia y Tradición -->
-						<div id="historia-tradicion" class=" rounded-xl p-1">
-							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								
+						<div id="historia-tradicion" class="rounded-xl p-1">
+							<div
+								class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+							>
 								<div class="grid md:grid-cols-1 gap-6">
-										<div class="text-center">
-				<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">Agüeros del Río de Oro</h1>
-				<p class="text-lg md:text-xl text-white opacity-90 px-4">Maria Carolina Ardila</p>
-			
-				<video 
-				src="/Quebrada-SantaElena.MOV" 
-				autoplay
-				class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
-				style="max-height: 70vh;"
-			/>
-			
-			
-			</div>
-									<div class="space-y-6">
-										<p class="text-lg text-white/90 leading-relaxed max-w-none">
-										Un viaje audiovisual que indaga en los presagios que emergen del río. Los agüeros, como ecos de lo tradicional, se convierten en imágenes y sonidos que revelan sus advertencias y su potencia transformadora, su elogio al juego y la cotidianidad.
+									<div class="text-center">
+										<h1
+											class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+										>
+											Agüeros del Río de Oro
+										</h1>
+										<p
+											class="text-lg md:text-xl text-white opacity-90 px-4"
+										>
+											Maria Carolina Ardila
 										</p>
-										<p class="text-lg text-white/90 leading-relaxed max-w-none">
-											Los abuelos cuentan que sus antepasados veían en las aguas doradas del río un regalo de la naturaleza, 
-											un símbolo de prosperidad que les recordaba la importancia de vivir en armonía con el entorno natural.
+
+										<video
+											src="https://ia801605.us.archive.org/13/items/agueros_de_rio/agueros_de_ri%CC%81o.mp4"
+											class="w-full max-w-4xl mx-auto mt-6 rounded-lg shadow-lg aspect-video object-cover"
+											style="max-height: 70vh;"
+											controls
+											autoplay
+											loop
+											muted
+											playsinline></video>
+									</div>
+									<div class="space-y-6">
+										<p
+											class="text-lg text-white/90 leading-relaxed max-w-none"
+										>
+											<b>Los agüeros del Río de Oro</b> son
+											un viaje audiovisual que indaga en los
+											presagios que emergen del río. Los agüeros
+											—ecos de lo tradicional y señales vivas
+											del territorio— se transforman en imágenes
+											y sonidos que revelan advertencias, memorias
+											y potencias que habitan su cauce.
+										</p>
+										<p
+											class="text-lg text-white/90 leading-relaxed max-w-none"
+										>
+											Este audiovisual colectivo recoge
+											las señales, ecos y advertencias que
+											la comunidad reconoce en el Río de
+											Oro: presagios que buscan prevenir a
+											los desprevenidos e incrédulos sobre
+											los poderes del río. Entre juego y
+											cotidianidad, estos agüeros se
+											convierten en un lenguaje vivo que
+											recuerda la fuerza transformadora
+											del agua.
 										</p>
 									</div>
-								
 
-									<img src="/agueros1.1.png" 
-										alt="Agüeros del Río de Oro" 
-										class=" max-w-4xl mx-auto mt-6 rounded-lg shadow-lg object-cover"
-										style="max-height: 70vh;">
+									<!-- Galería de Agüeros -->
+									<div class="mt-8">
+										<ImageGallery
+											client:load
+											images={galleryImages}
+											title="Galería: Agüeros del Río de Oro"
+											columns={3}
+										/>
+									</div>
 								</div>
 							</div>
 						</div>
 
-					
-
 						<!-- Artista -->
 						<div id="artista" class="rounded-xl p-1">
-							<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500">
-								<div class="flex flex-col md:flex-row gap-8 items-center">
+							<div
+								class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 border border-white/20 hover:border-white/40 transition-all duration-500"
+							>
+								<div
+									class="flex flex-col md:flex-row gap-8 items-center"
+								>
 									<div class="w-full md:w-1/2">
-										<div class="h-72 rounded-lg overflow-hidden glass-container relative">
-											<div class="absolute inset-0 bg-gradient-to-t from-[#f29f05]/30 to-transparent"></div>
+										<div
+											class="h-72 rounded-lg overflow-hidden glass-container relative"
+										>
+											<div
+												class="absolute inset-0 bg-gradient-to-t from-[#f29f05]/30 to-transparent"
+											>
+											</div>
 											<img
 												src="/mariartista.png"
 												alt="Retrato de Maria Carolina Ardila"
@@ -92,30 +166,55 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 										</div>
 									</div>
 									<div class="w-full md:w-1/2 space-y-5">
-										<p class="uppercase text-sm tracking-[0.3em] text-amber-200">Artista invitada</p>
-										<h2 class="text-3xl font-semibold text-white drop-shadow-lg">María Carolina Ardila</h2>
-										<p class="text-lg text-white/90 leading-relaxed">
-											Artista visual, investigadora y pedagoga que camina los ríos para tejer diálogos entre arte y ciencia.
-											En Agüeros del Río de Oro explora los presagios del agua a partir de archivos familiares, recorridos comunitarios
-											y registros audiovisuales que cuestionan las amenazas sobre la cuenca.
+										<p
+											class="uppercase text-sm tracking-[0.3em] text-amber-200"
+										>
+											Artista invitada
 										</p>
-										<p class="text-lg text-white/80 leading-relaxed">
-											Su práctica combina grabación de campo, escritura y montaje audiovisual.
-											Desde laboratorios, archivos y territorios custodiados por las comunidades, recopila historias, voces
-											y objetos que se transforman en experiencias inmersivas para defender el río.
+										<h2
+											class="text-3xl font-semibold text-white drop-shadow-lg"
+										>
+											María Carolina Ardila
+										</h2>
+										<p
+											class="text-lg text-white/90 leading-relaxed"
+										>
+											Artista visual, investigadora y
+											pedagoga que camina los ríos para
+											tejer diálogos entre arte y ciencia.
+											En Agüeros del Río de Oro explora
+											los presagios del agua a partir de
+											archivos familiares, recorridos
+											comunitarios y registros
+											audiovisuales que cuestionan las
+											amenazas sobre la cuenca.
 										</p>
-										<div class="flex flex-wrap gap-3 text-white/70 text-sm">
-											<a  href="" target="_blank"><span
-										class="px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm"
-										>Ver Perfil</span
-									>
-									</a>	
+										<p
+											class="text-lg text-white/80 leading-relaxed"
+										>
+											Su práctica combina grabación de
+											campo, escritura y montaje
+											audiovisual. Desde laboratorios,
+											archivos y territorios custodiados
+											por las comunidades, recopila
+											historias, voces y objetos que se
+											transforman en experiencias
+											inmersivas para defender el río.
+										</p>
+										<div
+											class="flex flex-wrap gap-3 text-white/70 text-sm"
+										>
+											<a href="" target="_blank"
+												><span
+													class="px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm"
+													>Ver Perfil</span
+												>
+											</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-				
 					</div>
 				</div>
 			</section>
@@ -124,10 +223,10 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 
 	<style>
 		@import url("/src/styles/river-flow.css");
-		
+
 		/* Estilos para mejorar la legibilidad */
 		.text-shadow-lg {
-			text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+			text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 		}
 
 		section {
@@ -135,8 +234,10 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 			overflow: hidden;
 		}
 
-    /* Sin fondo extra detrás de las secciones */
-    section::before { content: none; }
+		/* Sin fondo extra detrás de las secciones */
+		section::before {
+			content: none;
+		}
 
 		.glass-container {
 			position: relative;
@@ -148,16 +249,16 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 			.glass-container {
 				height: 200px;
 			}
-			
+
 			section {
 				min-height: auto;
 				padding: 2rem 0;
 			}
-			
+
 			h1 {
 				font-size: 2rem;
 			}
-			
+
 			h2 {
 				font-size: 1.75rem;
 				margin-bottom: 1.5rem;

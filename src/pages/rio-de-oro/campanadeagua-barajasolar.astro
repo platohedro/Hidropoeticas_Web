@@ -1,6 +1,22 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import ImageGallery from "../../components/ImageGallery.jsx";
+
+// Definir las imágenes de la galería de campana
+const galleryCampanaImages = [
+	{ src: "/galeria-campana/1.jpg", alt: "Campana de Agua 1" },
+	{ src: "/galeria-campana/2.png", alt: "Campana de Agua 2" },
+	{ src: "/galeria-campana/3.jpg", alt: "Campana de Agua 3" },
+	{ src: "/galeria-campana/4.jpg", alt: "Campana de Agua 4" },
+];
+
+// Galería de la carpeta galeria-baraja
+const galleryBarajaImages = [
+	{ src: "/galeria-baraja/1.jpg", alt: "Baraja Solar 1" },
+	{ src: "/galeria-baraja/2.jpg", alt: "Baraja Solar 2" },
+	{ src: "/galeria-baraja/3.png", alt: "Baraja Solar 3" },
+];
 ---
 
 <Layout title="Rio de Oro - Desafíos y Resiliencia - Hidropoeticas">
@@ -81,12 +97,21 @@ import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 							<p
 								class="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto"
 							>
-								Un juego de cartas que abre conversaciones sobre
-								energía y agua. Cada carta propone dinámicas de
-								cuidado colectivo y activa la imaginación para
-								sembrar saberes en comunidades escolares,
-								festivales y asambleas del agua.
+					Es un oráculo comunitario que invita a leer el territorio desde el juego. A través de dinámicas lúdicas y participativas, esta baraja activa la imaginación como herramienta para pensar el presente ambiental y para proyectar futuros posibles. Cada carta nace de imaginar lo distópico y lo esperanzador a la vez: advertencias, aprendizajes y pulsos de vida que dialogan con las realidades ambientales que habitamos.
 							</p>
+
+
+									<p
+								class="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto"
+							>
+				La Baraja Solar se activa en colectivo. No predice: abre conversaciones. Invita a pensar en las relaciones que sostenemos con el agua, la tierra y el sol, y a reconocer las energías que circulan en nuestros territorios —las que cuidan, las que resisten y las que anuncian transformaciones.		</p>
+
+
+									<p
+								class="text-lg text-white/90 leading-relaxed max-w-3xl mx-auto"
+							>
+				Su experiencia en la Biblioteca La Bellecera permitió compartirla con la comunidad como herramienta lúdica y sensible para leer el presente, imaginar otros futuros y fortalecer las prácticas de cuidado en torno a lo vivo. Allí, la baraja se convirtió en punto de encuentro, ejercicio creativo y espejo de las memorias y preocupaciones ambientales de la región.
+		</p>
 							<div class="flex justify-center">
 								<a
 									href="https://barajasolar.com"
@@ -113,6 +138,19 @@ import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 									Ver sitio web
 								</a>
 							</div>
+
+
+							<div class="mt-10">
+								<ImageGallery
+									client:load
+									images={galleryBarajaImages}
+									title="Galería Baraja Solar"
+									columns={3}
+								/>
+							</div>
+
+
+							
 						</div>
 					</div>
 				</section>
@@ -121,50 +159,100 @@ import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 					<div
 						class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 md:p-10 border border-white/20 hover:border-white/40 transition-all duration-500"
 					>
-						<div class="grid md:grid-cols-2 gap-8 items-center">
-							<div class="space-y-5">
-								<h2
-									class="text-3xl font-bold text-white drop-shadow-lg"
-								>
-									Campana de Agua
-								</h2>
+						<div class="space-y-6">
+							<h2
+								class="text-3xl font-bold text-white drop-shadow-lg text-center"
+							>
+								Campana de Agua
+							</h2>
+
+							<!-- Imagen centrada -->
+							<div class="flex justify-center">
+								<img
+									src="/campana_de_agua.jpg"
+									alt="Campana Comunitaria"
+									class="rounded-lg shadow-lg object-cover max-w-2xl w-full"
+								/>
+							</div>
+
+							<!-- Textos -->
+							<div class="space-y-5 max-w-4xl mx-auto">
 								<p
 									class="text-lg text-white/90 leading-relaxed"
 								>
-									En el barrio Molino, la comunidad hace sonar
-									su campana: alerta, cuidado y prevención
-									frente al riesgo. El sonido convoca a la
-									acción colectiva, convierte el agua en
-									presencia cotidiana y en responsabilidad
-									compartida.
+									La campana suena como alerta y cuidado: un
+									llamado colectivo frente al riesgo, donde el
+									agua se nombra como presencia viva y
+									responsabilidad compartida. Este juego,
+									creado por Proyecto NN —del cual hace parte
+									Laura Sofía Montoya— en colaboración con la
+									Corporación Somos por Naturaleza y
+									habitantes del barrio La Honda en Medellín,
+									enseña de forma lúdica los ciclos del agua
+									en la ladera y su relación con el
+									territorio.
 								</p>
-								<ul class="text-white/80 space-y-2 text-base">
-									<li>
-										• Acompañamiento comunitario en
-										emergencias y crecientes del río.
-									</li>
-									<li>
-										• Ceremonias para agradecer y pedir
-										protección al agua.
-									</li>
-									<li>
-										• Talleres con niñas y jóvenes para
-										crear nuevos toques y relatos.
-									</li>
-								</ul>
-							</div>
-							<div
-								class="h-60 rounded-2xl overflow-hidden glass-container relative"
-							>
-								<div
-									class="absolute inset-0 bg-black/20 mix-blend-overlay"
+								<p
+									class="text-lg text-white/90 leading-relaxed"
 								>
+									A través de un juego de roles simple y
+									práctico, la propuesta promueve la
+									organización comunitaria y el trabajo
+									colectivo como estrategias para el
+									mejoramiento del hábitat popular, utilizando
+									herramientas pedagógicas accesibles a
+									contextos barriales.
+								</p>
+								<p
+									class="text-lg text-white/90 leading-relaxed"
+								>
+									Durante el proceso de circulación artística
+									en el barrio El Molino, la campana viajó
+									hasta Piedecuesta, Santander, para resonar
+									allí también: alerta, cuidado y prevención
+									frente al riesgo. En este encuentro, el agua
+									volvió a ser nombrada en colectivo,
+									reafirmando su presencia y el compromiso
+									compartido de protegerla.
+								</p>
+
+								<!-- Galería de Campana de Agua -->
+								<div class="mt-8">
+									<ImageGallery
+										client:load
+										images={galleryCampanaImages}
+										title="Galería: Campana de Agua"
+										columns={3}
+									/>
 								</div>
-								<img
-									src="/campana1.png"
-									alt="Campana Comunitaria"
-									class="w-full h-full object-cover"
-								/>
+
+								<div class="mt-6 max-w-4xl mx-auto bg-white/5 p-4 rounded-lg">
+									<h3 class="text-lg font-semibold text-white mb-2">MATERIAL DE CONSULTA:</h3>
+									<ul class="list-none space-y-2 text-white/90">
+										<li>
+											Cómic Campana de Agua &nbsp;→&nbsp;
+											<a
+												href="https://archive.org/details/comic-campana-de-agua/page/n5/mode/2up"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="underline text-cyan-200"
+											>
+												https://archive.org/details/comic-campana-de-agua/page/n5/mode/2up
+											</a>
+										</li>
+										<li>
+											Sobre el Barrio El Molino &nbsp;→&nbsp;
+											<a
+												href="https://drive.google.com/file/d/17aIRDXHDUuFtb_-UBfGJ-90ESpjBhSLf/view?usp=drive_link"
+												target="_blank"
+												rel="noopener noreferrer"
+												class="underline text-cyan-200"
+											>
+												https://drive.google.com/file/d/17aIRDXHDUuFtb_-UBfGJ-90ESpjBhSLf/view?usp=drive_link
+											</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -284,14 +372,19 @@ import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 									vecinxs del Río de Oro
 								</p>
 
-								<ul class="list-disc ml-5 space-y-2 text-white/80">
+								<ul
+									class="list-disc ml-5 space-y-2 text-white/80"
+								>
 									<li>
-										Recorridos, encuentros y charlas colectivas en el marco del Festival de la Tigra,
-										junto a la Comunidad Barrio Molino y la Biblioteca La Bellecera.
+										Recorridos, encuentros y charlas
+										colectivas en el marco del Festival de
+										la Tigra, junto a la Comunidad Barrio
+										Molino y la Biblioteca La Bellecera.
 									</li>
 									<li>
-										Asamblea del Agua: "Alienígenas en Santurbán" y Caravana "Cuando el Río Suena" —
-										9° Festival de la Tigra, 2025.
+										Asamblea del Agua: "Alienígenas en
+										Santurbán" y Caravana "Cuando el Río
+										Suena" — 9° Festival de la Tigra, 2025.
 									</li>
 								</ul>
 
@@ -302,11 +395,12 @@ import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 								<div
 									class="flex flex-wrap gap-3 text-white/70 text-sm"
 								>
-								<a  href="" target="_blank"><span
-										class="px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm"
-										>Ver Perfil</span
-									>
-									</a>	
+									<a href="" target="_blank"
+										><span
+											class="px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm"
+											>Ver Perfil</span
+										>
+									</a>
 								</div>
 							</div>
 						</div>
