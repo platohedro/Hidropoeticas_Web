@@ -1,58 +1,219 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import ImageGallery from "../../components/ImageGallery.jsx";
+
+const galleryImages = [
+	{ src: "/galeria-asamblea/1.jpg", alt: "Asamblea del Agua 1" },
+	{ src: "/galeria-asamblea/2.png", alt: "Asamblea del Agua 2" },
+	{ src: "/galeria-asamblea/3.png", alt: "Asamblea del Agua 3" },
+	{ src: "/galeria-asamblea/4.jpg", alt: "Asamblea del Agua 4" },
+	{ src: "/galeria-asamblea/5.jpg", alt: "Asamblea del Agua 5" },
+	{ src: "/galeria-asamblea/5.png", alt: "Asamblea del Agua 6" },
+	{ src: "/galeria-asamblea/6.jpg", alt: "Asamblea del Agua 7" },
+];
 ---
 
 <Layout title="Rio de Oro - Asamblea del Agua">
 	<main class="min-h-screen">
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
 			<nav class="mb-4 md:mb-8 flex gap-4 flex-wrap">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Inicio
 				</a>
-				<a href="/rio-de-oro" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-500/30 hover:to-blue-500/30 text-emerald-100 hover:text-white px-4 py-2 rounded-lg border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-emerald-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/rio-de-oro"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-500/30 hover:to-blue-500/30 text-emerald-100 hover:text-white px-4 py-2 rounded-lg border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-emerald-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Río de Oro
 				</a>
 			</nav>
 			<div class="text-center mt-6">
-				
-				<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Asamblea del Agua</h1>
-				<p class="text-sm uppercase tracking-[0.3em] text-cyan-200/80 mb-2">Alienígenas en Santurbán</p>
+				<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">
+					Asamblea del Agua
+				</h1>
+				<p
+					class="text-sm uppercase tracking-[0.3em] text-cyan-200/80 mb-2"
+				>
+					Alienígenas en Santurbán
+				</p>
 				<p class="text-lg text-white/80"></p>
-					
 			</div>
 		</header>
 
 		<VerticalRiverNav
 			client:load
 			sections={[
-				{ id: 'asamblea', text: 'Asamblea del Agua' },
+				{ id: "juntxs", text: "Juntxs" },
+				{ id: "asamblea", text: "Asamblea del Agua" },
 				// { id: 'acciones', text: 'Acciones performáticas' },
 				// { id: 'memorias', text: 'Memorias del páramo' },
 			]}
 		/>
 
-		<section id="asamblea" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-5xl mx-auto bg-gradient-to-b from-white/10 to-white/5 rounded-3xl border border-white/15 p-8 backdrop-blur-xl">
-				<div class="max-w-3xl mx-auto text-center space-y-5">
-					<img src="/asamblea.png" alt="Asamblea del Agua" class="pt-4 h-full object-cover mx-auto block rounded-lg" />
-					<!-- <h2 class="text-3xl font-semibold text-white">El páramo convoca</h2> -->
-					<p class="text-white/90 leading-relaxed">
-						Las aguas nos convocan a juntarnos, a defender lo que fluye y sostiene la vida. En el marco del 9° Festival de la Tigra, Hidropoéticas Ambientales hizo parte de la Asamblea del Agua: Alienígenas en Santurbán y de la Caravana del Agua: Cuando el Río Suena, dos actos colectivos que unen arte, territorio y resistencia en defensa de los páramos y de los cuerpos de agua que nos mantienen vivxs.
-						Desde la palabra, la música, el muralismo, la siembra y el ritual, se activaron diálogos urgentes sobre la protección del agua como derecho común y memoria viva. La fuerza de las comunidades que cuidan estos territorios nos recordó que el agua no solo nutre: enseña, conecta y nos convoca al cuidado mutuo.
-						Para Hidropoéticas Ambientales, esta participación reafirma nuestro compromiso: seguir tejiendo lenguajes sensibles que permitan escuchar los ríos, seguir caminando junto a quienes resisten y sueñan territorios más justos, seguir defendiendo las aguas que nos atraviesan.
-					</p>
-				</div>
+		<section id="juntxs" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div
+				class="max-w-6xl mx-auto bg-gradient-to-b from-white/10 to-white/5 rounded-3xl border border-white/15 p-8 backdrop-blur-xl"
+			>
+				<div class="grid gap-10 md:grid-cols-[1fr,0.95fr] items-start">
+					<div class="space-y-6 text-white">
+						<h2 class="text-4xl font-bold text-white">
+							Asamblea del Agua: Alienígenas en Santurbán
+						</h2>
+						<p class="text-lg text-white/90 leading-relaxed">
+							Asamblea del Agua: Alienígenas en Santurbán fue un
+							encuentro para recordar la urgencia de entrelazar
+							lenguajes —arte, ciencia, investigación,
+							organización comunitaria y acción política— en
+							defensa de lo vital: las aguas y los territorios.
+						</p>
+						<p class="text-lg text-white/90 leading-relaxed">
+							Este espacio, convocado por el Festival de la Tigra,
+							reunió voces y oficios diversos que hoy ponen su
+							mirada y su acción sobre los páramos, uno de los
+							ecosistemas más amenazados y esenciales del país.
+							Allí afirmamos que el arte puede ser río: un
+							lenguaje que moviliza, conecta y despierta nuevas
+							formas de sensibilidad y cuidado.
+						</p>
+						<p class="text-lg text-white/90 leading-relaxed">
+							Nuestra participación hizo parte de Encuentros Vivos
+							– Cultura en Movimiento, en el marco de la beca
+							JUNTXS: Circulación y Colaboración en Artes
+							Plásticas y Visuales, en la que se reconocen los
+							relatos y las aguas de Antioquia y Santander, entre
+							la Quebrada Santa Elena y el Río de Oro, dentro del
+							territorio y desde la escucha compartida.
+						</p>
+						<p class="text-lg text-white/90 leading-relaxed">
+							La Asamblea fue la antesala de la Caravana del Agua:
+							un recordatorio de que se debe seguir cuidando, lo
+							que defender las aguas es defender la vida.
+						</p>
+						<p class="text-sm text-white/70">
+							Agradecemos a las comunidades, procesos y artistas
+							que hicieron posible esta Asamblea del Agua:
+							defender los páramos, visibilizar las amenazas y
+							celebrar las razones para seguir cuidando los
+							cuerpos de agua.
+						</p>
+					</div>
+					<div class="space-y-4">
+						<img
+							src="/asamblea.png"
+							alt="Asamblea del Agua en Santurbán"
+							class="w-full h-auto rounded-2xl shadow-2xl object-cover border border-white/20"
+						/>
+						<p
+							class="text-xs uppercase tracking-[0.4em] text-white/60"
+						>
+							Biblioteca La Bellecera · Festival de la Tigra
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
-<!-- 
+
+		<section id="asamblea" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<div
+				class="max-w-6xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl"
+			>
+				<div class="flex flex-col gap-10 items-center text-center">
+					<p
+						class="text-sm uppercase tracking-[0.4em] text-cyan-200/80"
+					>
+						Asamblea del Agua:
+					</p>
+					<h2 class="text-3xl md:text-4xl font-bold">
+						Alienígenas en Santurbán
+					</h2>
+					<div class="relative w-full max-w-4xl">
+						<img
+							src="/asamblea_foto.jpg"
+							alt="Asamblea del Agua"
+							class="w-full h-auto rounded-2xl shadow-2xl object-cover border border-white/20"
+						/>
+					</div>
+					<div class="space-y-5 text-white max-w-4xl">
+						<p class="text-lg text-white/90 leading-relaxed">
+							Asamblea del Agua: Alienígenas en Santurbán fue un
+							encuentro para recordar la urgencia de entrelazar
+							lenguajes —arte, ciencia, investigación,
+							organización comunitaria y acción política— en
+							defensa de lo vital: las aguas y los territorios.
+						</p>
+						<p class="text-lg text-white/90 leading-relaxed">
+							Este espacio, convocado por el Festival de la Tigra,
+							reunió voces y oficios diversos que hoy ponen su
+							mirada y su acción sobre los Páramos, uno de los
+							ecosistemas más amenazados y esenciales del país.
+							Allí afirmamos que el arte puede ser río: un
+							lenguaje que moviliza, conecta y despierta nuevas
+							formas de sensibilidad y cuidado.
+						</p>
+						<p class="text-lg text-white/90 leading-relaxed">
+							Nuestra participación hizo parte de Encuentros Vivos
+							– Cultura en Movimiento, en el marco de la beca
+							JUNTXS: Circulación y Colaboración en Artes
+							Plásticas y Visuales, un proceso que fortalece el
+							diálogo entre las aguas de Antioquia y Santander,
+							entre la Quebrada Santa Elena y el Río de Oro,
+							tejiendo memoria y defensa colectiva.
+						</p>
+
+						<p class="text-lg text-white/90">
+							La Asamblea fue la antesala de la Caravana del Agua:
+							un recordatorio de que sin vínculo no hay cuidado, y
+							que defender las aguas es defender la vida.
+						</p>
+						<p class="text-lg text-white/90">
+							Agradecimientos a quienes hicieron de esta Asamblea
+							del Agua: @macristinaobregon @colombianofrack
+							@tironeta @comite_santurban @pollo_jaimes
+							@concienciabellezana @la_muchacha_isabel @elejecc
+							@platohedro
+						</p>
+					</div>
+					<div class="relative w-full max-w-4xl">
+						<ImageGallery
+							client:load
+							images={galleryImages}
+							columns={3}
+							title=""
+						/>
+					</div>
+				</div>
+			</div>
+			<!-- 
 		<section id="acciones" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
 			<div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
 				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
@@ -85,7 +246,7 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 			</div>
 		</section> -->
 
-		<!-- <section id="memorias" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
+			<!-- <section id="memorias" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
 			<div class="max-w-5xl mx-auto bg-gradient-to-r from-cyan-900/60 via-blue-900/50 to-emerald-900/60 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-xl">
 				<div class="grid md:grid-cols-2 gap-8 items-center">
 					<div>
@@ -112,29 +273,30 @@ import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
 				</div>
 			</div>
 		</section> -->
-	</main>
+		</section>
 
-	<style>
-		@import url("/src/styles/river-flow.css");
+		<style>
+			@import url("/src/styles/river-flow.css");
 
-		section {
-			position: relative;
-		}
-
-		@media (max-width: 1024px) {
-			header {
-				margin-left: 0;
-			}
-		}
-
-		@media (max-width: 768px) {
 			section {
-				padding: 2rem 1rem;
+				position: relative;
 			}
 
-			.rounded-3xl {
-				border-radius: 1.25rem;
+			@media (max-width: 1024px) {
+				header {
+					margin-left: 0;
+				}
 			}
-		}
-	</style>
+
+			@media (max-width: 768px) {
+				section {
+					padding: 2rem 1rem;
+				}
+
+				.rounded-3xl {
+					border-radius: 1.25rem;
+				}
+			}
+		</style>
+	</main>
 </Layout>

@@ -21,7 +21,7 @@ generate_preview() {
 # Generate previews for each video
 generate_preview "public/vidoes-rios/RIOQUILICHAOHOME.MOV" "public/rio-quilichao-preview.jpg"
 generate_preview "public/vidoes-rios/RIODEOROHOME.mp4" "public/rio-de-oro-preview.jpg"
-generate_preview "public/vidoes-rios/SANATAELENAHOME.MOV" "public//vistaprevia/Quebrada-Santaelena.png"
+generate_preview "public /vidoes-rios/SANATAELENAHOME.MOV" "public//vistaprevia/Quebrada-Santaelena.png"
 generate_preview "public/vidoes-rios/RIOSAMANAHOME.MOV" "public/rio-samana-preview.jpg"
 
 echo "All previews have been generated in the public directory."

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 /**
  * ImageGallery - Componente reutilizable de galería con lightbox
@@ -116,9 +117,9 @@ export default function ImageGallery({ images = [], title = '', columns = 3 }) {
 			</div>
 
 			{/* Lightbox Modal */}
-			{isOpen && (
+			{isOpen && typeof document !== 'undefined' && createPortal(
 				<div
-					className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+					className="fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center p-4"
 					onClick={closeLightbox}
 				>
 					{/* Botón cerrar */}
@@ -212,7 +213,8 @@ export default function ImageGallery({ images = [], title = '', columns = 3 }) {
 							</svg>
 						</button>
 					)}
-				</div>
+				</div>,
+				document.body
 			)}
 		</div>
 	);
