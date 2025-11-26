@@ -1,127 +1,307 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import ImageGallery from "../../components/ImageGallery.jsx";
+
+const galleryImages = [
+	{
+		src: "/galeria-viusalidades/1.png",
+		alt: "Memorias de Elena 1",
+	},
+
+];
 ---
 
-<Layout title="Quebrada Santa Elena - Visualidades y Cuerpos de Agua">
+<Layout title="Quebrada Santa Elena - Conexión Cultural - Hidropoeticas">
 	<main class="min-h-screen">
+		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
-			<nav class="mb-4 md:mb-8 flex gap-4 flex-wrap">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+			<nav class="mb-4 md:mb-8 flex gap-4">
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Inicio
 				</a>
-				<a href="/quebrada-santaelena" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-500/30 hover:to-blue-500/30 text-emerald-100 hover:text-white px-4 py-2 rounded-lg border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-emerald-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/quebrada-santaelena"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-500/30 hover:to-pink-500/30 text-purple-200 hover:text-white px-4 py-2 rounded-lg border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-purple-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Quebrada Santa Elena
 				</a>
 			</nav>
-			<div class="text-center mt-6">
-				<p class="text-sm uppercase tracking-[0.3em] text-cyan-200/80 mb-2">Laboratorio visual</p>
-				<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Visualidades y Cuerpos de Agua</h1>
-				<p class="text-lg text-white/80">Cartografías sensibles para mirar la quebrada desde los cuerpos que la habitan.</p>
+			<div class="text-center">
+				<h1
+					class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+				>
+				Visualidades y Cuerpos de Agua
+				</h1>
+				 <p class="text-lg md:text-xl text-white opacity-90 px-4">II Ciclo de Hidropoéticas Ambientales, 2025</p>
+
+			<video
+				class="mt-6 max-w-full h-auto rounded-lg shadow-2xl mx-auto"
+				controls
+				src="/visualidades.mp4">
 			</div>
 		</header>
 
-		<VerticalRiverNav
+		<!-- River Navigation -->
+		<!-- <VerticalRiverNav
 			client:load
 			sections={[
-				{ id: 'mapas', text: 'Mapas bordados' },
-				{ id: 'archivo', text: 'Archivo fotográfico' },
-				{ id: 'proyecciones', text: 'Proyecciones líquidas' },
+				{ id: "herencia-ancestral", text: "Herencia Ancestral" },
+				{ id: "saberes-tradicionales", text: "Saberes Tradicionales" },
+				{ id: "rituales-sagrados", text: "Rituales Sagrados" },
+				{
+					id: "expresiones-artisticas",
+					text: "Expresiones Artísticas",
+				},
+				{ id: "preservacion-cultural", text: "Preservación Cultural" },
 			]}
-		/>
+		/> -->
 
-		<section id="mapas" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-5xl mx-auto bg-gradient-to-b from-white/10 to-white/5 rounded-3xl border border-white/15 p-8 backdrop-blur-xl">
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="space-y-5">
-						<h2 class="text-3xl font-semibold text-white">Mapas bordados</h2>
-						<p class="text-white/90 leading-relaxed">
-							Las mujeres del barrio San Diego bordaron sobre telas teñidas con agua de la quebrada.
-							Cada puntada marca nacimientos, desvíos y recuerdos familiares. Los mapas se digitalizaron y hoy se consultan como guía poética y pedagógica.
-						</p>
-					</div>
-					<div class="rounded-2xl overflow-hidden relative h-64">
-						<div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-transparent"></div>
-						<img src="/quebrada.png" alt="Mapas bordados" class="w-full h-full object-cover" />
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- Content Section -->
+		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
+			<section class="max-w-6xl mx-auto space-y-20 py-16">
+				<article
+					id="herencia-ancestral"
+					class="rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-md shadow-2xl p-8 space-y-10"
+				>
+					<p class="text-lg md:text-xl text-white/90 leading-relaxed">
+					En este segundo ciclo abrimos una exploración visual y territorial para imaginar, desde el arte y la memoria, otros futuros posibles con la quebrada Santa Elena.
+ La artista digital Julix Mercury y el sabedor territorial Chibchakum guiaron un proceso de creación comunitaria que unió ciencia, tecnología, imaginarios ancestrales y visualidades del agua.</p>
+					<p class="text-lg md:text-xl text-white/90 leading-relaxed">
+Caminamos la cuenca como archivo vivo: seguimos el cauce libre y el cauce enterrado, escuchamos las huellas del agua bajo el cemento y evocamos memorias que persisten entre la vegetación urbana. Junto a vecinas y vecinos activamos laboratorios visuales, experimentamos con microscopía, materiales del territorio, escritura especulativa y mapeos colectivos para reimaginar los cuerpos de agua de la ciudad.</p>
 
-		<section id="archivo" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
-				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
-					<h3 class="text-2xl font-semibold text-white mb-4">Archivo fotográfico comunitario</h3>
-					<p class="text-white/90 leading-relaxed">
-						Se recopilaron 40 años de fotografías familiares donde el agua aparece como telón de fondo.
-						El archivo incluye fichas narrativas y códigos QR para escuchar las voces que describen cada escena.
-					</p>
-				</div>
-				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
-					<h3 class="text-2xl font-semibold text-white mb-4">Residencia de ilustración</h3>
-					<p class="text-white/90 leading-relaxed">
-						Artistas jóvenes reinterpretaron las fotos en clave de cómic anfibio generando una serie descargable.
-						Cada viñeta se acompaña de datos ecológicos de la quebrada para usar en procesos educativos.
-					</p>
-				</div>
-			</div>
-		</section>
+				<p class="text-lg md:text-xl text-white/90 leading-relaxed">
+Entre futurismos —utópicos y distópicos— soñamos Medellín dentro de cien años:
+<br>
+ ¿y si las aguas de Aná volvieran a cielo abierto?
+ <br>
+ ¿y si la ciudad perdiera su cauce?
+ <br>
+ La imagen se volvió herramienta para pensar lo que hoy parece imposible.
+</p>
 
-		<section id="proyecciones" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-5xl mx-auto bg-gradient-to-r from-cyan-900/60 via-blue-900/50 to-emerald-900/60 border border-cyan-300/20 rounded-3xl p-8 backdrop-blur-xl">
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div>
-						<h3 class="text-3xl font-semibold text-white mb-4">Proyecciones líquidas</h3>
-						<p class="text-white/90 leading-relaxed mb-4">
-							Se diseñó un sistema portátil para proyectar animaciones sobre el cauce nocturno.
-							Las visuales reaccionan al caudal y a las palabras que el público envía desde sus teléfonos.
-						</p>
-						<a href="mailto:contacto@hidropoeticas.com" class="inline-flex items-center gap-2 text-cyan-200 hover:text-white transition-colors">
-							<span>Solicitar kit de proyección</span>
-							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-							</svg>
-						</a>
+
+<p class="text-lg md:text-xl text-white/90 leading-relaxed" >  El ciclo culminó con un destaponamiento simbólico en la Avenida La Playa: proyecciones sobre el asfalto, cantos, visuales y elogios a la flora y fauna convocaron la presencia de la quebrada. Bolitas de barro y microorganismos recordaron la bioregeneración y la fuerza de unir lo ancestral con lo tecnológico y lo imaginado. </p>
+					 
+ <div class="pt-8"> 	<ImageGallery
+						client:load
+						images={galleryImages}
+						title="Galería: Visualidades"
+						columns={3}
+					
+					/></div> 
+				
+				</article>
+
+				<article
+					id="material-consulta"
+					class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-center"
+				>
+					<div class="rounded-2xl overflow-hidden shadow-2xl">
+					 <img
+							src="/vocesdelterritorio.png"
+							alt="Instalación de En Medellín Llueve Mucho"
+							class="max-w-sm mx-auto w-auto object-contain max-h-[50vh] transition-transform duration-500 hover:scale-105 rounded-lg"
+						/> 
+						
 					</div>
-					<div class="bg-black/30 rounded-2xl overflow-hidden">
-						<video 
-							src="/Quebrada-SantaElena.MOV"
-							controls
-							class="w-full h-full object-cover"
-						></video>
+					<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-2xl border border-white/20 p-8 backdrop-blur-md shadow-2xl">
+						<h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+							Material de consulta
+						</h2>
+						<!-- <p class="text-white/80 mb-6">
+							Recursos que documentan el proceso creativo, las
+							instancias de memoria y las piezas sonoras que
+							componen En Medellín Llueve Mucho.
+						</p> -->
+						<ul class="text-white/90 space-y-3 text-sm md:text-base">
+							<li>
+								<a
+									href=""
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+									Mapa de la Quebrada, recorrido I
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://drive.google.com/file/d/14kZOWNKXVClLxzMbcO-sj9ZGYPYxQeXc/view?usp=drive_link"
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+									Catálogo del corredor biológico urbano
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://drive.google.com/file/d/1kJtbc-EAq57RTe7gSKTOmRUjlwZr5ST4/view?usp=drive_link"
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+					Bitácora La Playa y Árboles Abuelos, recorrido II
+								</a>
+							</li>
+							<li>
+								<a
+									href=""
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+									Vídeos
+								</a>
+							</li>
+						
+					
+							
+						
+						</ul>
 					</div>
-				</div>
-			</div>
-		</section>
+				</article>
+			</section>
+
+<!-- 
+			<section id="artista" class="rounded-xl p-1">
+					<div
+						class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 md:p-10 border border-white/20 hover:border-white/40 transition-all duration-500"
+					>
+						<div
+							class="flex flex-col md:flex-row gap-8 items-center"
+						>
+							<div class="w-full md:w-1/2">
+								<div
+									class="h-72 rounded-lg overflow-hidden glass-container relative"
+								>
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-[#f29f05]/30 to-transparent"
+									>
+									</div>
+									<img
+										src="/sandra_artista.jpg"
+										alt="Retrato de Maria Carolina Ardila"
+										class="w-full h-full object-cover"
+									/>
+								</div>
+							</div>
+							<div class="w-full md:w-1/2 space-y-5">
+								<p
+									class="uppercase text-sm tracking-[0.3em] text-amber-200"
+								>
+									Artista invitada
+								</p>
+								<h2
+									class="text-3xl font-semibold text-white drop-shadow-lg"
+								>
+								Sandra Ramirez
+								</h2>
+								<p
+									class="text-lg text-white/90 leading-relaxed"
+								>
+									Narradora visual, periodista y gestora cultural. Fue investigadora y fotógrafa del proyecto Te recuerdo, te presiento, una retrospectiva sobre la desaparición forzada narrada por mujeres víctimas del conflicto armado en Colombia. Su trabajo explora la memoria y la relación de las comunidades con la vida, el territorio, el agua y lo no humano, articulando fotografía expandida y metodologías participativas. Ha desarrollado proyectos en el Sur de América y acompañado procesos de conservación, accesibilidad cultural y educación comunitaria. Ganadora del Sustainability Champion Photo Contest (2021) y participante del Mentorship Program de Vital Impacts (2023). 
+								</p>
+
+							
+
+								<p
+									class="text-lg text-white/80 leading-relaxed"
+								>
+								</p>
+								<div
+									class="flex flex-wrap gap-3 text-white/70 text-sm"
+								>
+									<a href="" target="_blank"
+										><span
+											class="px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm"
+											>Ver Perfil</span
+										>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section> -->
+
+				<section class="max-w-6xl mx-auto space-y-6 py-10">
+					<div class="grid gap-6 md:grid-cols-2">
+						<figure class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+							<img
+								src="/visualidades1.png"
+								alt="Visualidad 1"
+								class="w-full h-full object-cover"
+							/>
+						</figure>
+						<figure class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+							<img
+								src="/visualidades2.png"
+								alt="Visualidad 2"
+								class="w-full h-full object-cover"
+							/>
+						</figure>
+					</div>
+				</section>
+		</div>
 	</main>
+</Layout>
 
-	<style>
-		@import url("/src/styles/river-flow.css");
+<style>
+	@import url("/src/styles/river-flow.css");
+
+	.glass-container {
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* Mejoras adicionales para móvil */
+	@media (max-width: 768px) {
+		.glass-container {
+			height: 200px;
+		}
 
 		section {
-			position: relative;
+			min-height: auto;
+			padding: 2rem 0;
 		}
 
-		@media (max-width: 1024px) {
-			header {
-				margin-left: 0;
-			}
+		h1 {
+			font-size: 2rem;
 		}
 
-		@media (max-width: 768px) {
-			section {
-				padding: 2rem 1rem;
-			}
-
-			.rounded-3xl {
-				border-radius: 1.25rem;
-			}
+		h2 {
+			font-size: 1.75rem;
+			margin-bottom: 1.5rem;
 		}
-	</style>
-</Layout>
+	}
+</style>
