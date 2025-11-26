@@ -24,9 +24,11 @@ import WaterBackground from '../components/WaterBackground';
 	<body class="bg-[#051d25] text-white font-sans relative">
 		<WaterBackground client:load />
 		<div class="relative z-10">
-			<slot />
+			<div class="page-shell">
+				<slot />
+			</div>
 		</div>
-		
+
 		<!-- Water Ripples Effect -->
 		<script src="/ripples-init.js" is:inline></script>
 	</body>
@@ -108,4 +110,3 @@ import WaterBackground from '../components/WaterBackground';
 		100% { opacity: 0; transform: scale(1); }
 	}
 </style>
-

@@ -28,6 +28,13 @@
     background-color: white;
     min-height: 100vh;
   }
+
+  /* Consistent page container */
+  .page-shell {
+    width: min(1280px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 2vw, 2.5rem);
+  }
 }
 
 /* Typography - Global Font Families */
@@ -198,3 +205,11 @@ h1, h2, h3, h4, h5, h6 {
 .relative.z-10 [class*="gap-8"],
 [class*="gap-10"],
 [class*="gap-16"] { gap: 1rem !important; }
+
+/* Ensure media inside the project always respects responsive constraints */
+.relative.z-10 img,
+.relative.z-10 video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
