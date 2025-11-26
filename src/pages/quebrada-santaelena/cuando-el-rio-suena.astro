@@ -1,124 +1,328 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import VerticalRiverNav from '../../components/VerticalRiverNav.jsx';
+import Layout from "../../layouts/Layout.astro";
+import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
+import ImageGallery from "../../components/ImageGallery.jsx";
+
+const galleryImages = Array.from({ length: 8 }, (_, index) => ({
+	src: `/galeria-epigrafe/${index + 1}.png`,
+	alt: `Galería Epígrafe de los cuerpos ${index + 1}`,
+}));
 ---
 
-<Layout title="Quebrada Santa Elena - Cuando el Río Suena">
+<Layout title="Quebrada Santa Elena - Conexión Cultural - Hidropoeticas">
 	<main class="min-h-screen">
+		<!-- Header -->
 		<header class="py-4 md:py-8 px-4 md:px-8 ml-0 lg:ml-[280px]">
-			<nav class="mb-4 md:mb-8 flex gap-4 flex-wrap">
-				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+			<nav class="mb-4 md:mb-8 flex gap-4">
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Inicio
 				</a>
-				<a href="/quebrada-santaelena" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600/20 to-blue-600/20 hover:from-emerald-500/30 hover:to-blue-500/30 text-emerald-100 hover:text-white px-4 py-2 rounded-lg border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-emerald-500/20">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+				<a
+					href="/quebrada-santaelena"
+					class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600/20 to-pink-600/20 hover:from-purple-500/30 hover:to-pink-500/30 text-purple-200 hover:text-white px-4 py-2 rounded-lg border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-purple-500/20"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
 					</svg>
 					Quebrada Santa Elena
 				</a>
 			</nav>
-			<div class="text-center mt-6">
-				<p class="text-sm uppercase tracking-[0.3em] text-cyan-200/80 mb-2">Procesión sonora</p>
-				<h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Cuando el Río Suena</h1>
-				<p class="text-lg text-white/80">Recorrido musical y radial que recorre el cauce para amplificar las voces del agua.</p>
+			<div class="text-center">
+				<h1
+					class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg"
+				>
+	Cuando el Río suena, Medellín
+				</h1>
+				 <p class="text-lg md:text-xl text-white opacity-90 px-4">Circulación Artística, Juntxs II <br>Circulación – Encuentros Vivos: Cultura en Movimiento <br> JUNTXS – Platohedro & Eleje CC</p> 
+
+				<img
+					src="/cuandoelrioseuena.png"
+					alt="Quebrada Santa Elena"
+					class="max-w-4xl mx-auto mt-6 rounded-lg shadow-lg w-full object-cover hover:scale-105 transition-transform duration-700"
+				/>
 			</div>
 		</header>
 
-		<VerticalRiverNav
+		<!-- River Navigation -->
+		<!-- <VerticalRiverNav
 			client:load
 			sections={[
-				{ id: 'caminata', text: 'Caminata sonora' },
-				{ id: 'radio', text: 'Radio en vivo' },
-				{ id: 'archivo', text: 'Archivo multicanal' },
+				{ id: "herencia-ancestral", text: "Herencia Ancestral" },
+				{ id: "saberes-tradicionales", text: "Saberes Tradicionales" },
+				{ id: "rituales-sagrados", text: "Rituales Sagrados" },
+				{
+					id: "expresiones-artisticas",
+					text: "Expresiones Artísticas",
+				},
+				{ id: "preservacion-cultural", text: "Preservación Cultural" },
 			]}
-		/>
+		/> -->
 
-		<section id="caminata" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-5xl mx-auto bg-gradient-to-b from-white/10 to-white/5 rounded-3xl border border-white/15 p-8 backdrop-blur-xl">
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="space-y-5">
-						<h2 class="text-3xl font-semibold text-white">Caminata sonora</h2>
-						<p class="text-white/90 leading-relaxed">
-							Instrumentos de viento, tambores de agua y grabadoras portátiles acompañaron un trayecto de 6 km.
-							En cada punto estratégico se dejaban micrófonos abiertos para registrar el pulso de la quebrada.
+		<!-- Content Section -->
+		<div class="ml-0 lg:ml-[280px] px-4 md:px-8">
+			<section class="max-w-6xl mx-auto space-y-20 py-16">
+				<article
+					id="herencia-ancestral"
+					class="rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-md shadow-2xl p-8 space-y-10"
+				>
+					<p class="text-lg md:text-xl text-white/90 leading-relaxed">
+				<b>Cuando el Río Suena</b> es un encuentro que trae hasta Medellín la fuerza creativa y comunitaria del Río de Oro, guiada por la psicóloga, educadora popular, muralista y rapera <b>Laura Velandia – Mandala</b>. Desde su trabajo en Piedecuesta (Santander), Mandala teje arte, territorio y cuidado del agua como práctica de resistencia y salud colectiva.</p>
+					<p class="text-lg md:text-xl text-white/90 leading-relaxed">
+En el marco de su visita, activamos el <b>LAB Garabatear los Cuerpos de Agua</b>, un laboratorio que parte de un texto de Alfredo Mírez para abrir un diálogo fluido donde las palabras se vuelven corriente. Entre lecturas, conversaciones, garabatos y escrituras libres, exploramos nuestras experiencias cotidianas con las fuentes hídricas del territorio.</p>
+
+				
+
+	<p class="text-lg md:text-xl text-white/90 leading-relaxed">
+Durante dos jornadas, creamos de manera colaborativa un <b>fanzine artesanal</b>, una memoria sensible del encuentro y del vínculo afectivo, político y cotidiano que tenemos con las aguas.</b></p>
+
+			<p class="text-lg md:text-xl text-white/90 leading-relaxed">La circulación cerró en la  <b>Quebrada Santa Elena</b>, donde llevamos palabras venidas del Río de Oro y ofrendamos vida en su cauce, siguiendo el puente que une ambos territorios.
+ Un gesto para recordar que las aguas conversan, viajan y nos conectan más allá de sus riberas.
+			</p>	
+
+				<p class="text-lg md:text-xl text-white/90 leading-relaxed">Este proceso hace parte de <b>Encuentros Vivos – Cultura en Movimiento</b>, en el marco de la <b>Beca JUNTXS</b>, siguiendo el propósito de tejer puentes entre las aguas de Antioquia y Santander, entre Medellín y Piedecuesta, entre la Quebrada Santa Elena y el Río de Oro.
+			</p>	
+
+				
+				</article>
+
+				<!-- <article
+					id="video-patrimonio"
+					class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-start rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-md shadow-2xl p-8"
+				>
+						<div class="rounded-3xl overflow-hidden border border-white/10 shadow-lg">
+							<div class="relative h-[520px] max-h-[80vh] lg:h-[640px]">
+							<video
+								src="https://ia801905.us.archive.org/12/items/HIDROREPOVIDEO/Copia%20de%20Reel_Socializacion_Mirla_16_julio.mp4"
+								aria-label="Video Patrimonio Biocultural Quebrada Santa Elena"
+								class="w-full h-full object-cover"
+								controls
+								playsinline>
+							</video>
+						</div>
+					</div>
+
+					<div class="space-y-4">
+					
+						<p class="text-lg text-white/80 leading-relaxed">
+							El ciclo comenzó con un recorrido exploratorio por la quebrada, donde sentimos su rumor bajo el asfalto y las voces de una memoria viva que continúa habitando el territorio. En el segundo encuentro, afinamos la escucha del agua, trabajamos desde la introspección y la escritura colectiva, y fuimos despertando memorias que nos atraviesan como comunidades anfibias.
 						</p>
-					</div>
-					<div class="rounded-2xl overflow-hidden relative h-64">
-						<div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-blue-600/20 to-transparent"></div>
-						<img src="/campana1.png" alt="Caminata sonora" class="w-full h-full object-cover" />
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="radio" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-6xl mx-auto grid gap-6 md:grid-cols-2">
-				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
-					<h3 class="text-2xl font-semibold text-white mb-4">Radio en vivo</h3>
-					<p class="text-white/90 leading-relaxed">
-						La emisora comunitaria transmitió toda la jornada con entrevistas, cápsulas ambientales y música curada por las y los guardianes del cauce.
-					</p>
-				</div>
-				<div class="bg-white/5 border border-white/15 rounded-3xl p-8 backdrop-blur-lg">
-					<h3 class="text-2xl font-semibold text-white mb-4">Escucha expandida</h3>
-					<p class="text-white/90 leading-relaxed">
-						Se montaron estaciones de escucha en plazas y colegios para que quienes no podían caminar siguieran la experiencia en tiempo real.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<section id="archivo" class="ml-0 lg:ml-[280px] px-4 md:px-8 py-12">
-			<div class="max-w-5xl mx-auto bg-gradient-to-r from-emerald-900/60 via-cyan-900/50 to-blue-900/60 border border-emerald-300/20 rounded-3xl p-8 backdrop-blur-xl">
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<div class="bg-black/30 rounded-2xl overflow-hidden">
-						<video 
-							src="/Rio-de-Oro.MOV"
-							controls
-							class="w-full h-full object-cover"
-						></video>
-					</div>
-					<div>
-						<h3 class="text-3xl font-semibold text-white mb-4">Archivo multicanal</h3>
-						<p class="text-white/90 leading-relaxed mb-4">
-							Las grabaciones se organizaron en capas: río, voz, ciudad y biodiversidad. El archivo está disponible para proyectos artísticos y educativos.
+						<p class="text-lg text-white/80 leading-relaxed">
+							El proceso avanzó hacia la creación sonora, donde coplas, cantos y texturas acústicas permitieron reimaginar el patrimonio oral vinculado a la quebrada. En el encuentro final, La Mirla tejió un diálogo entre las aguas de la Quebrada Santa Elena: sus sonidos, su historia, sus ausencias, su pérdida y su defensa cotidiana.
 						</p>
-						<a href="mailto:contacto@hidropoeticas.com" class="inline-flex items-center gap-2 text-cyan-200 hover:text-white transition-colors">
-							<span>Solicitar acceso</span>
-							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-							</svg>
-						</a>
+						<p class="text-lg text-white/80 leading-relaxed">
+							La socialización del ciclo fue un canto común por las aguas. Las palabras surgidas en los talleres se convirtieron en música; los recuerdos, en ritmo; y el territorio, en resonancia colectiva. Así, la quebrada Santa Elena volvió a escucharse como vecina histórica, como maestra y como sujeto de cuidado.
+						</p>
+						<p class="text-lg text-white/80 leading-relaxed font-semibold">
+							Este primer ciclo nos dejó un aprendizaje claro: el arte también es agua; el sonido también es memoria; el cuidado también se compone. Cuando creamos juntxs, abrimos otros futuros posibles para las aguas que nos sostienen.
+						</p>
+						
 					</div>
-				</div>
-			</div>
-		</section>
+				</article> -->
+
+
+					 <!-- <div class="pt-8"> 	<ImageGallery
+						client:load
+						images={galleryImages}
+						title="Galería: Epígrafe de los cuerpos"
+						columns={3}
+					
+					/></div>  -->
+
+		
+				<article
+					id="material-consulta"
+					class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-center"
+				>
+					<div class="rounded-2xl overflow-hidden shadow-2xl">
+						<img
+							src="/mconsultavivien.png"
+							alt="Instalación de En Medellín Llueve Mucho"
+							class="max-w-sm mx-auto w-auto object-contain max-h-[50vh] transition-transform duration-500 hover:scale-105 rounded-lg"
+						/>
+						
+					</div>
+					<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-2xl border border-white/20 p-8 backdrop-blur-md shadow-2xl">
+						<h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+							Material de consulta
+						</h2>
+						<!-- <p class="text-white/80 mb-6">
+							Recursos que documentan el proceso creativo, las
+							instancias de memoria y las piezas sonoras que
+							componen En Medellín Llueve Mucho.
+						</p> -->
+						<ul class="text-white/90 space-y-3 text-sm md:text-base">
+							<li>
+								<a
+									href="https://drive.google.com/file/d/1VsieAAN6bC-3MDw8Azi81k_PvpQ0oI9-/view?usp=drive_link"
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+					Fanzine “En Chingue y Chanclas”
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://www.youtube.com/watch?v=uJr5gevAajw&list=RDuJr5gevAajw&start_radio=1"
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+									Canción Batucada
+								</a>
+							</li>
+							<li>
+								<a
+									href="https://drive.google.com/file/d/10aSg0SpXppMezNekvIikS3SjdFTa9qW8/view?usp=drive_link"
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+									Texto Alfredo Mires
+								</a>
+							</li>
+
+							<li>
+								<a
+									href="https://www.instagram.com/reel/DPuQSU0kmsr/"
+									target="_blank"
+									rel="noreferrer"
+									class="text-cyan-200 hover:text-white underline transition-colors"
+								>
+									 Experiencia Piedecuesta
+								</a>
+
+							</li>
+							
+						</ul>
+					</div>
+				</article>
+			</section>
+
+			<section>
+				<img
+					src="/mandala.jpg"
+					alt="Divider Water"
+					class=" max-w-6xl mx-auto my-16"
+				/>
+			</section>
+
+
+			<!-- <section id="artista" class="rounded-xl p-1">
+					<div
+						class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 md:p-10 border border-white/20 hover:border-white/40 transition-all duration-500"
+					>
+						<div
+							class="flex flex-col md:flex-row gap-8 items-center"
+						>
+							<div class="w-full md:w-1/2">
+								<div
+									class="h-72 rounded-lg overflow-hidden glass-container relative"
+								>
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-[#f29f05]/30 to-transparent"
+									>
+									</div>
+									<img
+										src="/sandra_artista.jpg"
+										alt="Retrato de Maria Carolina Ardila"
+										class="w-full h-full object-cover"
+									/>
+								</div>
+							</div>
+							<div class="w-full md:w-1/2 space-y-5">
+								<p
+									class="uppercase text-sm tracking-[0.3em] text-amber-200"
+								>
+									Artista invitada
+								</p>
+								<h2
+									class="text-3xl font-semibold text-white drop-shadow-lg"
+								>
+								Sandra Ramirez
+								</h2>
+								<p
+									class="text-lg text-white/90 leading-relaxed"
+								>
+									Narradora visual, periodista y gestora cultural. Fue investigadora y fotógrafa del proyecto Te recuerdo, te presiento, una retrospectiva sobre la desaparición forzada narrada por mujeres víctimas del conflicto armado en Colombia. Su trabajo explora la memoria y la relación de las comunidades con la vida, el territorio, el agua y lo no humano, articulando fotografía expandida y metodologías participativas. Ha desarrollado proyectos en el Sur de América y acompañado procesos de conservación, accesibilidad cultural y educación comunitaria. Ganadora del Sustainability Champion Photo Contest (2021) y participante del Mentorship Program de Vital Impacts (2023). 
+								</p>
+
+							
+
+								<p
+									class="text-lg text-white/80 leading-relaxed"
+								>
+								</p>
+								<div
+									class="flex flex-wrap gap-3 text-white/70 text-sm"
+								>
+									<a href="" target="_blank"
+										><span
+											class="px-3 py-1 rounded-full border border-white/20 backdrop-blur-sm"
+											>Ver Perfil</span
+										>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section> -->
+		</div>
 	</main>
+</Layout>
 
-	<style>
-		@import url("/src/styles/river-flow.css");
+<style>
+	@import url("/src/styles/river-flow.css");
+
+	.glass-container {
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* Mejoras adicionales para móvil */
+	@media (max-width: 768px) {
+		.glass-container {
+			height: 200px;
+		}
 
 		section {
-			position: relative;
+			min-height: auto;
+			padding: 2rem 0;
 		}
 
-		@media (max-width: 1024px) {
-			header {
-				margin-left: 0;
-			}
+		h1 {
+			font-size: 2rem;
 		}
 
-		@media (max-width: 768px) {
-			section {
-				padding: 2rem 1rem;
-			}
-
-			.rounded-3xl {
-				border-radius: 1.25rem;
-			}
+		h2 {
+			font-size: 1.75rem;
+			margin-bottom: 1.5rem;
 		}
-	</style>
-</Layout>
+	}
+</style>
