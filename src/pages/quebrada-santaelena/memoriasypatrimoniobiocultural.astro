@@ -3,72 +3,10 @@ import Layout from "../../layouts/Layout.astro";
 import VerticalRiverNav from "../../components/VerticalRiverNav.jsx";
 import ImageGallery from "../../components/ImageGallery.jsx";
 
-const galleryImages = [
-	{
-		src: "/galeria-memoriasdeelena/1.jpg",
-		alt: "Memorias de Elena 1",
-	},
-	{
-		src: "/galeria-memoriasdeelena/2.jpg",
-		alt: "Memorias de Elena 2",
-	},
-	{
-		src: "/galeria-memoriasdeelena/3.jpg",
-		alt: "Memorias de Elena 3",
-	},
-	{
-		src: "/galeria-memoriasdeelena/4.jpg",
-		alt: "Memorias de Elena 4",
-	},
-	{
-		src: "/galeria-memoriasdeelena/5.jpg",
-		alt: "Memorias de Elena 5",
-	},
-	{
-		src: "/galeria-memoriasdeelena/6.jpg",
-		alt: "Memorias de Elena 6",
-	},
-	{
-		src: "/galeria-memoriasdeelena/7.jpg",
-		alt: "Memorias de Elena 7",
-	},
-	{
-		src: "/galeria-memoriasdeelena/8.jpg",
-		alt: "Memorias de Elena 8",
-	},
-	{
-		src: "/galeria-memoriasdeelena/9.jpg",
-		alt: "Memorias de Elena 9",
-	},
-	{
-		src: "/galeria-memoriasdeelena/10.jpg",
-		alt: "Memorias de Elena 10",
-	},
-	{
-		src: "/galeria-memoriasdeelena/11.jpg",
-		alt: "Memorias de Elena 11",
-	},
-	{
-		src: "/galeria-memoriasdeelena/12.jpg",
-		alt: "Memorias de Elena 12",
-	},
-	{
-		src: "/galeria-memoriasdeelena/13.jpg",
-		alt: "Memorias de Elena 13",
-	},
-	{
-		src: "/galeria-memoriasdeelena/14.jpg",
-		alt: "Memorias de Elena 14",
-	},
-	{
-		src: "/galeria-memoriasdeelena/15.jpg",
-		alt: "Memorias de Elena 15",
-	},
-	{
-		src: "/galeria-memoriasdeelena/16.jpg",
-		alt: "Memorias de Elena 16",
-	},
-];
+const galleryImages = Array.from({ length: 8 }, (_, index) => ({
+	src: `/galeria-myp/${index + 1}.png`,
+	alt: `Galería Memorias y Patrimonio ${index + 1}`,
+}));
 ---
 
 <Layout title="Quebrada Santa Elena - Conexión Cultural - Hidropoeticas">
@@ -154,142 +92,77 @@ const galleryImages = [
 					class="rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-md shadow-2xl p-8 space-y-10"
 				>
 					<p class="text-lg md:text-xl text-white/90 leading-relaxed">
-					<b>"Las Memorias de Elena"</b> es un proyecto artístico y pedagógico que busca sensibilizar sobre la importancia del agua mediante intervenciones artísticas colaborativas centradas en la quebrada Santa Elena, un cuerpo de agua esencial en la identidad del barrio Buenos Aires y en el origen de la ciudad de Medellín.</p>
+				El primer ciclo de Hidropoéticas Ambientales abrió un espacio para cuidar colectivamente la quebrada Santa Elena desde el cruce entre arte, ciencia, memoria y justicia ambiental. Durante un mes, vecinxs, artistas y sabedorxs nos reunimos para escuchar el territorio, despertar sus memorias y crear lenguajes sensibles para su protección..</p>
 					<p class="text-lg md:text-xl text-white/90 leading-relaxed">
-				Las Memorias de Elena nos convoca al junte para hilar y reconectar con las memorias locales de la quebrada. Es una búsqueda por revincularnos con este afluente y con las memorias vivas que aún le habitan, reconociendo su profundo significado en la historia de la ciudad. Desde el caminar como pedagogía, y convencidxs de que sin vínculo no hay cuidado, el proyecto integra recorridos, pagamentos, voces, imágenes de archivo, intervenciones y experiencias sensoriales, en las que Aná, Aguasal, La Loca, Nodriza —más conocida como Quebrada Santa Elena— atraviesa todos los sentidos. Con sus murmullos —gritos cubiertos por el asfalto— nos pregunta si sus aguas volverán a correr en libertad.</p>
+		La residencia contó con La Mirla como artista residente y con Chambimbe, productor, músico y sabedor del Cauca, como acompañante territorial. La Mirla, conformada por Juliana Correa, Samuel Gallego y Zhajit Ibargüen, guiaron un proceso que se sostuvo en la escucha profunda, la experimentación sensorial y el reconocimiento del patrimonio biocultural que resiste en el cauce.</p>
 
 				
-					 <div class="pt-8"> 	<ImageGallery
-						client:load
-						images={galleryImages}
-						title="Galería: En Medellín Llueve Mucho"
-						columns={3}
-					
-					/></div> 
+
+
+
 				
 				</article>
 
 				<article
+					id="video-patrimonio"
+					class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-start rounded-2xl bg-gradient-to-b from-white/10 to-white/5 border border-white/20 backdrop-blur-md shadow-2xl p-8"
+				>
+						<div class="rounded-3xl overflow-hidden border border-white/10 shadow-lg">
+							<div class="relative h-[520px] max-h-[80vh] lg:h-[640px]">
+							<video
+								src="https://ia801905.us.archive.org/12/items/HIDROREPOVIDEO/Copia%20de%20Reel_Socializacion_Mirla_16_julio.mp4"
+								alt="Video Patrimonio Biocultural Quebrada Santa Elena"
+								class="w-full h-full object-cover"
+								controls
+								playsinline>
+						</div>
+					</div>
+
+					<div class="space-y-4">
+						<!-- <h2 class="text-3xl font-semibold text-white">Escucha y memoria</h2> -->
+						<p class="text-lg text-white/80 leading-relaxed">
+							El ciclo comenzó con un recorrido exploratorio por la quebrada, donde sentimos su rumor bajo el asfalto y las voces de una memoria viva que continúa habitando el territorio. En el segundo encuentro, afinamos la escucha del agua, trabajamos desde la introspección y la escritura colectiva, y fuimos despertando memorias que nos atraviesan como comunidades anfibias.
+						</p>
+						<p class="text-lg text-white/80 leading-relaxed">
+							El proceso avanzó hacia la creación sonora, donde coplas, cantos y texturas acústicas permitieron reimaginar el patrimonio oral vinculado a la quebrada. En el encuentro final, La Mirla tejió un diálogo entre las aguas de la Quebrada Santa Elena: sus sonidos, su historia, sus ausencias, su pérdida y su defensa cotidiana.
+						</p>
+						<p class="text-lg text-white/80 leading-relaxed">
+							La socialización del ciclo fue un canto común por las aguas. Las palabras surgidas en los talleres se convirtieron en música; los recuerdos, en ritmo; y el territorio, en resonancia colectiva. Así, la quebrada Santa Elena volvió a escucharse como vecina histórica, como maestra y como sujeto de cuidado.
+						</p>
+						<p class="text-lg text-white/80 leading-relaxed font-semibold">
+							Este primer ciclo nos dejó un aprendizaje claro: el arte también es agua; el sonido también es memoria; el cuidado también se compone. Cuando creamos juntxs, abrimos otros futuros posibles para las aguas que nos sostienen.
+						</p>
+						
+					</div>
+				</article>
+
+
+					 <div class="pt-8"> 	<ImageGallery
+						client:load
+						images={galleryImages}
+						title="Galería: Memorias y Patrimonio Biocultural"
+						columns={3}
+					
+					/></div> 
+
+				<article
 					id="material-consulta"
-					class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-center"
+					class=" items-center"
 				>
 					<div class="rounded-2xl overflow-hidden shadow-2xl">
 					 <img
-							src="/vocesdelterritorio.png"
+							src="/mypbio.png"
 							alt="Instalación de En Medellín Llueve Mucho"
 							class="max-w-sm mx-auto w-auto object-contain max-h-[50vh] transition-transform duration-500 hover:scale-105 rounded-lg"
 						/> 
 						
 					</div>
-					<div class="bg-gradient-to-b from-white/10 to-white/5 rounded-2xl border border-white/20 p-8 backdrop-blur-md shadow-2xl">
-						<h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-							Voces del territorio
-						</h2>
-						<!-- <p class="text-white/80 mb-6">
-							Recursos que documentan el proceso creativo, las
-							instancias de memoria y las piezas sonoras que
-							componen En Medellín Llueve Mucho.
-						</p> -->
-						<ul class="text-white/90 space-y-3 text-sm md:text-base">
-							<li>
-								<a
-									href="https://drive.google.com/file/d/1C10OIQdSymU7uDPjsS88sH03exDHyNmA/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-									Familia Vélez, Beatriz Elena Vélez
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://drive.google.com/file/d/1D9Lxz4AmaRapY6pgBh2ZSEJHF8pA5a7f/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-									Familia Hoyos, Caludia Hoyos
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://drive.google.com/file/d/10D23TuQ6Upr7Jc5AIE8rszv7_2-GS7oh/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-						Familia Vélez y López,  Ana P. López
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://drive.google.com/file/d/1ZyWgj7UHH4ubaHTn0t9xzJ6s6cTuYHqL/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-									Los Vélez
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://drive.google.com/file/d/1FG5SpWoRppapqj-ENuJjyRnrTpBGWjqG/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-							Bernardo Quiroz, El Indio del Río
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://drive.google.com/file/d/1tNbnyMuqqKzaIq5Ig3ZirZYM4J5FzVwL/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-							Familia Ramírez Patiño, Rey Ramírez
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://drive.google.com/file/d/1aGlhvb75bv7sCyEfrLw7V1tvuZA1QpMv/view?usp=drive_link"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-						Familia Giraldo Alzate, Alba Giraldo
-								</a>
-							</li>
-
-							<li>
-								<a
-									href=""
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-						Poema Aná, Yeison Medina
-								</a>
-							</li>
-							<li>
-								<a
-									href="https://podcast.platohedro.org/episode/post11"
-									target="_blank"
-									rel="noreferrer"
-									class="text-cyan-200 hover:text-white underline transition-colors"
-								>
-						Las Memorias de Elena, Sandra Ramírez
-								</a>
-							</li>
-						
-						</ul>
-					</div>
+				
 				</article>
 			</section>
 
 
-			<section id="artista" class="rounded-xl p-1">
+			<!-- <section id="artista" class="rounded-xl p-1">
 					<div
 						class="bg-gradient-to-b from-white/10 to-white/5 rounded-lg backdrop-blur-md p-8 md:p-10 border border-white/20 hover:border-white/40 transition-all duration-500"
 					>
@@ -347,7 +220,7 @@ const galleryImages = [
 							</div>
 						</div>
 					</div>
-				</section>
+				</section> -->
 		</div>
 	</main>
 </Layout>
