@@ -7,7 +7,7 @@ const logoGroups = [
 		description: 'Instituciones que han acompañado el desarrollo y la difusión de este proyecto.',
 		names: ['', '', '', ''],
 		logos: [
-            	{ src: '/LOGOS/mincultura.png', alt: 'Logo Ministerio de Cultura de Colombia', label: '' },
+			{ src: '/LOGOS/mincultura.png', alt: 'Logo Ministerio de Cultura de Colombia', label: '', size: 'xl' },
 			{ src: '/LOGOS/logo-amb-colombie.png', alt: 'Logo Ministerio de Cultura de Colombia', label: '' },
 			{ src: '/LOGOS/logo-tdh.png', alt: 'Logo TDH', label: '' },
 			{ src: '/LOGOS/uedimburgo.png', alt: 'Logo Instituto Francés', label: '' },
@@ -21,7 +21,7 @@ const logoGroups = [
 		names: ['', '', '', '', ''],
 		logos: [
 			{ src: '/LOGOS/logo-bellecera-aplicaciones.png', alt: 'Logo Bellas Artes', label: '' },
-			{ src: '/LOGOS/logo-alcaldia-medellin-distrito-04.png', alt: 'Logo Alcaldía de Medellín', label: '' },
+			{ src: '/LOGOS/logo-alcaldia-medellin-distrito-04.png', alt: 'Logo Alcaldía de Medellín', label: '', size: 'xl' },
 			{ src: '/LOGOS/logo-gobernacion-blanco-01.png', alt: 'Logo Gobernación de Antioquia', label: '' },
 			{ src: '/LOGOS/logo-tigra.png', alt: 'Logo Tigra', label: '' },
 			{ src: '/LOGOS/logo-en-blanco-02.png', alt: 'Logo Alianza Francesa', label: '' },
@@ -141,7 +141,12 @@ const appreciationList = ['Don Esteban Mesa', 'Jardín Botánico Medellín', 'Ca
                                     <div class="grid gap-4 grid-cols-2 md:grid-cols-3">
                                         {group.logos.map((logo) => (
                                             <figure class="flex flex-col items-center justify-center gap-2">
-                                                <img src={logo.src} alt={logo.alt} class="h-16 w-full max-h-20 object-contain" loading="lazy" />
+                                                <img
+                                                    src={logo.src}
+                                                    alt={logo.alt}
+                                                    class={`w-full object-contain ${logo.size === 'xl' ? 'h-24 max-h-28 md:h-28 md:max-h-32' : 'h-16 max-h-20'}`}
+                                                    loading="lazy"
+                                                />
                                                 <figcaption class="text-xs uppercase tracking-[0.3em] text-white/60">{logo.label}</figcaption>
                                             </figure>
                                         ))}
@@ -161,13 +166,13 @@ const appreciationList = ['Don Esteban Mesa', 'Jardín Botánico Medellín', 'Ca
                     </section>
 
                     <!-- Contacto -->
-                    <div class="space-y-4 pt-4">
+                    <!-- <div class="space-y-4 pt-4">
                         <h2 class="text-2xl font-bold uppercase tracking-wider mb-4 text-white">CONTACTO</h2>
                         <div class="bg-white/5 p-6 rounded-xl border border-white/10">
                             <p class="text-white">Para más información sobre el proyecto, puedes escribirnos a:</p>
                             <a href="mailto:contacto@hidropoeticas.com" class="text-cyan-300 hover:text-cyan-200 transition-colors">contacto@hidropoeticas.com</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
            
