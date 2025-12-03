@@ -31,6 +31,12 @@ import WaterBackground from '../components/WaterBackground';
 
 		<!-- Water Ripples Effect -->
 		<script src="/ripples-init.js" is:inline></script>
+		{import.meta.env.PROD && (
+			<script is:inline>
+				window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+			</script>
+		)}
+		{import.meta.env.PROD && <script defer src="/_vercel/insights/script.js"></script>}
 	</body>
 </html>
 
