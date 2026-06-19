@@ -1,0 +1,522 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Hidropoéticas Ambientales: Quebrada Santa Elena como agente de memoria en Wikimedia">
+	<main class="min-h-screen">
+		<!-- Header -->
+		<header class="py-4 md:py-8 px-4 md:px-8">
+			<nav class="mb-4 md:mb-8">
+				<a href="/" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600/20 to-blue-600/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-200 hover:text-white px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 text-sm md:text-base font-medium backdrop-blur-md shadow-lg hover:shadow-cyan-500/20">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+					</svg>
+					Volver al inicio
+				</a>
+			</nav>
+		</header>
+
+		<!-- Main Content -->
+		<div class="container mx-auto px-4 max-w-6xl">
+			<div class="py-4 px-4 md:px-8">
+				<h1 class="text-3xl md:text-4xl font-bold text-center text-white mb-10 text-shadow leading-tight">
+					Hidropoéticas Ambientales: Quebrada Santa Elena como agente de memoria en Wikimedia
+				</h1>
+
+				<!-- Wikimedia Section -->
+				<section class="mb-12">
+					<h2 class="text-xl md:text-2xl font-semibold text-cyan-300 mb-4">Página en Wikimedia Colombia</h2>
+					<div class="rounded-xl overflow-hidden border border-cyan-500/30 shadow-lg shadow-cyan-900/20">
+						<iframe
+							src="https://co.wikimedia.org/wiki/Hidropo%C3%A9ticas_Ambientales:_Quebrada_Santa_Elena_como_agente_de_memoria_en_Wikimedia#Contexto_general"
+							class="w-full"
+							style="height: 80vh; min-height: 500px;"
+							title="Hidropoéticas Ambientales en Wikimedia Colombia"
+							loading="lazy"
+							allow="fullscreen"
+						></iframe>
+					</div>
+					<p class="mt-2 text-center text-sm text-cyan-400/70">
+						<a
+							href="https://co.wikimedia.org/wiki/Hidropo%C3%A9ticas_Ambientales:_Quebrada_Santa_Elena_como_agente_de_memoria_en_Wikimedia#Contexto_general"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hover:text-cyan-300 underline underline-offset-2 transition-colors"
+						>
+							Abrir en Wikimedia Colombia ↗
+						</a>
+					</p>
+				</section>
+
+				<!-- Contribuciones Section -->
+				<section class="mb-12">
+					<h2 class="text-xl md:text-2xl font-semibold text-cyan-300 mb-6">Contribuciones de participantes</h2>
+
+					<!-- Buscador -->
+					<div class="mb-4">
+						<div class="relative">
+							<svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-cyan-400/60 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+							</svg>
+							<input
+								id="buscador"
+								type="text"
+								placeholder="Buscar por título o descripción…"
+								class="w-full pl-9 pr-4 py-2 rounded-lg bg-white/5 border border-cyan-500/30 text-white placeholder-cyan-400/40 focus:outline-none focus:border-cyan-400/60 focus:bg-white/10 transition-colors text-sm"
+							/>
+						</div>
+					</div>
+
+					<!-- Filtros -->
+					<div class="flex flex-wrap gap-2 mb-6" id="filtros">
+						<button data-filter="all"       class="filter-btn active px-4 py-1.5 rounded-full text-sm font-medium border border-cyan-500/50 bg-cyan-500/20 text-cyan-200 hover:bg-cyan-500/30 transition-colors">Todos</button>
+						<button data-filter="wikidata"  class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-cyan-500/30 text-cyan-400/70 hover:bg-cyan-500/20 hover:text-cyan-200 transition-colors">Wikidata</button>
+						<button data-filter="wikipedia" class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-cyan-500/30 text-cyan-400/70 hover:bg-cyan-500/20 hover:text-cyan-200 transition-colors">Wikipedia</button>
+						<button data-filter="new"       class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium border border-green-500/30 text-green-400/70 hover:bg-green-500/20 hover:text-green-200 transition-colors">Nuevos</button>
+					</div>
+
+					<div class="overflow-x-auto rounded-xl border border-cyan-500/20">
+						<table class="w-full text-sm" id="tabla-contribuciones">
+							<thead>
+								<tr class="bg-cyan-950/60 text-cyan-300 text-left">
+									<th class="px-4 py-3 font-semibold w-20">Tipo</th>
+									<th class="px-4 py-3 font-semibold">Título / Label</th>
+									<th class="px-4 py-3 font-semibold">Descripción</th>
+									<th class="px-4 py-3 font-semibold">Usuario</th>
+									<th class="px-4 py-3 font-semibold w-20 text-center">Estado</th>
+								</tr>
+							</thead>
+							<tbody class="divide-y divide-cyan-500/10">
+
+								<!-- Wikipedia -->
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikipedia">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">Wikipedia</span></td>
+									<td class="px-4 py-3"><a href="https://es.wikipedia.org/wiki/Quebrada_Santa_Elena" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Quebrada Santa Elena</a></td>
+									<td class="px-4 py-3 text-white/60">Artículo sobre la quebrada urbana de Medellín, Colombia</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Sandramirezgiraldo</td>
+									<td class="px-4 py-3 text-center"><span class="text-yellow-400/80 text-xs">Editado</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikipedia">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">Wikipedia</span></td>
+									<td class="px-4 py-3"><a href="https://es.wikipedia.org/wiki/Río_Medellín" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Río Medellín</a></td>
+									<td class="px-4 py-3 text-white/60">Artículo sobre el río que atraviesa Medellín</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Sandramirezgiraldo</td>
+									<td class="px-4 py-3 text-center"><span class="text-yellow-400/80 text-xs">Editado</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikipedia">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">Wikipedia</span></td>
+									<td class="px-4 py-3"><a href="https://es.wikipedia.org/wiki/Santa_Elena_(Medellín)" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Santa Elena (Medellín)</a></td>
+									<td class="px-4 py-3 text-white/60">Artículo sobre el corregimiento de Santa Elena en Medellín</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Sandramirezgiraldo</td>
+									<td class="px-4 py-3 text-center"><span class="text-yellow-400/80 text-xs">Editado</span></td>
+								</tr>
+
+								<!-- Wikidata — nuevos -->
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139505255" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Dar de beber al sediento (Mujeres con mesero)</a></td>
+									<td class="px-4 py-3 text-white/60">Obra de Carolina Cárdenas Núñez</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Juan Andres Jaramillo Silva</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139922351" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Clémence Vazard</a></td>
+									<td class="px-4 py-3 text-white/60">Artista transdisciplinaria francesa enfocada en relaciones ecológicas, prácticas colectivas y sistemas vivos</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Sandramirezgiraldo</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139922387" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Quebrada Santa Elena</a></td>
+									<td class="px-4 py-3 text-white/60">Corriente urbana en Medellín, Colombia</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Sandramirezgiraldo</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934644" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Vivien Ayroles</a></td>
+									<td class="px-4 py-3 text-white/60">Artista y fotógrafo francés, graduado de la Escuela Nacional Superior de Fotografía en Arles</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">CristinaACorea</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934626" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">La Mirla</a></td>
+									<td class="px-4 py-3 text-white/60">Grupo musical de cuerdas, vientos y voces, de las memorias armoniosas de nuestro continente latinoamericano</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Kennypaternina</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934659" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Juliana Correa</a></td>
+									<td class="px-4 py-3 text-white/60">Vocalista de La Mirla, grupo musical de cuerdas, vientos y voces</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Kennypaternina</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934729" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Zhajid Ibargüen</a></td>
+									<td class="px-4 py-3 text-white/60">Integrante del grupo musical La Mirla</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Kennypaternina</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934736" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Samuel Gallego</a></td>
+									<td class="px-4 py-3 text-white/60">Integrante del grupo musical La Mirla</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Kennypaternina</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934654" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Chambimbe</a></td>
+									<td class="px-4 py-3 text-white/60">Compositor y productor colombiano</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Litrogeno</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139934649" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Juliana Grisales Naranjo</a></td>
+									<td class="px-4 py-3 text-white/60">Artista digital colombiana</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Platoboss</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q140073121" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Quebrada La Castro</a></td>
+									<td class="px-4 py-3 text-white/60">Corriente hídrica en la Comuna 8 (Villa Hermosa) de Medellín, afluente de la Quebrada Santa Elena</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Yeison Medina Medina</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q140181457" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Quebrada Marinilla</a></td>
+									<td class="px-4 py-3 text-white/60">Afluente del oriente antioqueño que desemboca en el río Negro</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Juan Andres Jaramillo Silva</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q140181527" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Río de Oro (Santander)</a></td>
+									<td class="px-4 py-3 text-white/60">Curso de agua de Colombia</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Andresusugaespacioenoff</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata" data-new="true">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q140286922" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Maria Carolina Ardila</a></td>
+									<td class="px-4 py-3 text-white/60">Artista visual y audiovisual, investigadora y arquitecta con base en Colombia</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Sandramirezgiraldo</td>
+									<td class="px-4 py-3 text-center"><span class="text-green-400/80 text-xs">Nuevo</span></td>
+								</tr>
+
+								<!-- Wikidata — editados -->
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q139789799" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Gustavo Marulanda Garcia</a></td>
+									<td class="px-4 py-3 text-white/60">Estudiante de Filosofía de la U. de Antioquia y líder del movimiento estudiantil en Medellín, asesinado en el conflicto armado universitario</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Juan Andres Jaramillo Silva</td>
+									<td class="px-4 py-3 text-center"><span class="text-yellow-400/80 text-xs">Editado</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q23721026" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Río Medellín</a></td>
+									<td class="px-4 py-3 text-white/60">Curso de agua natural en el departamento de Antioquia, Colombia</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Juan Andres Jaramillo Silva</td>
+									<td class="px-4 py-3 text-center"><span class="text-yellow-400/80 text-xs">Editado</span></td>
+								</tr>
+
+								<tr class="contrib-row hover:bg-white/5 transition-colors" data-project="wikidata">
+									<td class="px-4 py-3"><span class="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Wikidata</span></td>
+									<td class="px-4 py-3"><a href="https://www.wikidata.org/wiki/Q23702951" target="_blank" rel="noopener noreferrer" class="text-white hover:text-cyan-300 font-medium transition-colors">Q23702951</a></td>
+									<td class="px-4 py-3 text-white/60">Curso de agua de Colombia</td>
+									<td class="px-4 py-3 text-cyan-400/80 text-xs">Litrogeno</td>
+									<td class="px-4 py-3 text-center"><span class="text-yellow-400/80 text-xs">Editado</span></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+
+					<p class="mt-3 text-right text-xs text-cyan-400/50" id="contador">20 contribuciones</p>
+				</section>
+
+				<!-- Galería Commons -->
+				<section class="mb-12">
+					<h2 class="text-xl md:text-2xl font-semibold text-cyan-300 mb-2">Galería — Wikimedia Commons</h2>
+					<p class="text-white/50 text-sm mb-6">Imágenes subidas por los participantes del programa durante el proceso.</p>
+
+					<div class="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
+
+						<a href="https://commons.wikimedia.org/wiki/File:Hidropo%C3%A9ticas_Ambientales.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Hidropo%C3%A9ticas_Ambientales.jpg/500px-Hidropo%C3%A9ticas_Ambientales.jpg" alt="Hidropoéticas Ambientales" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Cascada de la Quebrada Santa Elena. Encuentros Hidropoéticas, 2025.</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Quebrada_Santa_Elena%2C_Medell%C3%ADn_Hidropo%C3%A9ticas_Ambientales_Sandra_Ram%C3%ADrez_Giraldo.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Quebrada_Santa_Elena%2C_Medell%C3%ADn_Hidropo%C3%A9ticas_Ambientales_Sandra_Ram%C3%ADrez_Giraldo.jpg/500px-Quebrada_Santa_Elena%2C_Medell%C3%ADn_Hidropo%C3%A9ticas_Ambientales_Sandra_Ram%C3%ADrez_Giraldo.jpg" alt="Quebrada Santa Elena" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Aná, Nodriza, Agua Sal o la Loca — nombres de la Quebrada Santa Elena</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Cascada_Quebrada_Santa_Elena.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Cascada_Quebrada_Santa_Elena.jpg/500px-Cascada_Quebrada_Santa_Elena.jpg" alt="Cascada Quebrada Santa Elena" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Encuentros Hidropoéticas en la Cuenca Hídrica de la Quebrada Santa Elena</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Destaponamiento_de_la_Quebrada_Santa_Elena.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Destaponamiento_de_la_Quebrada_Santa_Elena.jpg/500px-Destaponamiento_de_la_Quebrada_Santa_Elena.jpg" alt="Destaponamiento de la Quebrada Santa Elena" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Acto simbólico de destaponamiento de la Quebrada Santa Elena en la Avenida la Playa</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Las_Memorias_de_Elena.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Las_Memorias_de_Elena.jpg/500px-Las_Memorias_de_Elena.jpg" alt="Las Memorias de Elena" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Fotografía de la Familia Vélez, habitantes de la Cuenca Hídrica de la Quebrada Santa Elena</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Mar%C3%ADa_Carolina_Ardila.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Mar%C3%ADa_Carolina_Ardila.jpg/500px-Mar%C3%ADa_Carolina_Ardila.jpg" alt="María Carolina Ardila" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Artista audiovisual, investigadora, arquitecta</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Clemence_Vazard.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Clemence_Vazard.jpg" alt="Clémence Vazard" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Artista e investigadora francesa, prácticas ecológicas y sistemas vivos</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Llaugtu_de_chumbes%2C_Atun_Puncha.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Llaugtu_de_chumbes%2C_Atun_Puncha.jpg/500px-Llaugtu_de_chumbes%2C_Atun_Puncha.jpg" alt="Llaugtu de chumbes, Atun Puncha" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Corona ceremonial del Valle de Sibundoy — pueblos Inga y Kamëntsá</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Do%C3%B1a_Tere,_Chichera_en_la_Perseverancia.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Do%C3%B1a_Tere%2C_Chichera_en_la_Perseverancia.jpg/500px-Do%C3%B1a_Tere%2C_Chichera_en_la_Perseverancia.jpg" alt="Doña Tere, Chichera en la Perseverancia" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Teresa Torres "Doña Tere", maestra de chicha de La Perseverancia, Bogotá</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Sandramirezgiraldo</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Ciclo_II_Hidropo%C3%A9ticas_Ambientales.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Ciclo_II_Hidropo%C3%A9ticas_Ambientales.jpg/500px-Ciclo_II_Hidropo%C3%A9ticas_Ambientales.jpg" alt="Ciclo II Hidropoéticas Ambientales" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Imagen capturada en los recorridos de Hidropoéticas 2025</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Juan Andres Jaramillo Silva</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Ciclo_II_Hidropo%C3%A9ticas_Ambientales_Sandra_Ram%C3%ADrez_Giraldo_%282%29.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Ciclo_II_Hidropo%C3%A9ticas_Ambientales_Sandra_Ram%C3%ADrez_Giraldo_%282%29.jpg/500px-Ciclo_II_Hidropo%C3%A9ticas_Ambientales_Sandra_Ram%C3%ADrez_Giraldo_%282%29.jpg" alt="Ciclo II Hidropoéticas Ambientales (2)" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Foto de Hidropoéticas</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Juan Andres Jaramillo Silva</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Achiote_Hidropoeticas.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Achiote_Hidropoeticas.jpg/500px-Achiote_Hidropoeticas.jpg" alt="Achiote Hidropoeticas" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Semilla de achiote caída al borde de la Quebrada Santa Elena</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Litrogeno</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Chambimbe.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Chambimbe.jpg/500px-Chambimbe.jpg" alt="Chambimbe" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Compositor y productor de Santander de Quilichao (Cauca)</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Litrogeno</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Vivien.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Vivien.jpg" alt="Vivien Ayroles" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Foto de Vivien Ayroles</p>
+								<p class="text-cyan-400/60 text-xs mt-1">CristinaACorea</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Bio_remediacion.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Bio_remediacion.jpg/500px-Bio_remediacion.jpg" alt="Bio remediación" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Bio remediación de la quebrada Santa Elena</p>
+								<p class="text-cyan-400/60 text-xs mt-1">CristinaACorea</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Julixmercury.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Julixmercury.jpg/500px-Julixmercury.jpg" alt="Julix Mercury" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Artista digital colombiana que entreteje ciencia, arte y tecnología</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Platoboss</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:La_mirla_grupo_musical.png" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/La_mirla_grupo_musical.png/500px-La_mirla_grupo_musical.png" alt="La Mirla grupo musical" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Grupo musical de cuerdas, vientos y voces de las memorias armoniosas de Latinoamérica</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Kennypaternina</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Ramas_de_un_%C3%A1rbol.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Ramas_de_un_%C3%A1rbol.jpg/500px-Ramas_de_un_%C3%A1rbol.jpg" alt="Ramas de un árbol" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Ramas de un árbol</p>
+								<p class="text-cyan-400/60 text-xs mt-1">ManuelaAtehordez</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Rio_de_Oro_Hidropoeticas.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Rio_de_Oro_Hidropoeticas.jpg/500px-Rio_de_Oro_Hidropoeticas.jpg" alt="Rio de Oro Hidropoeticas" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Foto del río de Oro en Pie de Cuesta, Santander</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Andresusugaespacioenoff</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:Cascada_Santa_Elena.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Cascada_Santa_Elena.jpg/500px-Cascada_Santa_Elena.jpg" alt="Cascada Santa Elena" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">Cascada Santa Elena (Antioquia)</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Nathaly 1106</p>
+							</div>
+						</a>
+
+						<a href="https://commons.wikimedia.org/wiki/File:R%C3%ADo_Saman%C3%A1.jpg" target="_blank" rel="noopener noreferrer" class="group block break-inside-avoid rounded-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-400/50 transition-all shadow-lg hover:shadow-cyan-900/40">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/R%C3%ADo_Saman%C3%A1.jpg/500px-R%C3%ADo_Saman%C3%A1.jpg" alt="Río Samaná" loading="lazy" class="w-full object-cover group-hover:scale-105 transition-transform duration-300" />
+							<div class="bg-black/60 px-3 py-2">
+								<p class="text-white/80 text-xs leading-tight">El río Samaná, último gran afluente libre de Antioquia</p>
+								<p class="text-cyan-400/60 text-xs mt-1">Nathaly 1106</p>
+							</div>
+						</a>
+
+					</div>
+
+					<p class="mt-4 text-center text-sm text-cyan-400/50">
+						<a href="https://commons.wikimedia.org/wiki/Category:Hidropo%C3%A9ticas_Ambientales" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-300 underline underline-offset-2 transition-colors">
+							Ver todas las imágenes en Wikimedia Commons ↗
+						</a>
+					</p>
+				</section>
+
+				<!-- Dashboard Section -->
+				<section class="mb-12">
+					<h2 class="text-xl md:text-2xl font-semibold text-cyan-300 mb-4">Dashboard del programa — HacerWiki 2026-1</h2>
+					<div class="rounded-xl border border-cyan-500/30 bg-white/5 backdrop-blur-sm shadow-lg shadow-cyan-900/20 p-8 flex flex-col items-center gap-6 text-center">
+						<!-- Icon -->
+						<div class="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center border border-cyan-400/30">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-cyan-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+							</svg>
+						</div>
+						<!-- Text -->
+						<div>
+							<p class="text-white/80 text-base md:text-lg max-w-xl leading-relaxed">
+								Seguimiento de actividades, ediciones y participantes del programa
+								<span class="text-cyan-300 font-semibold">Hidropoéticas Ambientales — HacerWiki 2026-1</span>
+								en el Outreach Dashboard de Wikimedia.
+							</p>
+						</div>
+						<!-- Button -->
+						<a
+							href="https://outreachdashboard.wmflabs.org/courses/WMCO/Hidropoeticas_Ambientales_-_Hacerwiki_2026-1/home"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 text-sm md:text-base"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+							Ver Dashboard en Outreach Wikimedia
+						</a>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+<script>
+  const btns     = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const rows     = document.querySelectorAll<HTMLTableRowElement>('.contrib-row');
+  const contador = document.getElementById('contador');
+  const buscador = document.getElementById('buscador') as HTMLInputElement | null;
+
+  let activeFilter = 'all';
+  let searchTerm   = '';
+
+  function applyFilters() {
+    let visible = 0;
+    rows.forEach(row => {
+      const filterMatch =
+        activeFilter === 'all' ||
+        (activeFilter === 'new' && row.dataset.new === 'true') ||
+        row.dataset.project === activeFilter;
+
+      const text = row.textContent?.toLowerCase() ?? '';
+      const searchMatch = searchTerm === '' || text.includes(searchTerm);
+
+      const show = filterMatch && searchMatch;
+      row.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (contador) contador.textContent = `${visible} contribuciones`;
+  }
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active', 'bg-cyan-500/20', 'text-cyan-200', 'border-cyan-500/50'));
+      btn.classList.add('active', 'bg-cyan-500/20', 'text-cyan-200', 'border-cyan-500/50');
+      activeFilter = btn.dataset.filter ?? 'all';
+      applyFilters();
+    });
+  });
+
+  buscador?.addEventListener('input', () => {
+    searchTerm = buscador.value.toLowerCase().trim();
+    applyFilters();
+  });
+</script>
+</Layout>
